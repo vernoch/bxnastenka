@@ -2161,6 +2161,7 @@ function initPricingFlipCards() {
 
 function initTicketFlipCards() {
   document.querySelectorAll('.ticket-card').forEach((card) => {
+    const pkgBadge = card.querySelector('.package-badge');
     const h3 = card.querySelector('h3');
     const sub = card.querySelector('.ticket-sub');
     const price = card.querySelector('.ticket-price');
@@ -2171,7 +2172,8 @@ function initTicketFlipCards() {
     const isHighlight = card.classList.contains('highlight');
 
     const front = document.createElement('div');
-    if (isHighlight) {
+    if (pkgBadge) front.appendChild(pkgBadge.cloneNode(true));
+    if (isHighlight && !pkgBadge) {
       const badge = document.createElement('span');
       badge.textContent = 'Doporučeno';
       badge.style.cssText = 'position:absolute;top:1rem;right:1rem;background:var(--accent-gradient);color:#fff;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.25rem 0.75rem;border-radius:999px';
