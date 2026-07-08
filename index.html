@@ -603,6 +603,122 @@ button { cursor: pointer; border: none; background: none; }
   border-radius: 6px;
 }
 
+.calc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.calc-legend-item { display: flex; align-items: center; gap: 0.5rem; }
+
+.calc-block { margin-bottom: 1.75rem; }
+.calc-block-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 2px solid var(--border);
+}
+.calc-block-header h2 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.calc-block-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: -0.35rem 0 0.85rem;
+}
+
+.calc-status-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.calc-status-badge--official {
+  color: #0d7a52;
+  background: rgba(13, 122, 82, 0.12);
+  border: 1px solid rgba(13, 122, 82, 0.25);
+}
+.calc-status-badge--draft {
+  color: #9a6700;
+  background: rgba(154, 103, 0, 0.1);
+  border: 1px solid rgba(154, 103, 0, 0.22);
+}
+
+.calc-step--official {
+  border-left: 4px solid rgba(13, 122, 82, 0.55);
+}
+.calc-step--draft {
+  border-left: 4px solid rgba(154, 103, 0, 0.45);
+  background: rgba(154, 103, 0, 0.025);
+}
+.calc-step-header .calc-status-badge { margin-left: auto; }
+
+.calc-subblock {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+}
+.calc-subblock--official {
+  background: rgba(13, 122, 82, 0.05);
+  border: 1px solid rgba(13, 122, 82, 0.15);
+}
+.calc-subblock--draft {
+  background: rgba(154, 103, 0, 0.04);
+  border: 1px solid rgba(154, 103, 0, 0.14);
+}
+.calc-subblock-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.65rem;
+  color: var(--text-muted);
+}
+
+.summary-status-tag {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.12rem 0.4rem;
+  border-radius: 999px;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+}
+.summary-status-tag--official { color: #5eead4; background: rgba(13, 122, 82, 0.35); }
+.summary-status-tag--draft { color: #fde68a; background: rgba(154, 103, 0, 0.35); }
+.summary-subtotal {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  opacity: 0.75;
+}
+.summary-subtotal--official { color: #5eead4; }
+.summary-subtotal--draft { color: #fde68a; }
+
 .summary-panel {
   position: sticky;
   top: 5rem;
@@ -1640,15 +1756,27 @@ button { cursor: pointer; border: none; background: none; }
       <div class="container">
         <div class="hero-eyebrow">Náš model v praxi</div>
         <h1>Cenový konfigurátor</h1>
-        <p>Ceník výstavní plochy dle ABF (CZK). Oficiální Gold / Silver balíčky nebo sestavení po položkách.</p>
+        <p>Ceník plochy dle ABF (domluveno) + návrhové položky BX EXPO. Oficiální Gold / Silver balíčky.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container calc-layout">
         <div>
-          <div class="calc-step">
-            <div class="calc-step-header"><span class="step-num">1</span><h3>Plocha stánku</h3></div>
+          <div class="calc-legend">
+            <div class="calc-legend-item"><span class="calc-status-badge calc-status-badge--official">Domluveno</span> ABF ceník plochy, poplatky, fáze, Gold / Silver</div>
+            <div class="calc-legend-item"><span class="calc-status-badge calc-status-badge--draft">Návrh</span> Zóny, stavba, data, sponsorship, ostatní balíčky</div>
+          </div>
+
+          <div class="calc-block">
+            <div class="calc-block-header">
+              <span class="calc-status-badge calc-status-badge--official">Domluveno</span>
+              <h2>ABF ceník &amp; fáze</h2>
+            </div>
+            <p class="calc-block-desc">Plocha, typ pozice a fáze objednávky dle Excelu ABF. Registrační poplatek a pojištění v souhrnu automaticky.</p>
+
+          <div class="calc-step calc-step--official">
+            <div class="calc-step-header"><span class="step-num">1</span><h3>Plocha stánku</h3><span class="calc-status-badge calc-status-badge--official">Domluveno</span></div>
             <div class="area-control">
               <button type="button" id="area-minus">−</button>
               <input type="range" id="area-range" min="9" max="100" value="9">
@@ -1657,8 +1785,8 @@ button { cursor: pointer; border: none; background: none; }
             </div>
           </div>
 
-          <div class="calc-step">
-            <div class="calc-step-header"><span class="step-num">2</span><h3>Typ pozice</h3></div>
+          <div class="calc-step calc-step--official">
+            <div class="calc-step-header"><span class="step-num">2</span><h3>Typ pozice</h3><span class="calc-status-badge calc-status-badge--official">Domluveno</span></div>
             <div class="option-grid" data-group="position">
               <button type="button" class="option-btn" data-value="row"><strong>Řadový</strong><span>1 strana · od 5 500 Kč/m²</span></button>
               <button type="button" class="option-btn selected" data-value="corner"><strong>Rohový</strong><span>2 strany · od 6 000 Kč/m²</span></button>
@@ -1669,8 +1797,25 @@ button { cursor: pointer; border: none; background: none; }
             <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.75rem">Sazba za m² se odvíjí od velikosti plochy a fáze objednávky (viz krok 9). Min. velikost 9 m².</p>
           </div>
 
-          <div class="calc-step">
-            <div class="calc-step-header"><span class="step-num">3</span><h3>Výstavní zóna</h3></div>
+          <div class="calc-step calc-step--official">
+            <div class="calc-step-header"><span class="step-num">9</span><h3>Fáze objednávky</h3><span class="calc-status-badge calc-status-badge--official">Domluveno</span></div>
+            <div class="option-grid" data-group="phase">
+              <button type="button" class="option-btn selected" data-value="early"><strong>Early Bird</strong><span>Do 31. 11. 2026 · nižší sazby</span></button>
+              <button type="button" class="option-btn" data-value="late"><strong>Late</strong><span>Od 1. 12. 2026 · vyšší sazby</span></button>
+            </div>
+            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.75rem">Uzávěrka technických kompletů: <strong>do 1. 3. 2027</strong>.</p>
+          </div>
+          </div>
+
+          <div class="calc-block">
+            <div class="calc-block-header">
+              <span class="calc-status-badge calc-status-badge--draft">Návrh</span>
+              <h2>BX EXPO rozšíření</h2>
+            </div>
+            <p class="calc-block-desc">Položky mimo ABF ceník — pracovní verze pro interní modelování a srovnání.</p>
+
+          <div class="calc-step calc-step--draft">
+            <div class="calc-step-header"><span class="step-num">3</span><h3>Výstavní zóna</h3><span class="calc-status-badge calc-status-badge--draft">Návrh</span></div>
             <div class="option-grid" data-group="zone">
               <button type="button" class="option-btn selected" data-value="standard"><strong>Standardní zóna</strong><span>Hlavní výstavní hala</span></button>
               <button type="button" class="option-btn" data-value="premium"><strong>Prémiová zóna</strong><span>Lepší lokalita, +12 %</span></button>
@@ -1678,27 +1823,27 @@ button { cursor: pointer; border: none; background: none; }
             </div>
           </div>
 
-          <div class="calc-step">
-            <div class="calc-step-header"><span class="step-num">4</span><h3>Stavba na klíč</h3></div>
+          <div class="calc-step calc-step--draft">
+            <div class="calc-step-header"><span class="step-num">4</span><h3>Stavba na klíč</h3><span class="calc-status-badge calc-status-badge--draft">Návrh</span></div>
             <div class="option-grid" data-group="build">
-              <button type="button" class="option-btn" data-value="none"><strong>Space Only</strong><span>Bez příplatku</span></button>
-              <button type="button" class="option-btn selected" data-value="s3"><strong>Standard S3</strong><span>3 000 Kč/m²</span></button>
+              <button type="button" class="option-btn selected" data-value="none"><strong>Space Only</strong><span>Bez příplatku · odpovídá ABF</span></button>
+              <button type="button" class="option-btn" data-value="s3"><strong>Standard S3</strong><span>3 000 Kč/m²</span></button>
               <button type="button" class="option-btn" data-value="c1"><strong>Stánek C1 (Vysoký)</strong><span>3 900 Kč/m²</span></button>
               <button type="button" class="option-btn" data-value="r4"><strong>Stojan R4</strong><span>4 000 Kč/m²</span></button>
               <button type="button" class="option-btn" data-value="c3"><strong>Premium C3</strong><span>4 450 Kč/m²</span></button>
             </div>
           </div>
 
-          <div class="calc-step">
-            <div class="calc-step-header"><span class="step-num">5</span><h3>Doplňkové poplatky</h3></div>
+          <div class="calc-step calc-step--draft">
+            <div class="calc-step-header"><span class="step-num">5</span><h3>Doplňkové poplatky</h3><span class="calc-status-badge calc-status-badge--draft">Návrh</span></div>
             <div class="extra-inputs">
               <label>Spoluvystavovatelé: <input type="number" id="coexhibitors" min="0" max="5" value="0"></label>
               <label>Další permanentky: <input type="number" id="extra-badges" min="0" max="20" value="0"></label>
             </div>
           </div>
 
-          <div class="calc-step">
-            <div class="calc-step-header"><span class="step-num">6</span><h3>Data &amp; schůzky</h3></div>
+          <div class="calc-step calc-step--draft">
+            <div class="calc-step-header"><span class="step-num">6</span><h3>Data &amp; schůzky</h3><span class="calc-status-badge calc-status-badge--draft">Návrh</span></div>
             <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.75rem">Garance leadů a matchmaking — prodej byznysu, ne jen metrů. U all-in balíčků jsou zahrnuty dle specifikace.</p>
             <p style="font-size:0.78rem;font-weight:600;margin-bottom:0.35rem">Garance leadů</p>
             <div class="option-grid" data-group="leadgen" style="margin-bottom:0.75rem">
@@ -1715,16 +1860,19 @@ button { cursor: pointer; border: none; background: none; }
             </div>
           </div>
 
-          <div class="calc-step">
+          <div class="calc-step calc-step--draft">
             <div class="calc-step-header"><span class="step-num">7</span><h3>Produktové balíčky</h3></div>
-            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.75rem">Oficiální Gold / Silver nebo návrhové balíčky — při výběru balíčku se použije jeho cena místo sestavení z kroků 1–6.</p>
-            <p style="font-size:0.78rem;font-weight:600;margin-bottom:0.35rem">Official</p>
-            <div class="option-grid" data-group="content" style="margin-bottom:0.75rem">
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.75rem">Při výběru balíčku se použije jeho cena místo sestavení z kroků 1–6.</p>
+            <div class="calc-subblock calc-subblock--official">
+              <div class="calc-subblock-label"><span class="calc-status-badge calc-status-badge--official">Domluveno</span> Official</div>
+            <div class="option-grid" data-group="content">
               <button type="button" class="option-btn selected" data-value="none"><strong>Bez balíčku</strong><span>Sestavit z kroků 1–6</span></button>
               <button type="button" class="option-btn" data-value="masterclass-network"><strong>Gold</strong><span>500 000 Kč all-in</span></button>
               <button type="button" class="option-btn" data-value="speaking"><strong>Silver</strong><span>200 000 Kč all-in</span></button>
             </div>
-            <p style="font-size:0.78rem;font-weight:600;margin-bottom:0.35rem">Návrh</p>
+            </div>
+            <div class="calc-subblock calc-subblock--draft">
+              <div class="calc-subblock-label"><span class="calc-status-badge calc-status-badge--draft">Návrh</span> Návrhové balíčky</div>
             <div class="option-grid" data-group="content-draft">
               <button type="button" class="option-btn" data-value="partner"><strong>Partner</strong><span>32 000 Kč all-in</span></button>
               <button type="button" class="option-btn" data-value="bronze"><strong>Bronze / Startup Hub</strong><span>54 000 Kč all-in</span></button>
@@ -1733,11 +1881,12 @@ button { cursor: pointer; border: none; background: none; }
               <button type="button" class="option-btn" data-value="masterclass"><strong>General / Masterclass</strong><span>319 000 Kč all-in</span></button>
               <button type="button" class="option-btn" data-value="workshop"><strong>Sponsored Workshop</strong><span>194 000 Kč · bez stánku</span></button>
             </div>
+            </div>
             <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.75rem">Sponsored Workshop je samostatná obsahová položka mimo partnerské balíčky (sleva 15 % z 228 000 Kč).</p>
           </div>
 
-          <div class="calc-step">
-            <div class="calc-step-header"><span class="step-num">8</span><h3>Sponsorship zón</h3></div>
+          <div class="calc-step calc-step--draft">
+            <div class="calc-step-header"><span class="step-num">8</span><h3>Sponsorship zón</h3><span class="calc-status-badge calc-status-badge--draft">Návrh</span></div>
             <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.75rem">Doplňkové k existujícímu stánku. Samostatné Lounge partnerství bez stánku → balíček v kroku 7.</p>
             <div class="option-grid" data-group="sponsorship">
               <button type="button" class="option-btn selected" data-value="none"><strong>Bez sponsorshipu</strong><span>Bez balíčku</span></button>
@@ -1746,21 +1895,18 @@ button { cursor: pointer; border: none; background: none; }
               <button type="button" class="option-btn" data-value="cafe"><strong>Branding kavárny</strong><span>127 000 Kč</span></button>
             </div>
           </div>
-
-          <div class="calc-step">
-            <div class="calc-step-header"><span class="step-num">9</span><h3>Fáze objednávky</h3></div>
-            <div class="option-grid" data-group="phase">
-              <button type="button" class="option-btn selected" data-value="early"><strong>Early Bird</strong><span>Do 31. 11. 2026 · nižší sazby</span></button>
-              <button type="button" class="option-btn" data-value="late"><strong>Late</strong><span>Od 1. 12. 2026 · vyšší sazby</span></button>
-            </div>
-            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.75rem">Uzávěrka technických kompletů: <strong>do 1. 3. 2027</strong>.</p>
           </div>
         </div>
 
         <aside class="summary-panel">
           <h3>Váš rozpočet</h3>
-          <p style="font-size:0.8rem;opacity:0.6;margin-bottom:1rem">28.4.–30.4. 2027 · PVA EXPO Praha · bez DPH</p>
+          <p style="font-size:0.8rem;opacity:0.6;margin-bottom:0.75rem">28.4.–30.4. 2027 · PVA EXPO Praha · bez DPH</p>
+          <div id="summary-status-legend" style="display:flex;flex-wrap:wrap;gap:0.5rem 0.75rem;margin-bottom:1rem;font-size:0.72rem;opacity:0.75">
+            <span><span class="summary-status-tag summary-status-tag--official">Domluveno</span> ABF</span>
+            <span><span class="summary-status-tag summary-status-tag--draft">Návrh</span> BX model</span>
+          </div>
           <div id="summary-lines"></div>
+          <div id="summary-subtotals"></div>
           <div class="breakdown-bar" id="breakdown-bar"></div>
           <div class="summary-total">
             <div style="font-size:0.8rem;opacity:0.6">Celková cena</div>
@@ -2409,6 +2555,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // BX EXPO ceník: ABF ceník plochy (CZK) + doplňkové položky BX EXPO
 const PACKAGE_DISCOUNT = 0.15;
 
+const OFFICIAL_PACKAGE_IDS = new Set(['gold', 'silver']);
+
 const SPONSORSHIP_LIST_PRICES = {
   recharge: 88000,
   lounge: 72000,
@@ -2604,6 +2752,14 @@ function getPricePerM2(positionId, area, phaseId) {
   return phase.useLateRates ? tier.late : tier.early;
 }
 
+function itemWithStatus(label, detail, amount, status) {
+  return { label, detail, amount, status };
+}
+
+function isOfficialPackageId(packageId) {
+  return OFFICIAL_PACKAGE_IDS.has(packageId);
+}
+
 function formatCzk(amount) {
   return new Intl.NumberFormat('cs-CZ', {
     style: 'currency',
@@ -2629,7 +2785,7 @@ function getState() {
     area: parseInt(document.getElementById('area-range')?.value || '9', 10),
     positionId: getSelected('position') || 'corner',
     zoneId: getSelected('zone') || 'standard',
-    buildId: getSelected('build') || 's3',
+    buildId: getSelected('build') || 'none',
     contentId: getSelectedContentId(),
     sponsorshipId: getSelected('sponsorship') || 'none',
     leadgenId: getSelected('leadgen') || 'none',
@@ -2655,37 +2811,43 @@ function calcBoothFromState(state) {
   const coex = MANDATORY_FEES.coexhibitor * state.coexhibitors;
   const badges = MANDATORY_FEES.extraBadge * state.extraBadges;
 
+  const zoneIsStandard = state.zoneId === 'standard';
+  const areaStatus = zoneIsStandard ? 'official' : 'draft';
+
   const items = [
-    {
-      label: `Plocha · ${position.label} · ${zone.label}`,
-      detail: `${state.area} m² × ${formatCzk(pricePerM2)} (${tier.label}) × ${zone.multiplier}`,
-      amount: areaBase,
-    },
+    itemWithStatus(
+      `Plocha · ${position.label} · ${zone.label}`,
+      `${state.area} m² × ${formatCzk(pricePerM2)} (${tier.label})${zoneIsStandard ? '' : ` × ${zone.multiplier} (návrhová zóna)`}`,
+      areaBase,
+      areaStatus
+    ),
   ];
 
   if (build.pricePerM2 > 0) {
-    items.push({
-      label: `Stavba · ${build.label}`,
-      detail: `${state.area} m² × ${formatCzk(build.pricePerM2)}`,
-      amount: buildCost,
-    });
+    items.push(itemWithStatus(
+      `Stavba · ${build.label}`,
+      `${state.area} m² × ${formatCzk(build.pricePerM2)}`,
+      buildCost,
+      'draft'
+    ));
   }
 
   items.push(
-    { label: 'Registrační poplatek', detail: 'Povinně jednorázově', amount: registration },
-    { label: 'Pojištění odpovědnosti', detail: 'Povinně jednorázově', amount: insurance }
+    itemWithStatus('Registrační poplatek', 'Povinně jednorázově · ABF', registration, 'official'),
+    itemWithStatus('Pojištění odpovědnosti', 'Povinně jednorázově · ABF', insurance, 'official')
   );
 
   if (platform > 0) {
-    items.push({
-      label: 'BX Platform',
-      detail: 'Katalog, aplikace, vstupenky (turnkey)',
-      amount: platform,
-    });
+    items.push(itemWithStatus(
+      'BX Platform',
+      'Katalog, aplikace, vstupenky (turnkey)',
+      platform,
+      'draft'
+    ));
   }
 
-  if (coex > 0) items.push({ label: 'Spoluvystavovatelé', detail: `${state.coexhibitors}× ${formatCzk(MANDATORY_FEES.coexhibitor)}`, amount: coex });
-  if (badges > 0) items.push({ label: 'Další permanentky', detail: `${state.extraBadges}× ${formatCzk(MANDATORY_FEES.extraBadge)}`, amount: badges });
+  if (coex > 0) items.push(itemWithStatus('Spoluvystavovatelé', `${state.coexhibitors}× ${formatCzk(MANDATORY_FEES.coexhibitor)}`, coex, 'draft'));
+  if (badges > 0) items.push(itemWithStatus('Další permanentky', `${state.extraBadges}× ${formatCzk(MANDATORY_FEES.extraBadge)}`, badges, 'draft'));
 
   const total = items.reduce((s, i) => s + i.amount, 0);
   const categories = [
@@ -2714,19 +2876,21 @@ function getDataLayerItems(state, skip = {}) {
   const items = [];
   const leadgen = getLeadgenOption(state.leadgenId);
   if (!skip.leadgen && leadgen.price > 0) {
-    items.push({
-      label: leadgen.label,
-      detail: `${leadgen.contacts} kvalifikovaných kontaktů k obvolání`,
-      amount: leadgen.price,
-    });
+    items.push(itemWithStatus(
+      leadgen.label,
+      `${leadgen.contacts} kvalifikovaných kontaktů k obvolání`,
+      leadgen.price,
+      'draft'
+    ));
   }
   const match = getMatchmakingOption(state.matchmakingId);
   if (!skip.matchmaking && match.price > 0) {
-    items.push({
-      label: match.label,
-      detail: match.detail,
-      amount: match.price,
-    });
+    items.push(itemWithStatus(
+      match.label,
+      match.detail,
+      match.price,
+      'draft'
+    ));
   }
   return items;
 }
@@ -2842,11 +3006,12 @@ function calculateQuote(state) {
     const packagePrice = getPackagePrice(content.packageId, state.phaseId);
 
     if (content.standalone) {
-      const items = [{
-        label: `Balíček · ${content.label}`,
-        detail: `Samostatný obsahový slot · po položkách ${formatCzkPlain(componentsTotal)} Kč (−${Math.round(PACKAGE_DISCOUNT * 100)} %)`,
-        amount: packagePrice,
-      }];
+      const items = [itemWithStatus(
+        `Balíček · ${content.label}`,
+        `Samostatný obsahový slot · po položkách ${formatCzkPlain(componentsTotal)} Kč (−${Math.round(PACKAGE_DISCOUNT * 100)} %)`,
+        packagePrice,
+        'draft'
+      )];
       const { total, breakdown } = buildQuoteBreakdown(items);
       return {
         items,
@@ -2864,14 +3029,16 @@ function calculateQuote(state) {
       sponsorship = SPONSORSHIP_OPTIONS[0];
     }
 
-    const items = [{
-      label: `Balíček · ${content.label}`,
-      detail: `All-in · po položkách ${formatCzkPlain(componentsTotal)} Kč (−${Math.round(PACKAGE_DISCOUNT * 100)} %)`,
-      amount: packagePrice,
-    }];
+    const pkgStatus = isOfficialPackageId(content.packageId) ? 'official' : 'draft';
+    const items = [itemWithStatus(
+      `Balíček · ${content.label}`,
+      `All-in · po položkách ${formatCzkPlain(componentsTotal)} Kč (−${Math.round(PACKAGE_DISCOUNT * 100)} %)`,
+      packagePrice,
+      pkgStatus
+    )];
 
     if (sponsorship.price > 0) {
-      items.push({ label: sponsorship.label, detail: 'Doplňkový sponsorship', amount: sponsorship.price });
+      items.push(itemWithStatus(sponsorship.label, 'Doplňkový sponsorship', sponsorship.price, 'draft'));
     }
 
     const { total, breakdown } = buildQuoteBreakdown(items);
@@ -2892,7 +3059,7 @@ function calculateQuote(state) {
   const items = [...booth.items, ...getDataLayerItems(state)];
 
   if (sponsorship.price > 0) {
-    items.push({ label: sponsorship.label, detail: 'Sponsorship zóny', amount: sponsorship.price });
+    items.push(itemWithStatus(sponsorship.label, 'Sponsorship zóny', sponsorship.price, 'draft'));
   }
 
   const { total, breakdown } = buildQuoteBreakdown(items);
@@ -2974,6 +3141,32 @@ function syncPackageCardRefs() {
   });
 }
 
+function renderSummaryLine(item) {
+  const tag = item.status === 'official'
+    ? '<span class="summary-status-tag summary-status-tag--official">Domluveno</span>'
+    : item.status === 'draft'
+      ? '<span class="summary-status-tag summary-status-tag--draft">Návrh</span>'
+      : '';
+  return `
+      <div class="summary-line">
+        <span>${item.label}${tag}${item.detail ? `<span class="detail">${item.detail}</span>` : ''}</span>
+        <span>${formatCzk(item.amount)}</span>
+      </div>`;
+}
+
+function renderSummarySubtotals(items) {
+  const official = items.filter((i) => i.status === 'official').reduce((s, i) => s + i.amount, 0);
+  const draft = items.filter((i) => i.status === 'draft').reduce((s, i) => s + i.amount, 0);
+  const rows = [];
+  if (official > 0) {
+    rows.push(`<div class="summary-subtotal summary-subtotal--official"><span>Domluveno (ABF + official)</span><span>${formatCzk(official)}</span></div>`);
+  }
+  if (draft > 0) {
+    rows.push(`<div class="summary-subtotal summary-subtotal--draft"><span>Návrh (BX model)</span><span>${formatCzk(draft)}</span></div>`);
+  }
+  return rows.join('');
+}
+
 function updateCalculator() {
   const state = getState();
   const content = CONTENT_PACKAGES.find((c) => c.id === state.contentId) || CONTENT_PACKAGES[0];
@@ -2997,15 +3190,12 @@ function updateCalculator() {
 
   const linesEl = document.getElementById('summary-lines');
   if (linesEl) {
-    linesEl.innerHTML = result.items
-      .map(
-        (item) => `
-      <div class="summary-line">
-        <span>${item.label}${item.detail ? `<span class="detail">${item.detail}</span>` : ''}</span>
-        <span>${formatCzk(item.amount)}</span>
-      </div>`
-      )
-      .join('');
+    linesEl.innerHTML = result.items.map(renderSummaryLine).join('');
+  }
+
+  const subtotalsEl = document.getElementById('summary-subtotals');
+  if (subtotalsEl) {
+    subtotalsEl.innerHTML = renderSummarySubtotals(result.items);
   }
 
   const totalEl = document.getElementById('summary-total');
