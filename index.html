@@ -310,6 +310,21 @@ button { cursor: pointer; border: none; background: none; }
 
 /* ── Ticket cards (IW pricing style) ── */
 .ticket-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+.ticket-card.official { border: 2px solid rgba(230,50,138,0.35); }
+.ticket-card.official.highlight { border-color: var(--bx-pink); box-shadow: 0 12px 40px rgba(230,50,138,0.15); }
+.package-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bx-pink);
+  background: rgba(230,50,138,0.1);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+.draft-packages .ticket-card { opacity: 0.92; }
 .ticket-card {
   background: transparent;
   border: none;
@@ -885,7 +900,7 @@ button { cursor: pointer; border: none; background: none; }
           <div><div class="stat-num">8</div><div class="stat-label">modely konkurence</div></div>
           <div><div class="stat-num">9</div><div class="stat-label">výstavních sekcí</div></div>
           <div><div class="stat-num">18</div><div class="stat-label">analyzovaných akcí</div></div>
-          <div><div class="stat-num">7</div><div class="stat-label">produktové balíčky</div></div>
+          <div><div class="stat-num">2</div><div class="stat-label">oficiální balíčky</div></div>
         </div>
       </div>
     </section>
@@ -907,7 +922,7 @@ button { cursor: pointer; border: none; background: none; }
           </div>
           <div class="feature-card">
             <h3>Náš model</h3>
-            <p>Vrstvený model BX EXPO – 9 sekcí a 7 partnerských balíčků. Od plochy k celoroční platformě.</p>
+            <p>9 výstavních sekcí a oficiální Gold / Silver balíčky. Vrstvený model a návrhové balíčky níže pro referenci.</p>
           </div>
           <div class="feature-card">
             <h3>Kalkulačka</h3>
@@ -962,7 +977,7 @@ button { cursor: pointer; border: none; background: none; }
           <a href="#model" data-page="model" class="nav-card">
             <div class="nav-card-num">03</div>
             <h3>Náš model</h3>
-            <p>Vrstvený model BX EXPO – 9 sekcí a 7 partnerských balíčků.</p>
+            <p>9 výstavních sekcí, oficiální Gold / Silver a interaktivní kalkulačka dle ceníku ABF.</p>
             <span class="nav-card-link">Zobrazit →</span>
           </a>
           <a href="#kalkulacka" data-page="kalkulacka" class="nav-card">
@@ -1421,59 +1436,72 @@ button { cursor: pointer; border: none; background: none; }
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Vrstvený model: od plochy k celoroční platformě</h2>
-        </div>
-        <div class="layer-stack">
-          <div class="layer-item">
-            <div class="layer-tag">Nadstavba</div>
-            <h3>Digitální a datová vrstva</h3>
-            <ul>
-              <li>Garance leadů (kvalifikované kontakty z databáze)</li>
-              <li>Matchmaking app (algoritmické schůzky před akcí)</li>
-              <li>Celoroční digitální platforma (katalog, web, aplikace)</li>
-            </ul>
-          </div>
-          <div class="layer-item">
-            <div class="layer-tag">Střed</div>
-            <h3>Zážitková a obsahová vrstva</h3>
-            <ul>
-              <li>Konference & content (Masterclass sloty)</li>
-              <li>Experience zóny a immersive instalace</li>
-              <li>Sponsorship balíčky</li>
-            </ul>
-          </div>
-          <div class="layer-item">
-            <div class="layer-tag">Základ</div>
-            <h3>Fyzický základ</h3>
-            <ul>
-              <li>Výstavní plocha – standard / premium / startup zóny</li>
-              <li>Stánky na klíč (Turnkey S3, C1, R4, C3)</li>
-              <li>Povinný Registration & Media Package</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section section-muted">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">9 výstavních sekcí</h2>
-          <p class="section-desc">Struktura navržená podle reálných use-cases, nikoliv zastaralých oborů.</p>
+          <p class="section-desc">Struktura podle nomenklatury BX EXPO — use-cases, nikoliv zastaralé obory.</p>
         </div>
         <div class="card-grid">
-          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">1.</span></div><h3>Print & Production</h3><p class="card-sub">Digitální tisk, workflow automation, finishing</p><p>Moderní produkce už není jen o barvě na papír, ale o plné automatizaci a propojení tiskových strojů s digitálními daty.</p></div>
-          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">2.</span></div><h3>Packaging</h3><p class="card-sub">Obalové technologie, eco materiály, smart packaging</p><p>Obal je klíčový bod kontaktu se zákazníkem. Firmy hledají ekologické varianty a chytré obaly propojené s online světem.</p></div>
-          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">3.</span></div><h3>Retail & Space</h3><p class="card-sub">Signage, POS, retail design, DOOH & programmatic</p><p>Fyzický prostor prodejen se mění v zážitkové showroomy. Chytré billboardy a programmatic OOH reagují v reálném čase na data o publiku.</p></div>
-          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">4.</span></div><h3>Digital & Content</h3><p class="card-sub">Video production, content automation, creative tools</p><p>Nástroje pro hromadnou tvorbu digitálního obsahu včetně generativního videa šetří marketingovým týmům stovky hodin.</p></div>
-          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">5.</span></div><h3>AI & Martech</h3><p class="card-sub">AI tools, martech, vibe coding, AI agenti</p><p>Mozek celého ekosystému – software řídící kampaně, no-code vývoj a autonomní AI asistenti optimalizující marketingové rozpočty.</p></div>
-          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">6.</span></div><h3>E-commerce</h3><p class="card-sub">Print-on-demand, fulfillment, autonomní logistika</p><p>Komplexní infrastruktura pro moderní e-shopy včetně doručovacích robotů, dronů a skladové automatizace.</p></div>
-          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">7.</span></div><h3>Experience</h3><p class="card-sub">AR/VR, event tech, immersive instalace, roboti</p><p>Technologie vtahující zákazníka do příběhu značky – od VR po humanoidní roboty a autonomní systémy jako Brand Experience tahák.</p></div>
-          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">8.</span></div><h3>Promo Products</h3><p class="card-sub">Eco merch, tech merch, premium branding</p><p>Konec levných propisek – prémiové, technologické a udržitelné dárky posilující hodnotu značky.</p></div>
-          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">9.</span></div><h3>Startup Hub</h3><p class="card-sub">AI tools, nové materiály, SaaS</p><p>Prostor pro technologické štiky a startupy přinášející experimentální formáty na trh.</p></div>
+          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">1.</span></div><h3>Print &amp; Production</h3><p class="card-sub">Digitální tisk · automatizace · mass customization · smart materials</p><p>Digitální tisk (inkjet, UV, textile), automatizace výroby, mass customization a chytré materiály propojené s daty.</p></div>
+          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">2.</span></div><h3>Packaging &amp; Sustainability</h3><p class="card-sub">Smart packaging · cirkulární materiály · eco-design · digitální etikety</p><p>Obal jako aktivní touchpoint — smart packaging (QR, NFC, AR), cirkulární materiály, eco-design a digitální etikety.</p></div>
+          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">3.</span></div><h3>Retail &amp; Space</h3><p class="card-sub">Signage · digital signage · retail design · event &amp; exhibition design</p><p>Navigace, DOOH, retail design a exhibition design — fyzický prostor maximalizující prodej i zážitek zákazníka.</p></div>
+          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">4.</span></div><h3>Digital &amp; Content</h3><p class="card-sub">Video/foto/motion · content automation · generativní grafika · virtual production</p><p>Hromadná tvorba digitálního obsahu včetně generativní grafiky, motion a virtual production.</p></div>
+          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">5.</span></div><h3>AI &amp; Martech</h3><p class="card-sub">Marketing automation · AI obsah · personalizace · data-driven kampaně</p><p>Software řídící kampaně, AI generování obsahu, personalizace a data-driven rozhodování v marketingu.</p></div>
+          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">6.</span></div><h3>E-commerce &amp; ON-DEMAND PRODUCTION</h3><p class="card-sub">Print-on-demand · fulfillment · custom merch · integrace e-shopů</p><p>Infrastruktura pro moderní e-shopy — od PoD přes fulfillment po custom merch a integraci s e-shopy.</p></div>
+          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">7.</span></div><h3>Experience &amp; Innovation</h3><p class="card-sub">AR/VR · immersive instalace · experiential marketing · phygital</p><p>Technologie vtahující zákazníka do příběhu značky — AR/VR, immersive instalace a phygital kampaně.</p></div>
+          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">8.</span></div><h3>Promotional Products Reinvented</h3><p class="card-sub">Smart gifts (IoT) · sustainable merch · digital gifting</p><p>Prémiové propagační produkty — smart gifts, udržitelný merch a digital gifting místo levných propisek.</p></div>
+          <div class="card"><div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem"><span class="card-num">9.</span></div><h3>Startup &amp; Innovation Hub</h3><p class="card-sub">AI tools · SaaS pro marketing · nové materiály · kreativní technologie</p><p>Prostor pro technologické startupy přinášející experimentální formáty a kreativní technologie na trh.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Official</div>
+          <h2 class="section-title">Produktové balíčky — official</h2>
+          <p class="section-desc">Aktuální partnerské úrovně pro BX EXPO. Ceny bez DPH.</p>
+        </div>
+        <div class="ticket-grid">
+
+          <div class="ticket-card highlight official" data-package="gold">
+            <span class="package-badge">Exkluzivní · max 1 / sekce</span>
+            <h3>Gold</h3>
+            <p class="ticket-sub">Lídři trhu · maximální viditelnost</p>
+            <div class="ticket-price">500 000 Kč</div>
+            <p class="ticket-calc-ref" data-calc-ref="gold"></p>
+            <span class="ticket-save" data-calc-save="gold"></span>
+            <ul class="ticket-features">
+              <li>50 m² výstavní plochy</li>
+              <li>Prostor na stage 20–25 min</li>
+              <li>10× čestná vstupenka</li>
+              <li>Brand na stage a v okolí v ceně</li>
+              <li>Matchmaking</li>
+              <li>Leady z čestných vstupenek</li>
+              <li>Lounge 5×</li>
+              <li>Branding v lounge zóně</li>
+            </ul>
+          </div>
+
+          <div class="ticket-card official" data-package="silver">
+            <span class="package-badge">Max 3 / sekce</span>
+            <h3>Silver</h3>
+            <p class="ticket-sub">Zavedené značky · silná viditelnost</p>
+            <div class="ticket-price">200 000 Kč</div>
+            <p class="ticket-calc-ref" data-calc-ref="silver"></p>
+            <span class="ticket-save" data-calc-save="silver"></span>
+            <ul class="ticket-features">
+              <li>20 m² výstavní plochy</li>
+              <li>5× vstupenka</li>
+              <li>Bez stage prostoru</li>
+              <li>Brand na stage</li>
+            </ul>
+          </div>
+
+        </div>
+        <div style="text-align:center;margin-top:2.5rem">
+          <a href="#kalkulacka" data-page="kalkulacka" class="btn btn-dark">Porovnat v kalkulačce</a>
         </div>
       </div>
     </section>
@@ -1481,10 +1509,11 @@ button { cursor: pointer; border: none; background: none; }
     <section class="section section-muted">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Produktové balíčky</h2>
-          <p class="section-desc">Sedm partnerských úrovní — all-in balíčky se slevou max. 15 % oproti sestavení po položkách v kalkulačce. Ceny bez DPH.</p>
+          <div class="section-eyebrow">Návrh</div>
+          <h2 class="section-title">Produktové balíčky — návrh</h2>
+          <p class="section-desc">Původní návrhové balíčky pro referenci a srovnání. All-in ceny se slevou max. 15 % oproti sestavení po položkách.</p>
         </div>
-        <div class="ticket-grid">
+        <div class="ticket-grid draft-packages">
 
           <div class="ticket-card" data-package="general">
             <h3>General</h3>
@@ -1502,22 +1531,6 @@ button { cursor: pointer; border: none; background: none; }
             </ul>
           </div>
 
-          <div class="ticket-card" data-package="gold">
-            <h3>Gold</h3>
-            <p class="ticket-sub">Zavedené značky · thought leadership</p>
-            <div class="ticket-price">185 000 Kč</div>
-            <p class="ticket-calc-ref" data-calc-ref="gold"></p>
-            <span class="ticket-save" data-calc-save="gold"></span>
-            <ul class="ticket-features">
-              <li>8× vstupenka (vč. Lounge)</li>
-              <li>20 % sleva na další vstupenky</li>
-              <li>Prezentační místo 5×3 m</li>
-              <li>Účast v panelu</li>
-              <li>Brandovaná stage</li>
-              <li>9 m² stánek na klíč</li>
-            </ul>
-          </div>
-
           <div class="ticket-card" data-package="party">
             <h3>Party / Meet &amp; Greet</h3>
             <p class="ticket-sub">Networking a firemní akce · LeadGen 100 kontaktů</p>
@@ -1531,22 +1544,6 @@ button { cursor: pointer; border: none; background: none; }
               <li>Branding party zóny</li>
               <li>LeadGen 100 kvalifikovaných kontaktů</li>
               <li>Bez prezentačního místa</li>
-            </ul>
-          </div>
-
-          <div class="ticket-card highlight" data-package="silver">
-            <h3>Silver</h3>
-            <p class="ticket-sub">E-shopy, agentury · nejprodávanější</p>
-            <div class="ticket-price">110 000 Kč</div>
-            <p class="ticket-calc-ref" data-calc-ref="silver"></p>
-            <span class="ticket-save" data-calc-save="silver"></span>
-            <ul class="ticket-features">
-              <li>5× vstupenka (vč. Lounge)</li>
-              <li>10 % sleva na další vstupenky</li>
-              <li>Prezentační místo 5×3 m</li>
-              <li>Vlastní přednáška (max. 10 min)</li>
-              <li>9 m² stánek na klíč</li>
-              <li>Zápis v katalogu a aplikaci</li>
             </ul>
           </div>
 
@@ -1596,8 +1593,44 @@ button { cursor: pointer; border: none; background: none; }
           </div>
 
         </div>
-        <div style="text-align:center;margin-top:2.5rem">
-          <a href="#kalkulacka" data-page="kalkulacka" class="btn btn-dark">Porovnat v kalkulačce</a>
+      </div>
+    </section>
+
+    <section class="section section-muted" style="opacity:0.85">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Referenční rámec</div>
+          <h2 class="section-title">Vrstvený model: od plochy k celoroční platformě</h2>
+          <p class="section-desc">Pracovní verze — aktuálně méně prioritní, ponecháno pro orientaci v dlouhodobé strategii.</p>
+        </div>
+        <div class="layer-stack">
+          <div class="layer-item">
+            <div class="layer-tag">Nadstavba</div>
+            <h3>Digitální a datová vrstva</h3>
+            <ul>
+              <li>Garance leadů (kvalifikované kontakty z databáze)</li>
+              <li>Matchmaking app (algoritmické schůzky před akcí)</li>
+              <li>Celoroční digitální platforma (katalog, web, aplikace)</li>
+            </ul>
+          </div>
+          <div class="layer-item">
+            <div class="layer-tag">Střed</div>
+            <h3>Zážitková a obsahová vrstva</h3>
+            <ul>
+              <li>Konference & content (Masterclass sloty)</li>
+              <li>Experience zóny a immersive instalace</li>
+              <li>Sponsorship balíčky</li>
+            </ul>
+          </div>
+          <div class="layer-item">
+            <div class="layer-tag">Základ</div>
+            <h3>Fyzický základ</h3>
+            <ul>
+              <li>Výstavní plocha – standard / premium / startup zóny</li>
+              <li>Stánky na klíč (Turnkey S3, C1, R4, C3)</li>
+              <li>Povinný Registration & Media Package</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -1607,7 +1640,7 @@ button { cursor: pointer; border: none; background: none; }
       <div class="container">
         <div class="hero-eyebrow">Náš model v praxi</div>
         <h1>Cenový konfigurátor</h1>
-        <p>Vrstvený ceník podle EuroShop (× 0,78). Balíčky = součet položek se slevou 15 %.</p>
+        <p>Ceník výstavní plochy dle ABF (CZK). Oficiální Gold / Silver balíčky nebo sestavení po položkách.</p>
       </div>
     </section>
 
@@ -1627,12 +1660,13 @@ button { cursor: pointer; border: none; background: none; }
           <div class="calc-step">
             <div class="calc-step-header"><span class="step-num">2</span><h3>Typ pozice</h3></div>
             <div class="option-grid" data-group="position">
-              <button type="button" class="option-btn" data-value="row"><strong>Řadový</strong><span>1 strana · 5 800 Kč/m²</span></button>
-              <button type="button" class="option-btn selected" data-value="corner"><strong>Rohový</strong><span>2 strany · 6 000 Kč/m²</span></button>
-              <button type="button" class="option-btn" data-value="peninsula"><strong>Poloostrov</strong><span>3 strany · 6 150 Kč/m²</span></button>
-              <button type="button" class="option-btn" data-value="island"><strong>Ostrovní</strong><span>4 strany · 6 350 Kč/m²</span></button>
-              <button type="button" class="option-btn" data-value="outdoor"><strong>Venkovní sekce</strong><span>Mimo haly · 2 550 Kč/m²</span></button>
+              <button type="button" class="option-btn" data-value="row"><strong>Řadový</strong><span>1 strana · od 5 500 Kč/m²</span></button>
+              <button type="button" class="option-btn selected" data-value="corner"><strong>Rohový</strong><span>2 strany · od 6 000 Kč/m²</span></button>
+              <button type="button" class="option-btn" data-value="peninsula"><strong>Tvar U</strong><span>3 strany · od 6 500 Kč/m²</span></button>
+              <button type="button" class="option-btn" data-value="island"><strong>Ostrovní</strong><span>4 strany · od 6 500 Kč/m²</span></button>
+              <button type="button" class="option-btn" data-value="outdoor"><strong>Venkovní plocha</strong><span>Mimo haly · 3 000 Kč/m²</span></button>
             </div>
+            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.75rem">Sazba za m² se odvíjí od velikosti plochy a fáze objednávky (viz krok 9). Min. velikost 9 m².</p>
           </div>
 
           <div class="calc-step">
@@ -1683,19 +1717,23 @@ button { cursor: pointer; border: none; background: none; }
 
           <div class="calc-step">
             <div class="calc-step-header"><span class="step-num">7</span><h3>Produktové balíčky</h3></div>
-            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.75rem">All-in ceny 7 partnerských balíčků — při výběru balíčku se použije jeho cena místo sestavení z kroků 1–6.</p>
-            <div class="option-grid" data-group="content">
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.75rem">Oficiální Gold / Silver nebo návrhové balíčky — při výběru balíčku se použije jeho cena místo sestavení z kroků 1–6.</p>
+            <p style="font-size:0.78rem;font-weight:600;margin-bottom:0.35rem">Official</p>
+            <div class="option-grid" data-group="content" style="margin-bottom:0.75rem">
               <button type="button" class="option-btn selected" data-value="none"><strong>Bez balíčku</strong><span>Sestavit z kroků 1–6</span></button>
+              <button type="button" class="option-btn" data-value="masterclass-network"><strong>Gold</strong><span>500 000 Kč all-in</span></button>
+              <button type="button" class="option-btn" data-value="speaking"><strong>Silver</strong><span>200 000 Kč all-in</span></button>
+            </div>
+            <p style="font-size:0.78rem;font-weight:600;margin-bottom:0.35rem">Návrh</p>
+            <div class="option-grid" data-group="content-draft">
               <button type="button" class="option-btn" data-value="partner"><strong>Partner</strong><span>32 000 Kč all-in</span></button>
               <button type="button" class="option-btn" data-value="bronze"><strong>Bronze / Startup Hub</strong><span>54 000 Kč all-in</span></button>
               <button type="button" class="option-btn" data-value="lounge-pkg"><strong>Networking Lounge</strong><span>88 000 Kč all-in</span></button>
-              <button type="button" class="option-btn" data-value="speaking"><strong>Silver</strong><span>110 000 Kč all-in</span></button>
               <button type="button" class="option-btn" data-value="party"><strong>Party / Meet &amp; Greet</strong><span>165 000 Kč all-in</span></button>
-              <button type="button" class="option-btn" data-value="masterclass-network"><strong>Gold</strong><span>185 000 Kč all-in</span></button>
               <button type="button" class="option-btn" data-value="masterclass"><strong>General / Masterclass</strong><span>319 000 Kč all-in</span></button>
               <button type="button" class="option-btn" data-value="workshop"><strong>Sponsored Workshop</strong><span>194 000 Kč · bez stánku</span></button>
             </div>
-            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.75rem">Sponsored Workshop je samostatná obsahová položka mimo 7 partnerských balíčků (sleva 15 % z 228 000 Kč).</p>
+            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.75rem">Sponsored Workshop je samostatná obsahová položka mimo partnerské balíčky (sleva 15 % z 228 000 Kč).</p>
           </div>
 
           <div class="calc-step">
@@ -1712,9 +1750,9 @@ button { cursor: pointer; border: none; background: none; }
           <div class="calc-step">
             <div class="calc-step-header"><span class="step-num">9</span><h3>Fáze objednávky</h3></div>
             <div class="option-grid" data-group="phase">
-              <button type="button" class="option-btn selected" data-value="early"><strong>Early Bird</strong><span>Do 31. 12. 2026 · −10 %</span></button>
-              <button type="button" class="option-btn" data-value="standard"><strong>Standard</strong><span>Do 31. 3. 2027</span></button>
-              <button type="button" class="option-btn" data-value="late"><strong>Late</strong><span>Po 1. 4. 2027 · +10 %</span></button>
+              <button type="button" class="option-btn selected" data-value="early"><strong>Early Bird</strong><span>Do 31. 11. 2026 · nižší sazby</span></button>
+              <button type="button" class="option-btn" data-value="standard"><strong>Standard</strong><span>Do 31. 3. 2027 · nižší sazby</span></button>
+              <button type="button" class="option-btn" data-value="late"><strong>Late</strong><span>Od 1. 12. 2026 · vyšší sazby</span></button>
             </div>
           </div>
         </div>
@@ -2350,13 +2388,23 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', () => {
         grid.querySelectorAll('.option-btn').forEach((b) => b.classList.remove('selected'));
         btn.classList.add('selected');
+        if (grid.dataset.group === 'content' || grid.dataset.group === 'content-draft') {
+          document.querySelectorAll('.option-grid[data-group="content"] .option-btn, .option-grid[data-group="content-draft"] .option-btn')
+            .forEach((b) => { if (b !== btn) b.classList.remove('selected'); });
+          if (grid.dataset.group === 'content-draft' && btn.dataset.value !== 'none') {
+            document.querySelector('.option-grid[data-group="content"] .option-btn[data-value="none"]')?.classList.remove('selected');
+          }
+          if (grid.dataset.group === 'content' && btn.dataset.value !== 'none') {
+            document.querySelectorAll('.option-grid[data-group="content-draft"] .option-btn').forEach((b) => b.classList.remove('selected'));
+          }
+        }
         if (window.updateCalculator) window.updateCalculator();
       });
     });
   });
 });
 
-// BX EXPO ceník: EuroShop × 0,78 (CEE), balíčky = součet položek − max 15 %
+// BX EXPO ceník: ABF ceník plochy (CZK) + doplňkové položky BX EXPO
 const PACKAGE_DISCOUNT = 0.15;
 
 const SPONSORSHIP_LIST_PRICES = {
@@ -2370,9 +2418,9 @@ const PACKAGE_LIST_PRICES = {
   partner: 32000,
   bronze: 54000,
   lounge: 88000,
-  silver: 110000,
+  silver: 200000,
   party: 165000,
-  gold: 185000,
+  gold: 500000,
   general: 319000,
   workshop: 194000,
 };
@@ -2425,9 +2473,9 @@ const PACKAGE_SPECS = {
     includePlatform: true,
   },
   silver: {
-    booth: { area: 9, positionId: 'corner', zoneId: 'standard', buildId: 's3' },
+    booth: { area: 20, positionId: 'corner', zoneId: 'standard', buildId: 's3' },
     badges: 5,
-    lineItems: ['presentationSpot', 'speaking10'],
+    lineItems: ['stageBranding'],
   },
   party: {
     badges: 8,
@@ -2438,10 +2486,12 @@ const PACKAGE_SPECS = {
     includePlatform: true,
   },
   gold: {
-    booth: { area: 9, positionId: 'corner', zoneId: 'standard', buildId: 's3' },
-    badges: 8,
-    lineItems: ['presentationSpot', 'panelSlot', 'stageBranding'],
+    booth: { area: 50, positionId: 'corner', zoneId: 'premium', buildId: 's3' },
+    badges: 10,
+    lineItems: ['presentationSpot', 'stageBranding', 'speaking25'],
+    matchmakingId: 'premium',
     includeLoungeAccess: true,
+    sponsorshipComponent: 'lounge',
   },
   general: {
     booth: { area: 9, positionId: 'corner', zoneId: 'premium', buildId: 's3' },
@@ -2457,12 +2507,40 @@ const PACKAGE_SPECS = {
 
 /** Balíčky, u kterých krok 8 (sponsorship lounge) nedává smysl — je už součástí */
 const PACKAGE_INCLUDES_LOUNGE = new Set(['lounge', 'party', 'gold', 'general']);
+
+/** Ceník plochy dle ABF — sazby za m² podle typu a velikosti (early = do 31.11.2026, late = od 1.12.2026) */
+const AREA_PRICING = {
+  row: [
+    { maxArea: 49, early: 5500, late: 6500, label: 'do 49 m²' },
+    { maxArea: 99, early: 6000, late: 7000, label: '50–99 m²' },
+    { maxArea: 199, early: 6500, late: 7500, label: '100–199 m²' },
+    { maxArea: Infinity, early: 7000, late: 8000, label: 'nad 200 m²' },
+  ],
+  corner: [
+    { maxArea: 49, early: 6000, late: 7000, label: 'do 49 m²' },
+    { maxArea: 99, early: 6500, late: 7500, label: '50–99 m²' },
+    { maxArea: 199, early: 7000, late: 8000, label: '100–199 m²' },
+    { maxArea: Infinity, early: 7500, late: 8500, label: 'nad 200 m²' },
+  ],
+  peninsula: [
+    { maxArea: 99, early: 6500, late: 7500, label: '50–99 m²' },
+    { maxArea: 199, early: 7000, late: 8000, label: '100–199 m²' },
+    { maxArea: Infinity, early: 7500, late: 8500, label: 'nad 200 m²' },
+  ],
+  island: [
+    { maxArea: 99, early: 6500, late: 7500, label: '60–99 m²' },
+    { maxArea: 199, early: 7000, late: 8000, label: '100–199 m²' },
+    { maxArea: Infinity, early: 7500, late: 8500, label: 'nad 200 m²' },
+  ],
+  outdoor: [{ maxArea: Infinity, early: 3000, late: 4000, label: 'venkovní' }],
+};
+
 const POSITIONS = [
-  { id: 'row', label: 'Řadový', pricePerM2: 5800 },
-  { id: 'corner', label: 'Rohový', pricePerM2: 6000 },
-  { id: 'peninsula', label: 'Poloostrov', pricePerM2: 6150 },
-  { id: 'island', label: 'Ostrovní', pricePerM2: 6350 },
-  { id: 'outdoor', label: 'Venkovní sekce', pricePerM2: 2550 },
+  { id: 'row', label: 'Řadový' },
+  { id: 'corner', label: 'Rohový' },
+  { id: 'peninsula', label: 'Tvar U' },
+  { id: 'island', label: 'Ostrovní' },
+  { id: 'outdoor', label: 'Venkovní plocha' },
 ];
 
 const ZONES = [
@@ -2499,19 +2577,31 @@ const SPONSORSHIP_OPTIONS = [
 ];
 
 const PHASES = [
-  { id: 'early', label: 'Early Bird', areaDiscount: 0.1 },
-  { id: 'standard', label: 'Standard', areaDiscount: 0 },
-  { id: 'late', label: 'Late', areaDiscount: -0.10 },
+  { id: 'early', label: 'Early Bird', useLateRates: false },
+  { id: 'standard', label: 'Standard', useLateRates: false },
+  { id: 'late', label: 'Late', useLateRates: true },
 ];
 
 const MANDATORY_FEES = {
-  media: 19000,
-  wastePerM2: 62,
-  associationPerM2: 14,
+  registration: 10000,
+  insurance: 1200,
   coexhibitor: 20700,
   extraBadge: 1100,
   platformTurnkey: 8000,
 };
+
+function getAreaTier(positionId, area) {
+  const tiers = AREA_PRICING[positionId] || AREA_PRICING.corner;
+  const effectiveArea = positionId === 'peninsula' ? Math.max(area, 50)
+    : positionId === 'island' ? Math.max(area, 60) : area;
+  return tiers.find((t) => effectiveArea <= t.maxArea) || tiers[tiers.length - 1];
+}
+
+function getPricePerM2(positionId, area, phaseId) {
+  const phase = PHASES.find((p) => p.id === phaseId) || PHASES[0];
+  const tier = getAreaTier(positionId, area);
+  return phase.useLateRates ? tier.late : tier.early;
+}
 
 function formatCzk(amount) {
   return new Intl.NumberFormat('cs-CZ', {
@@ -2526,13 +2616,20 @@ function getSelected(group) {
   return btn ? btn.dataset.value : null;
 }
 
+function getSelectedContentId() {
+  const official = document.querySelector('.option-grid[data-group="content"] .option-btn.selected');
+  if (official && official.dataset.value !== 'none') return official.dataset.value;
+  const draft = document.querySelector('.option-grid[data-group="content-draft"] .option-btn.selected');
+  return draft ? draft.dataset.value : 'none';
+}
+
 function getState() {
   return {
     area: parseInt(document.getElementById('area-range')?.value || '9', 10),
     positionId: getSelected('position') || 'corner',
     zoneId: getSelected('zone') || 'standard',
     buildId: getSelected('build') || 's3',
-    contentId: getSelected('content') || 'none',
+    contentId: getSelectedContentId(),
     sponsorshipId: getSelected('sponsorship') || 'none',
     leadgenId: getSelected('leadgen') || 'none',
     matchmakingId: getSelected('matchmaking') || 'none',
@@ -2543,29 +2640,24 @@ function getState() {
 }
 
 function calcBoothFromState(state) {
-  const position = POSITIONS.find((p) => p.id === state.positionId) || POSITIONS[0];
+  const position = POSITIONS.find((p) => p.id === state.positionId) || POSITIONS[1];
   const zone = ZONES.find((z) => z.id === state.zoneId) || ZONES[0];
   const build = BUILD_OPTIONS.find((b) => b.id === state.buildId) || BUILD_OPTIONS[0];
-  const phase = PHASES.find((p) => p.id === state.phaseId) || PHASES[1];
+  const tier = getAreaTier(state.positionId, state.area);
+  const pricePerM2 = getPricePerM2(state.positionId, state.area, state.phaseId);
 
-  const areaBase = Math.round(position.pricePerM2 * state.area * zone.multiplier);
+  const areaBase = Math.round(pricePerM2 * state.area * zone.multiplier);
   const buildCost = Math.round(build.pricePerM2 * state.area);
-  const media = MANDATORY_FEES.media;
-  const waste = MANDATORY_FEES.wastePerM2 * state.area;
-  const association = MANDATORY_FEES.associationPerM2 * state.area;
+  const registration = MANDATORY_FEES.registration;
+  const insurance = MANDATORY_FEES.insurance;
   const platform = build.pricePerM2 > 0 ? MANDATORY_FEES.platformTurnkey : 0;
   const coex = MANDATORY_FEES.coexhibitor * state.coexhibitors;
   const badges = MANDATORY_FEES.extraBadge * state.extraBadges;
 
-  let discount = 0;
-  if (phase.areaDiscount !== 0) {
-    discount = Math.round(areaBase * phase.areaDiscount);
-  }
-
   const items = [
     {
       label: `Plocha · ${position.label} · ${zone.label}`,
-      detail: `${state.area} m² × ${formatCzk(position.pricePerM2)} × ${zone.multiplier}`,
+      detail: `${state.area} m² × ${formatCzk(pricePerM2)} (${tier.label}) × ${zone.multiplier}`,
       amount: areaBase,
     },
   ];
@@ -2579,9 +2671,8 @@ function calcBoothFromState(state) {
   }
 
   items.push(
-    { label: 'Media / Registration Fee', detail: 'Povinně jednorázově', amount: media },
-    { label: 'Odvoz odpadu', detail: `${state.area} m² × ${MANDATORY_FEES.wastePerM2} Kč`, amount: waste },
-    { label: 'Asociační příspěvek', detail: `${state.area} m² × ${MANDATORY_FEES.associationPerM2} Kč`, amount: association }
+    { label: 'Registrační poplatek', detail: 'Povinně jednorázově', amount: registration },
+    { label: 'Pojištění odpovědnosti', detail: 'Povinně jednorázově', amount: insurance }
   );
 
   if (platform > 0) {
@@ -2594,19 +2685,12 @@ function calcBoothFromState(state) {
 
   if (coex > 0) items.push({ label: 'Spoluvystavovatelé', detail: `${state.coexhibitors}× ${formatCzk(MANDATORY_FEES.coexhibitor)}`, amount: coex });
   if (badges > 0) items.push({ label: 'Další permanentky', detail: `${state.extraBadges}× ${formatCzk(MANDATORY_FEES.extraBadge)}`, amount: badges });
-  if (discount !== 0) {
-    items.push({
-      label: phase.areaDiscount > 0 ? 'Early Bird sleva' : 'Late přirážka',
-      detail: `${Math.abs(phase.areaDiscount * 100)} % z ceny plochy`,
-      amount: -discount,
-    });
-  }
 
   const total = items.reduce((s, i) => s + i.amount, 0);
   const categories = [
     { label: 'Plocha', amount: areaBase },
     { label: 'Stavba', amount: buildCost },
-    { label: 'Poplatky', amount: media + waste + association + coex + badges + platform },
+    { label: 'Poplatky', amount: registration + insurance + coex + badges + platform },
   ].filter((c) => c.amount > 0);
 
   const breakdown = categories.map((c) => ({
@@ -2664,7 +2748,7 @@ function computePackageComponentsTotal(packageId, phaseId = 'early') {
     };
     total += calcBoothFromState(boothState).total;
   } else if (spec.includeMedia) {
-    total += MANDATORY_FEES.media;
+    total += MANDATORY_FEES.registration + MANDATORY_FEES.insurance;
   }
 
   if (spec.includePlatform) {
@@ -2725,7 +2809,7 @@ function buildQuoteBreakdown(items) {
     items.filter((i) => i.label.startsWith(prefix)).reduce((s, i) => s + i.amount, 0);
 
   const boothLike = items.filter((i) =>
-    /^(Plocha|Stavba|Media|Odvoz|Asociační|BX Platform|Spoluvystavovatelé|Další permanentky|Early Bird|Late)/.test(i.label)
+    /^(Plocha|Stavba|Registrační|Pojištění|BX Platform|Spoluvystavovatelé|Další permanentky)/.test(i.label)
   );
   const dataLike = items.filter((i) => /^(LeadGen|Matchmaking)/.test(i.label));
   const sponsorshipLike = items.filter((i) => /^(Recharge|Networking Lounge|Branding kavárny|Sponsorship)/.test(i.label));
@@ -2849,7 +2933,7 @@ function syncPackageCardRefs() {
     if (bronzeCard) bronzeCard.textContent = `Startup Hub: plná cena po položkách ${formatCzkPlain(PACKAGE_PRICES.bronzeFull)} Kč`;
   }
 
-  document.querySelectorAll('.option-grid[data-group="content"] .option-btn[data-value]').forEach((btn) => {
+  document.querySelectorAll('.option-grid[data-group="content"] .option-btn[data-value], .option-grid[data-group="content-draft"] .option-btn[data-value]').forEach((btn) => {
     const map = {
       partner: 'partner', bronze: 'bronze', 'lounge-pkg': 'lounge', speaking: 'silver',
       party: 'party', 'masterclass-network': 'gold', masterclass: 'general', workshop: 'workshop',
