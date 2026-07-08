@@ -1751,9 +1751,9 @@ button { cursor: pointer; border: none; background: none; }
             <div class="calc-step-header"><span class="step-num">9</span><h3>Fáze objednávky</h3></div>
             <div class="option-grid" data-group="phase">
               <button type="button" class="option-btn selected" data-value="early"><strong>Early Bird</strong><span>Do 31. 11. 2026 · nižší sazby</span></button>
-              <button type="button" class="option-btn" data-value="standard"><strong>Standard</strong><span>Do 31. 3. 2027 · nižší sazby</span></button>
               <button type="button" class="option-btn" data-value="late"><strong>Late</strong><span>Od 1. 12. 2026 · vyšší sazby</span></button>
             </div>
+            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.75rem">Uzávěrka technických kompletů: <strong>do 1. 3. 2027</strong>.</p>
           </div>
         </div>
 
@@ -2580,7 +2580,6 @@ const SPONSORSHIP_OPTIONS = [
 
 const PHASES = [
   { id: 'early', label: 'Early Bird', useLateRates: false },
-  { id: 'standard', label: 'Standard', useLateRates: false },
   { id: 'late', label: 'Late', useLateRates: true },
 ];
 
