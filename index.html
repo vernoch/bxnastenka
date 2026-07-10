@@ -1222,6 +1222,131 @@ button { cursor: pointer; border: none; background: none; }
 
 .page-view { display: none; }
 .page-view.active { display: block; }
+
+/* ── Zážitkové zóny / Naše sekce ── */
+.zone-draft-banner {
+  background: linear-gradient(135deg, rgba(230,50,138,0.08) 0%, rgba(155,93,229,0.1) 50%, rgba(64,184,232,0.08) 100%);
+  border: 1px dashed rgba(155,93,229,0.35);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.zone-draft-banner p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+.zone-draft-banner strong { color: var(--text); }
+
+.zone-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+.zone-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.zone-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.zone-card-header {
+  padding: 1.35rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--surface-muted) 0%, var(--surface) 100%);
+}
+.zone-card-num {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+.zone-card-header h3 {
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 0.45rem;
+}
+.zone-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.zone-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(64,184,232,0.12);
+  color: #1d9fd4;
+}
+.zone-card-body { padding: 1.25rem 1.5rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 1.1rem; }
+.zone-block-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 0.45rem;
+}
+.zone-ideas { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.zone-ideas li {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.45;
+}
+.zone-ideas li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+.zone-layout {
+  background: var(--surface-muted);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  border-left: 3px solid var(--bx-pink);
+}
+.zone-layout p {
+  font-size: 0.86rem;
+  color: var(--text);
+  line-height: 1.55;
+  margin: 0;
+}
+.zone-layout-img {
+  width: 100%;
+  margin-top: 0.85rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--surface-muted);
+}
+.zone-layout-caption {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.45rem;
+  font-style: italic;
+}
+.zone-partner-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.zone-partner-hint strong { color: var(--accent-3); font-weight: 700; }
+
+@media (max-width: 720px) {
+  .zone-grid { grid-template-columns: 1fr; }
+}
   </style>
 </head>
 <body>
@@ -1240,6 +1365,7 @@ button { cursor: pointer; border: none; background: none; }
         <a href="#benchmarky" data-page="benchmarky" class="nav-link">Benchmarky</a>
         <a href="#archetypy" data-page="archetypy" class="nav-link">Modely konkurence</a>
         <a href="#model" data-page="model" class="nav-link">Náš model</a>
+        <a href="#sekce" data-page="sekce" class="nav-link">Naše sekce</a>
         <a href="#vstupenky" data-page="vstupenky" class="nav-link">Vstupenky</a>
         <a href="#kalkulacka" data-page="kalkulacka" class="nav-link">Kalkulačka</a>
       </nav>
@@ -1294,7 +1420,11 @@ button { cursor: pointer; border: none; background: none; }
           </div>
           <div class="feature-card">
             <h3>Kalkulačka</h3>
-            <p>Interaktivní konfigurátor ceny stánku v reálném čase. Vystavovatel vidí, z čeho se cena skládá.</p>
+            <p>Interaktivní konfigurátor ceny stánku v reálnem čase. Vystavovatel vidí, z čeho se cena skládá.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Naše sekce</h3>
+            <p>Nástřel 9 zážitkových zón — nápady, layout na výstavišti a orientační partnerství pro obchodní schůzky.</p>
           </div>
         </div>
       </div>
@@ -1348,14 +1478,20 @@ button { cursor: pointer; border: none; background: none; }
             <p>9 výstavních sekcí, oficiální Gold / Silver balíčky pro vystavovatele.</p>
             <span class="nav-card-link">Zobrazit →</span>
           </a>
-          <a href="#vstupenky" data-page="vstupenky" class="nav-card">
+          <a href="#sekce" data-page="sekce" class="nav-card">
             <div class="nav-card-num">04</div>
+            <h3>Naše sekce</h3>
+            <p>Nástřel zážitkových zón — jak může vypadat každá ze 9 sekcí na výstavišti.</p>
+            <span class="nav-card-link">Zobrazit →</span>
+          </a>
+          <a href="#vstupenky" data-page="vstupenky" class="nav-card">
+            <div class="nav-card-num">05</div>
             <h3>Vstupenky</h3>
             <p>VIP, Business a Basic — tři úrovně pro návštěvníky včetně kurátorovaného VIP zdarma.</p>
             <span class="nav-card-link">Zobrazit →</span>
           </a>
           <a href="#kalkulacka" data-page="kalkulacka" class="nav-card">
-            <div class="nav-card-num">05</div>
+            <div class="nav-card-num">06</div>
             <h3>Kalkulačka</h3>
             <p>Interaktivní konfigurátor ceny stánku v reálném čase.</p>
             <span class="nav-card-link">Zobrazit →</span>
@@ -2009,6 +2145,316 @@ button { cursor: pointer; border: none; background: none; }
       </div>
     </section>
     </div>
+    <div id="page-sekce" class="page-view">
+<section class="page-hero">
+      <div class="container">
+        <div class="hero-eyebrow">Zážitkové zóny · Nástřel</div>
+        <h1>Naše sekce</h1>
+        <p>Pracovní koncept, jak může každá z 9 výstavních sekcí vypadat na PVA EXPO — ne katalog stánků, ale zážitkové zóny s obsahem, demy a programem. Materiál pro obchodní schůzky s partnery.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="zone-draft-banner">
+          <p><strong>Status: nástřel.</strong> Popisy layoutu a partnerství jsou orientační — slouží k diskusi s vystavovateli a anchor partnery. Finální podoba zón vznikne ve spolupráci s klíčovými partnery sekcí (vč. ČAUI pro AI &amp; Martech).</p>
+        </div>
+
+        <div class="section-header">
+          <div class="section-eyebrow">9 zón · 1 veletrh</div>
+          <h2 class="section-title">Jak může vypadat výstaviště</h2>
+          <p class="section-desc">Každá sekce = tematická zóna s vlastním layoutem, programem a typem partnerů. Cíl: návštěvník projde příběhem značky, ne jen uličkou stánků.</p>
+        </div>
+
+        <div class="zone-grid">
+
+          <article class="zone-card">
+            <div class="zone-card-header">
+              <div class="zone-card-num">Sekce 01</div>
+              <h3>Print &amp; Production 2.0</h3>
+              <div class="zone-card-tags">
+                <span class="zone-tag">live výroba</span>
+                <span class="zone-tag">on-demand</span>
+                <span class="zone-tag">automatizace</span>
+              </div>
+            </div>
+            <div class="zone-card-body">
+              <div>
+                <div class="zone-block-label">Nápady &amp; aktivity</div>
+                <ul class="zone-ideas">
+                  <li>Live linka: objednávka → tisk → finishing za pár minut</li>
+                  <li>Mass customization — personalizace na míru u stroje</li>
+                  <li>Workflow automation — propojení tiskárny s daty a e-shopem</li>
+                  <li>Smart materials — ukázky nových substrátů a aplikací</li>
+                  <li>Workshop „od PDF k hotovému produktu za 15 minut“</li>
+                </ul>
+              </div>
+              <div class="zone-layout">
+                <div class="zone-block-label">Náhled zóny na výstavišti</div>
+                <p>Otevřená produkční ulička — stroje viditelné z uličky, vzorkovna materiálů po obvodu, objednávkový kiosk u vstupu do zóny.</p>
+                <img src="assets/zones/zone-01-print.png" alt="Náhled zóny Print &amp; Production 2.0 — live tisková linka ve výstavní hale" class="zone-layout-img" loading="lazy">
+                <p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
+              </div>
+              <p class="zone-partner-hint"><strong>Partner sekce:</strong> výrobce tiskových technologií · integrátor workflow · orientačně 500k–1,2 mil. Kč</p>
+            </div>
+          </article>
+
+          <article class="zone-card">
+            <div class="zone-card-header">
+              <div class="zone-card-num">Sekce 02</div>
+              <h3>Packaging &amp; Sustainability</h3>
+              <div class="zone-card-tags">
+                <span class="zone-tag">ESG</span>
+                <span class="zone-tag">smart packaging</span>
+                <span class="zone-tag">materiály</span>
+              </div>
+            </div>
+            <div class="zone-card-body">
+              <div>
+                <div class="zone-block-label">Nápady &amp; aktivity</div>
+                <ul class="zone-ideas">
+                  <li>Galerie materiálů — dotek, recyklace, cirkulární design</li>
+                  <li>Smart packaging demo — QR, NFC, AR na reálném obalu</li>
+                  <li>Lifecycle wall — cesta obalu od návrhu po recyklaci</li>
+                  <li>Panel: ESG a obal jako touchpoint značky</li>
+                  <li>Redesign challenge — návštěvník navrhne obal na místě</li>
+                </ul>
+              </div>
+              <div class="zone-layout">
+                <div class="zone-block-label">Náhled zóny na výstavišti</div>
+                <p>Kurátorská galerie — stěny s materiálovými vzorky, uprostřed stoly s reálnými obaly. AR body spouštěné mobilem u vybraných exponátů.</p>
+                <img src="assets/zones/zone-02-packaging.png" alt="Náhled zóny Packaging &amp; Sustainability — galerie materiálů a obalů" class="zone-layout-img" loading="lazy">
+                <p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
+              </div>
+              <p class="zone-partner-hint"><strong>Partner sekce:</strong> Mondi, obalářská asociace SYBA · orientačně 500k–1 mil. Kč</p>
+            </div>
+          </article>
+
+          <article class="zone-card">
+            <div class="zone-card-header">
+              <div class="zone-card-num">Sekce 03</div>
+              <h3>Retail &amp; Space</h3>
+              <div class="zone-card-tags">
+                <span class="zone-tag">prodejna budoucnosti</span>
+                <span class="zone-tag">DOOH</span>
+                <span class="zone-tag">POS</span>
+              </div>
+            </div>
+            <div class="zone-card-body">
+              <div>
+                <div class="zone-block-label">Nápady &amp; aktivity</div>
+                <ul class="zone-ideas">
+                  <li>Mini obchod budoucnosti — walk-through retail unit</li>
+                  <li>Digital signage wall s live daty a personalizací</li>
+                  <li>Navigace a wayfinding — interaktivní signage demo</li>
+                  <li>Retail design portfolio — reálné realizace v 1:1</li>
+                  <li>Phygital checkout — propojení fyzického a online nákupu</li>
+                </ul>
+              </div>
+              <div class="zone-layout">
+                <div class="zone-block-label">Náhled zóny na výstavišti</div>
+                <p>Modulární prodejní box uprostřed haly — návštěvník projde „obchodem“. LED obrazovky na obvodu, POP/POS prvky v kontextu.</p>
+                <img src="assets/zones/zone-03-retail.png" alt="Náhled zóny Retail &amp; Space — mini prodejna budoucnosti" class="zone-layout-img" loading="lazy">
+                <p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
+              </div>
+              <p class="zone-partner-hint"><strong>Partner sekce:</strong> Samsung, LG, Zebra, POPAI · orientačně 800k–1,5 mil. Kč</p>
+            </div>
+          </article>
+
+          <article class="zone-card">
+            <div class="zone-card-header">
+              <div class="zone-card-num">Sekce 04</div>
+              <h3>Digital &amp; Content</h3>
+              <div class="zone-card-tags">
+                <span class="zone-tag">content studio</span>
+                <span class="zone-tag">generative</span>
+                <span class="zone-tag">video</span>
+              </div>
+            </div>
+            <div class="zone-card-body">
+              <div>
+                <div class="zone-block-label">Nápady &amp; aktivity</div>
+                <ul class="zone-ideas">
+                  <li>Content Studio — natáčení rozhovorů a case studies na místě</li>
+                  <li>Generative graphics live — AI vizuály z briefu návštěvníka</li>
+                  <li>Virtual production corner — green screen + realtime grafika</li>
+                  <li>Motion &amp; video showcase na obrazovkách po zóně</li>
+                  <li>Post-event balíček — video, fotky, clip pro partnera</li>
+                </ul>
+              </div>
+              <div class="zone-layout">
+                <div class="zone-block-label">Náhled zóny na výstavišti</div>
+                <p>Studio uprostřed — kamery, světla, editační stanice. Kolem „feed wall“ s live obsahem generovaným během veletrhu.</p>
+                <img src="assets/zones/zone-04-digital.png" alt="Náhled zóny Digital &amp; Content — content studio a video stěny" class="zone-layout-img" loading="lazy">
+                <p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
+              </div>
+              <p class="zone-partner-hint"><strong>Partner sekce:</strong> produkční agentura, Adobe, Runway · orientačně 300–700 tis. Kč</p>
+            </div>
+          </article>
+
+          <article class="zone-card">
+            <div class="zone-card-header">
+              <div class="zone-card-num">Sekce 05</div>
+              <h3>AI &amp; Martech</h3>
+              <div class="zone-card-tags">
+                <span class="zone-tag">mini stage</span>
+                <span class="zone-tag">SaaS demo</span>
+                <span class="zone-tag">matchmaking</span>
+              </div>
+            </div>
+            <div class="zone-card-body">
+              <div>
+                <div class="zone-block-label">Nápady &amp; aktivity</div>
+                <ul class="zone-ideas">
+                  <li>Mini stage — keynotes každou hodinu (AI v marketingu)</li>
+                  <li>Demo ostrovy — SaaS nástroje v reálném provozu</li>
+                  <li>Meeting area — domluvené B2B schůzky v zóně</li>
+                  <li>AI Pavilion — kurátorský výběr členů ČAUI</li>
+                  <li>Workshop track: governance, personalizace, AI obsah</li>
+                </ul>
+              </div>
+              <div class="zone-layout">
+                <div class="zone-block-label">Náhled zóny na výstavišti</div>
+                <p>Centrální hub zóny — stage vpředu, kolem 4–6 demo islandů, vzadu lounge pro schůzky. Nejživější místo veletrhu.</p>
+                <img src="assets/zones/zone-05-ai.png" alt="Náhled zóny AI &amp; Martech — mini stage a demo ostrovy" class="zone-layout-img" loading="lazy">
+                <p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
+              </div>
+              <p class="zone-partner-hint"><strong>Partner sekce:</strong> ČAUI + 1–3 AI firmy · orientačně 1–2 mil. Kč · garance 20 B2B meetingů</p>
+            </div>
+          </article>
+
+          <article class="zone-card">
+            <div class="zone-card-header">
+              <div class="zone-card-num">Sekce 06</div>
+              <h3>E-commerce &amp; On-demand Production</h3>
+              <div class="zone-card-tags">
+                <span class="zone-tag">fulfillment</span>
+                <span class="zone-tag">PoD</span>
+                <span class="zone-tag">e-shop flow</span>
+              </div>
+            </div>
+            <div class="zone-card-body">
+              <div>
+                <div class="zone-block-label">Nápady &amp; aktivity</div>
+                <ul class="zone-ideas">
+                  <li>Simulace e-shopu — klik → výroba → balení → expedice</li>
+                  <li>Print-on-demand linka propojená s objednávkou z tabletu</li>
+                  <li>Fulfillment flow — sklad, pick &amp; pack, last mile</li>
+                  <li>SaaS row — Shoptet, integrátoři, marketplace nástroje</li>
+                  <li>Panel: jak Alza / Notino škálují experience v e-commerce</li>
+                </ul>
+              </div>
+              <div class="zone-layout">
+                <div class="zone-block-label">Náhled zóny na výstavišti</div>
+                <p>Lineární cesta — návštěvník projde tok objednávky jako na pásovém nákupu. Fyzický conveyor nebo šipková trasa na podlaze.</p>
+                <img src="assets/zones/zone-06-ecommerce.png" alt="Náhled zóny E-commerce — fulfillment a on-demand linka" class="zone-layout-img" loading="lazy">
+                <p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
+              </div>
+              <p class="zone-partner-hint"><strong>Partner sekce:</strong> APEK, Shoptet, Packeta · orientačně 600k–1,2 mil. Kč</p>
+            </div>
+          </article>
+
+          <article class="zone-card">
+            <div class="zone-card-header">
+              <div class="zone-card-num">Sekce 07</div>
+              <h3>Experience &amp; Innovation</h3>
+              <div class="zone-card-tags">
+                <span class="zone-tag">immersive</span>
+                <span class="zone-tag">AR/VR</span>
+                <span class="zone-tag">activations</span>
+              </div>
+            </div>
+            <div class="zone-card-body">
+              <div>
+                <div class="zone-block-label">Nápady &amp; aktivity</div>
+                <ul class="zone-ideas">
+                  <li>Immersive room — 360° instalace, temná místnost, silný emoční zážitek</li>
+                  <li>AR/VR activations — vyzkoušení kampaní značek na vlastní kůži</li>
+                  <li>Phygital demo — QR/ NFC propojení fyzického stánku s mobilem</li>
+                  <li>Brand activation showcase — 3–5 reálných case studies</li>
+                  <li>Photo moment — instalace navržená pro sdílení na sociálních sítích</li>
+                </ul>
+              </div>
+              <div class="zone-layout">
+                <div class="zone-block-label">Náhled zóny na výstavišti</div>
+                <p>Dva režimy — tmavý immersive box uprostřed + světlé open demo kolem. Návštěvník střídá „wow moment“ a praktické ukázky.</p>
+                <img src="assets/zones/zone-07-experience.png" alt="Náhled zóny Experience &amp; Innovation — immersive instalace a AR demo" class="zone-layout-img" loading="lazy">
+                <p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
+              </div>
+              <p class="zone-partner-hint"><strong>Partner sekce:</strong> event agentura, Red Bull, Clientology · orientačně 800k–1,5 mil. Kč</p>
+            </div>
+          </article>
+
+          <article class="zone-card">
+            <div class="zone-card-header">
+              <div class="zone-card-num">Sekce 08</div>
+              <h3>Promotional Products Reinvented</h3>
+              <div class="zone-card-tags">
+                <span class="zone-tag">premium merch</span>
+                <span class="zone-tag">IoT gifts</span>
+                <span class="zone-tag">udržitelnost</span>
+              </div>
+            </div>
+            <div class="zone-card-body">
+              <div>
+                <div class="zone-block-label">Nápady &amp; aktivity</div>
+                <ul class="zone-ideas">
+                  <li>Prémiová galerie dárků — ne propisky, ale smart &amp; sustainable merch</li>
+                  <li>Live customizace — gravírování, potisk na místě</li>
+                  <li>IoT gift demo — propagační předmět s digitální vrstvou</li>
+                  <li>Digital gifting — elektronický dárek místo fyzického</li>
+                  <li>Srovnání: levný merch vs. brand gift, který si zákazník nechá</li>
+                </ul>
+              </div>
+              <div class="zone-layout">
+                <div class="zone-block-label">Náhled zóny na výstavišti</div>
+                <p>Butikový charakter — výstavní vitríny, uprostřed live customizační stan. Menší plocha, vyšší vizuální kvalita než klasický merch stánek.</p>
+                <img src="assets/zones/zone-08-promo.png" alt="Náhled zóny Promotional Products — prémiová galerie dárků" class="zone-layout-img" loading="lazy">
+                <p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
+              </div>
+              <p class="zone-partner-hint"><strong>Partner sekce:</strong> PF Concept, prémioví dodavatelé · vystavovatel orientačně 150–400 tis. Kč</p>
+            </div>
+          </article>
+
+          <article class="zone-card">
+            <div class="zone-card-header">
+              <div class="zone-card-num">Sekce 09</div>
+              <h3>Startup &amp; Innovation Hub</h3>
+              <div class="zone-card-tags">
+                <span class="zone-tag">pitch stage</span>
+                <span class="zone-tag">startup stánky</span>
+                <span class="zone-tag">investoři</span>
+              </div>
+            </div>
+            <div class="zone-card-body">
+              <div>
+                <div class="zone-block-label">Nápady &amp; aktivity</div>
+                <ul class="zone-ideas">
+                  <li>Pitch stage — krátké prezentace startupů každé 2 hodiny</li>
+                  <li>Startup stánky — kompaktní pultíky 3×3 m kolem stage</li>
+                  <li>Investor corner — speed dating startup × investor</li>
+                  <li>Mentor hours — office hours s experty z ekosystému</li>
+                  <li>Demo day finále — TOP 5 startupů poslední den veletrhu</li>
+                </ul>
+              </div>
+              <div class="zone-layout">
+                <div class="zone-block-label">Náhled zóny na výstavišti</div>
+                <p>Kompaktní cluster — malé startup stánky (3×3 m) kolem centrální pitch stage. StartupYard / CzechCrunch vibe, ne korporátní hala.</p>
+                <img src="assets/zones/zone-09-startup.png" alt="Náhled zóny Startup &amp; Innovation Hub — pitch stage a startup stánky" class="zone-layout-img" loading="lazy">
+                <p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
+              </div>
+              <p class="zone-partner-hint"><strong>Partner sekce:</strong> StartupYard, CzechCrunch · startup stánek od 54 tis. Kč (Bronze / pultík)</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align:center;margin-top:3rem">
+          <a href="#kalkulacka" data-page="kalkulacka" class="btn btn-dark">Sestavit nabídku v kalkulačce →</a>
+        </div>
+      </div>
+    </section>
+    </div>
     <div id="page-vstupenky" class="page-view">
 <section class="page-hero">
       <div class="container">
@@ -2279,6 +2725,7 @@ button { cursor: pointer; border: none; background: none; }
       <div class="footer-links">
         <a href="#benchmarky" data-page="benchmarky" class="footer-link">Benchmarky</a>
         <a href="#model" data-page="model" class="footer-link">Náš model</a>
+        <a href="#sekce" data-page="sekce" class="footer-link">Naše sekce</a>
         <a href="#vstupenky" data-page="vstupenky" class="footer-link">Vstupenky</a>
         <a href="#kalkulacka" data-page="kalkulacka" class="footer-link">Kalkulačka</a>
       </div>
@@ -2809,6 +3256,7 @@ const PAGE_TITLES = {
   benchmarky: 'Benchmarky – BX EXPO',
   archetypy: 'Modely konkurence – BX EXPO',
   model: 'Náš model – BX EXPO',
+  sekce: 'Naše sekce – BX EXPO',
   vstupenky: 'Vstupenky – BX EXPO',
   kalkulacka: 'Kalkulačka – BX EXPO',
 };
