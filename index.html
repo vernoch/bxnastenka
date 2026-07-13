@@ -1820,11 +1820,134 @@ button { cursor: pointer; border: none; background: none; }
   font-weight: 700;
   color: var(--accent);
 }
-.program-view-tabs { margin-bottom: 0.65rem; }
+.program-workspace {
+  margin-top: 0.5rem;
+}
+.program-workspace-toolbar {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1rem 1rem;
+  margin-bottom: 1.5rem;
+}
+.program-workspace-toolbar-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.55rem;
+}
+.program-workspace-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+.program-workspace-days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+.program-workspace-days.is-hidden { display: none; }
+.program-workspace-days-label {
+  width: 100%;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.15rem;
+}
 .filter-pill--secondary {
   opacity: 0.75;
   font-size: 0.82rem;
 }
+.program-expo-note {
+  width: 100%;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  background: rgba(64,184,232,0.08);
+  border: 1px solid rgba(64,184,232,0.2);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.program-expo-note strong { color: var(--text); }
+.program-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.program-highlight-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.program-highlight-card-num {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.program-highlight-card h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+.program-highlight-summary {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+.program-highlight-meta {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+.program-highlight-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 0.25rem;
+}
+.program-marketing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.85rem;
+}
+.program-marketing-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.1rem;
+}
+.program-marketing-channel {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 0.35rem;
+}
+.program-marketing-card p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+.program-inspiration-section {
+  margin-bottom: 2rem;
+}
+.program-inspiration-section:last-child { margin-bottom: 0; }
 .program-focus-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1908,6 +2031,7 @@ button { cursor: pointer; border: none; background: none; }
   .program-ideas-grid { grid-template-columns: 1fr; }
   .program-stage-item { grid-template-columns: 1fr; }
   .program-focus-grid { grid-template-columns: 1fr; }
+  .program-highlight-grid { grid-template-columns: 1fr; }
   .program-global-tags-row { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.35rem; }
   .program-global-tag { flex: 0 0 72vw; }
 }
@@ -3036,53 +3160,50 @@ button { cursor: pointer; border: none; background: none; }
       <div class="container">
         <div class="hero-eyebrow">28.4.–30.4. 2027 · PVA EXPO Praha</div>
         <h1>Program &amp; nápady</h1>
-        <p>Brainstorm nástroj na 3 dny — časová osa, focus sekcí a inspirace z trhu. Detail aktivit a layoutů je v <a href="#sekce" data-page="sekce">Naše sekce</a>.</p>
+        <p>Brainstorm na 3 dny — harmonogram, programové vlny, marketing a inspirace. Všechny sekce běží celé 3 dny; dny jen určují, co zviditelňujeme na stage a v PR.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <div class="zone-draft-banner program-status-banner">
-          <p><strong>Brainstorm · ne finální program · časy orientační.</strong> Tady držíme čas a focus dne — konkrétní nápady na aktivity upravujete v <code>BX_PROGRAM_IDEAS</code>, plné popisy jsou v sekcích.</p>
+          <p><strong>Brainstorm · ne finální program · časy orientační.</strong> Vystavovatelé a všechny sekce 01–09 jsou na místě <strong>celé 3 dny</strong>. „Den“ = programová vlna na main stage, peak momenty a marketing — ne zavřené haly. Data: <code>BX_PROGRAM_IDEAS</code>, layouty v <a href="#sekce" data-page="sekce">Naše sekce</a>.</p>
         </div>
-
-        <div id="program-global-tags" class="program-global-tags-wrap" aria-label="Průřezové nápady celého výstaviště"></div>
 
         <div class="program-pva-map" id="program-pva-map">
           <div class="program-pva-map-header">
             <h3>PVA EXPO Praha — orientační mapa</h3>
-            <p>Focus dne → hlavní haly. Kongresový sál = main stage po celé 3 dny. Finální layout vznikne s ABF.</p>
+            <p>Všechny zóny otevřené 3 dny. Barevná legenda = která PR/programová vlna ten den zviditelňuje které haly (ne že by zbytek neběžel).</p>
           </div>
           <img src="assets/program-pva-map.png" alt="Půdorys PVA EXPO Praha — haly, kongresový sál, konferenční místnosti" class="program-pva-map-img" loading="lazy">
           <div class="program-pva-legend" id="program-pva-legend">
-            <span class="program-pva-legend-item program-pva-legend--day1 is-active" data-pva-day="1">Den 1 · Haly 2–3 · Produkce &amp; prostor</span>
-            <span class="program-pva-legend-item program-pva-legend--day2" data-pva-day="2">Den 2 · Haly 4–5 · Digitál &amp; data</span>
-            <span class="program-pva-legend-item program-pva-legend--day3" data-pva-day="3">Den 3 · Haly 1, 7–8 · Zážitek &amp; startupy</span>
+            <span class="program-pva-legend-item program-pva-legend--day1 is-active" data-pva-day="1">Vlna 1 · PR/stage: produkce · haly 2–3 navíc highlight</span>
+            <span class="program-pva-legend-item program-pva-legend--day2" data-pva-day="2">Vlna 2 · PR/stage: digitál · haly 4–5 navíc highlight</span>
+            <span class="program-pva-legend-item program-pva-legend--day3" data-pva-day="3">Vlna 3 · PR/stage: zážitek · haly 1, 7–8 navíc highlight</span>
           </div>
-          <p class="program-pva-map-caption">Kongresový sál = main stage · konferenční sály = masterclass · venkovní plocha = networking &amp; večerní akce</p>
+          <p class="program-pva-map-caption">Kongresový sál = main stage po celé 3 dny · konferenční sály = masterclass · venkovní plocha = networking &amp; večerní akce</p>
         </div>
 
-        <div id="program-patterns" class="program-patterns-block" aria-label="Programové vzory z trhu"></div>
+        <div class="program-workspace">
+          <div class="program-workspace-toolbar">
+            <div class="program-workspace-toolbar-label">1 · Co prohlížíte</div>
+            <div class="filter-row program-workspace-tabs" id="program-panel-tabs">
+              <button type="button" class="filter-pill active" data-program-panel="schedule">Harmonogram</button>
+              <button type="button" class="filter-pill" data-program-panel="highlights">Programové vlny</button>
+              <button type="button" class="filter-pill" data-program-panel="marketing">Marketing &amp; PR</button>
+              <button type="button" class="filter-pill" data-program-panel="inspiration">Inspirace z trhu</button>
+            </div>
+            <div class="program-workspace-days" id="program-day-row">
+              <span class="program-workspace-days-label">2 · Který den (platí pro harmonogram, vlny i marketing)</span>
+              <button type="button" class="filter-pill active" data-program-filter="1">Den 1 · St 28.4.</button>
+              <button type="button" class="filter-pill" data-program-filter="2">Den 2 · Čt 29.4.</button>
+              <button type="button" class="filter-pill" data-program-filter="3">Den 3 · Pá 30.4.</button>
+              <button type="button" class="filter-pill filter-pill--secondary" data-program-filter="all">Všechny dny</button>
+            </div>
+          </div>
 
-        <div class="section-header">
-          <div class="section-eyebrow">Harmonogram vs. focus dne</div>
-          <h2 class="section-title">Program na jeden den</h2>
-          <p class="section-desc">Vyberte den a režim — harmonogram ukáže main stage a večerní prostory, přehled dne 3 focus sekce s odkazem na detail.</p>
+          <div id="program-root"></div>
         </div>
-
-        <div class="filter-row program-view-tabs" id="program-view-tabs">
-          <button type="button" class="filter-pill active" data-program-view="schedule">Harmonogram</button>
-          <button type="button" class="filter-pill" data-program-view="day">Přehled dne</button>
-        </div>
-
-        <div class="filter-row" id="program-filters">
-          <button type="button" class="filter-pill active" data-program-filter="1">Den 1 · Produkce 2.0</button>
-          <button type="button" class="filter-pill" data-program-filter="2">Den 2 · Digitální ekosystém</button>
-          <button type="button" class="filter-pill" data-program-filter="3">Den 3 · Zážitek &amp; platforma</button>
-          <button type="button" class="filter-pill filter-pill--secondary" data-program-filter="all">Všechny dny</button>
-        </div>
-
-        <div id="program-root"></div>
       </div>
     </section>
     </div>
@@ -4127,6 +4248,14 @@ const BX_PROGRAM_GLOBAL_IDEAS = [
   { title: 'Poradna zdarma', desc: '20min konzultace u stolů — SEO, UX, AI governance, obal, retail.' },
 ];
 
+const BX_PROGRAM_MARKETING_GLOBAL = [
+  { channel: 'Kampaň celé akce', idea: 'Message: „Není to veletrh o stáncích — je to veletrh o obsahu a zážitku.“ Jednotný vizuál 3 vln.' },
+  { channel: 'Registrace & CRM', idea: 'Vlny pozvánek podle segmentu (produkce / digitál / zážitek), ale vstupenka platí na všechny 3 dny.' },
+  { channel: 'Média & PR', idea: 'Tiskovky před akcí + denní recap; mediální partneři dostanou programové vlny, ne „den oboru“.' },
+  { channel: 'OOH & digital', idea: 'PVA + Praha OOH, LinkedIn kampaň na decision-makery, retargeting návštěvníků minulých ročníků (TBD).' },
+  { channel: 'Scarcity & FOMO', idea: 'Early bird vstupenky, VIP pozvánky kurátorovaně — inspirace Marketing Festival / Innovation Week.' },
+];
+
 const BX_PROGRAM_IDEAS = [
   {
     day: 1,
@@ -4135,7 +4264,13 @@ const BX_PROGRAM_IDEAS = [
     theme: 'Produkce & prostor 2.0',
     pillar: 'Produkce',
     focusLabel: 'Sekce 01–03 · Print, Packaging, Retail & Space',
-    themeDesc: 'Fyzický základ — návštěvník vidí, jak se značka materializuje. Den otevření a prvního kontaktu s výrobou, obaly a retail prostorem.',
+    themeDesc: 'Programová vlna 1: otevření a PR kolem fyzické produkce a prostoru. Všechny sekce 01–09 běží — tento den navíc peak na stage a v komunikaci pro sekce 01–03.',
+    marketingIdeas: [
+      { channel: 'PR & média', idea: 'Opening story: BX propojuje marketing a fyzickou produkci — tiskovka + pozvánky pro trade média.' },
+      { channel: 'Sociální sítě', idea: 'Live z výroby: objednávka → hotový produkt za 15 min · behind the scenes ze sekcí 01–03.' },
+      { channel: 'Pozvánky & audience', idea: 'Wave 1: výrobci, obaláři, retail designéři, nákupčí POP materiálů.' },
+      { channel: 'Co-marketing partnerů', idea: 'Partneři sekcí 01–03 sdílí vlastní invite na svůj peak slot (workshop, demo).' },
+    ],
     mainStage: {
       label: 'Main stage · Kongresový sál (orientačně)',
       slots: [
@@ -4194,7 +4329,13 @@ const BX_PROGRAM_IDEAS = [
     theme: 'Digitální ekosystém & data',
     pillar: 'Technologie',
     focusLabel: 'Sekce 04–06 · Digital & Content, AI & Martech, E-commerce',
-    themeDesc: 'Zážitková a obsahová vrstva — digitální média, AI, martech a e-commerce. Den pro CMO, markeťáky a technologické firmy.',
+    themeDesc: 'Programová vlna 2: stage a PR kolem digitálu, AI a e-commerce. Všechny zóny otevřené — navíc zviditelňujeme peak momenty v sekcích 04–06.',
+    marketingIdeas: [
+      { channel: 'PR & média', idea: 'Čtvrteční vlna: AI & martech v praxi — pitch pro CMO a head of digital, guest posts u ČAUI / martech médií.' },
+      { channel: 'Sociální sítě', idea: 'Clips z content studia a live AI dem — „z briefu 50 variant za hodinu“.' },
+      { channel: 'Pozvánky & audience', idea: 'Wave 2: CMO, markeťáci, agentury, SaaS a e-commerce lídři — matchmaking sloty v appce.' },
+      { channel: 'Co-marketing partnerů', idea: 'Masterclass partneři (Den 2) propagují svůj placený slot vlastním mailem a LinkedIn.' },
+    ],
     mainStage: {
       label: 'Main stage + konferenční sály 1, 3, 4',
       slots: [
@@ -4253,7 +4394,13 @@ const BX_PROGRAM_IDEAS = [
     theme: 'Zážitek, inovace & platforma',
     pillar: 'Marketing',
     focusLabel: 'Sekce 07–09 · Experience, Promo Products, Startup Hub',
-    themeDesc: 'Pohlcující zážitky a inovační laboratoře. Uzavření matchmakingem, startupy a VIP networkingem — den pro byznys a budoucnost platformy.',
+    themeDesc: 'Programová vlna 3: závěr akce, startupy, VIP networking. Všechny zóny běží — navíc peak v sekcích 07–09 a závěrečný message platformy.',
+    marketingIdeas: [
+      { channel: 'PR & média', idea: 'Závěrečná vlna: startup finals, výhled platformy BX, recap celého veletrhu pro média.' },
+      { channel: 'Sociální sítě', idea: 'Immersive momenty, pitch clips, VIP afterparty teaser (bez odhalení celého programu).' },
+      { channel: 'Pozvánky & audience', idea: 'Wave 3: investoři, startupy, event agentury, brand experience lídři — VIP pozvánky kurátorovaně.' },
+      { channel: 'Co-marketing partnerů', idea: 'Startup hub partneři sdílí pitch finals; experience zóna = photo moment pro organické sdílení.' },
+    ],
     mainStage: {
       label: 'Main stage · závěr akce',
       slots: [
@@ -4308,7 +4455,7 @@ const BX_PROGRAM_IDEAS = [
 ];
 
 let programActiveFilter = '1';
-let programActiveView = 'schedule';
+let programActivePanel = 'schedule';
 
 const BX_PROGRAM_BENCHMARK_PATTERNS = [
   { id: 'reshoper', name: 'Reshoper', takeaways: ['Freemium: veletrh zdarma, placená konference a afterparty jako upsell', 'Silent & partnerské stage v hale, roundtables'] },
@@ -4321,11 +4468,21 @@ const BX_PROGRAM_BENCHMARK_PATTERNS = [
   { id: 'retail-summit', name: 'Retail Summit', takeaways: ['Uzavřený C-level klub retail decision-makerů', 'Thought leadership na main stage, custom partnerství ne metry'] },
 ];
 
+const PROGRAM_EXPO_NOTE = 'Všechny sekce 01–09 a vystavovatelé jsou na místě celé 3 dny. „Vlna“ = co zviditelňujeme na main stage, v PR a peak programech — ne zavřené haly.';
+
 function programSectionSummary(section) {
   const ideas = section.ideas || [];
   if (!ideas.length) return 'Kompletní nápady a layout v sekci Naše sekce.';
   if (ideas.length === 1) return ideas[0];
   return ideas[0] + ' · ' + ideas[1];
+}
+
+function renderProgramExpoNoteOnce() {
+  return '<p class="program-expo-note"><strong>Expo běží 3 dny.</strong> ' + escapeHtml(PROGRAM_EXPO_NOTE) + '</p>';
+}
+
+function renderProgramExpoNote() {
+  return renderProgramExpoNoteOnce();
 }
 
 function renderProgramStage(stage) {
@@ -4358,40 +4515,42 @@ function renderProgramExtraSpacesCompact(spaces) {
   }).join('');
 }
 
-function renderProgramFocusCard(section, dayData) {
+function renderProgramHighlightCard(section, dayData) {
   const name = BX_PROGRAM_ZONES[section.id] || '';
   const summary = programSectionSummary(section);
   return (
-    '<article class="program-focus-card">'
-    + '<div class="program-focus-card-num">Sekce ' + escapeHtml(section.id) + ' · focus Den ' + dayData.day + '</div>'
+    '<article class="program-highlight-card">'
+    + '<div class="program-highlight-card-num">Sekce ' + escapeHtml(section.id) + ' · peak vlny ' + dayData.day + '</div>'
     + '<h4>' + escapeHtml(name) + '</h4>'
-    + '<p class="program-focus-summary">' + escapeHtml(summary) + '</p>'
-    + '<div class="program-focus-meta">📍 ' + escapeHtml(section.location || 'PVA · TBD') + '</div>'
-    + '<a href="#sekce" data-page="sekce" class="program-focus-link" data-zone-id="' + escapeHtml(section.id) + '">Detail sekce →</a>'
+    + '<p class="program-highlight-summary">' + escapeHtml(summary) + '</p>'
+    + '<div class="program-highlight-meta">📍 ' + escapeHtml(section.location || 'PVA · TBD') + '</div>'
+    + '<a href="#sekce" data-page="sekce" class="program-highlight-link" data-zone-id="' + escapeHtml(section.id) + '">Detail sekce →</a>'
     + '</article>'
   );
 }
 
-function renderProgramDayOverview(dayData) {
-  const sectionsHtml = (dayData.sections || []).map((s) => renderProgramFocusCard(s, dayData)).join('');
+function renderProgramHighlights(dayData, showExpoNote) {
+  const sectionsHtml = (dayData.sections || []).map((s) => renderProgramHighlightCard(s, dayData)).join('');
   return (
     '<div class="program-day-block" data-program-day="' + dayData.day + '">'
+    + (showExpoNote ? renderProgramExpoNoteOnce() : '')
     + '<div class="program-day-header">'
-    + '<h3>Den ' + dayData.day + ' · ' + escapeHtml(dayData.date) + ' (' + escapeHtml(dayData.weekday) + ')</h3>'
+    + '<h3>Vlna ' + dayData.day + ' · ' + escapeHtml(dayData.date) + ' (' + escapeHtml(dayData.weekday) + ')</h3>'
     + '<span class="program-day-theme">' + escapeHtml(dayData.theme) + '</span>'
     + '<p class="program-day-desc">' + escapeHtml(dayData.themeDesc) + '</p>'
     + '</div>'
-    + '<div class="program-focus-grid">' + sectionsHtml + '</div>'
+    + '<div class="program-highlight-grid">' + sectionsHtml + '</div>'
     + '</div>'
   );
 }
 
-function renderProgramSchedule(dayData) {
+function renderProgramSchedule(dayData, showExpoNote) {
   const extraHtml = renderProgramExtraSpacesCompact(dayData.extraSpaces);
   return (
     '<div class="program-day-block" data-program-day="' + dayData.day + '">'
+    + (showExpoNote ? renderProgramExpoNoteOnce() : '')
     + '<div class="program-day-header program-day-header--compact">'
-    + '<h3>Den ' + dayData.day + ' · ' + escapeHtml(dayData.date) + ' (' + escapeHtml(dayData.weekday) + ')</h3>'
+    + '<h3>Vlna ' + dayData.day + ' · ' + escapeHtml(dayData.date) + ' (' + escapeHtml(dayData.weekday) + ')</h3>'
     + '<span class="program-day-theme">' + escapeHtml(dayData.theme) + '</span>'
     + '</div>'
     + renderProgramStage(dayData.mainStage)
@@ -4400,27 +4559,63 @@ function renderProgramSchedule(dayData) {
   );
 }
 
-function renderProgramGlobalTags() {
-  const wrap = document.getElementById('program-global-tags');
-  if (!wrap) return;
+function renderProgramMarketingCard(item) {
+  return (
+    '<article class="program-marketing-card">'
+    + '<div class="program-marketing-channel">' + escapeHtml(item.channel) + '</div>'
+    + '<p>' + escapeHtml(item.idea) + '</p>'
+    + '</article>'
+  );
+}
+
+function renderProgramMarketing(dayData, opts) {
+  const includeGlobal = opts && opts.includeGlobal;
+  const showExpoNote = opts && opts.showExpoNote;
+  const dayIdeas = (dayData.marketingIdeas || []).map(renderProgramMarketingCard).join('');
+  let globalBlock = '';
+  if (includeGlobal) {
+    const globalIdeas = BX_PROGRAM_MARKETING_GLOBAL.map(renderProgramMarketingCard).join('');
+    globalBlock = (
+      '<div class="program-inspiration-section" style="margin-top:1.5rem">'
+      + '<div class="section-eyebrow">Průřez celou akcí · <code>BX_PROGRAM_MARKETING_GLOBAL</code></div>'
+      + '<div class="program-marketing-grid" style="margin-top:0.75rem">' + globalIdeas + '</div>'
+      + '</div>'
+    );
+  }
+  return (
+    '<div class="program-day-block" data-program-day="' + dayData.day + '">'
+    + (showExpoNote ? renderProgramExpoNoteOnce() : '')
+    + '<div class="program-day-header">'
+    + '<h3>Marketing vlny ' + dayData.day + ' · ' + escapeHtml(dayData.date) + '</h3>'
+    + '<span class="program-day-theme">' + escapeHtml(dayData.theme) + '</span>'
+    + '<p class="program-day-desc">' + escapeHtml(dayData.themeDesc) + '</p>'
+    + '</div>'
+    + '<div class="program-marketing-grid">' + dayIdeas + '</div>'
+    + globalBlock
+    + '</div>'
+  );
+}
+
+function renderProgramGlobalTagsHtml() {
   const tags = BX_PROGRAM_GLOBAL_IDEAS.map((item) => (
     '<div class="program-global-tag">'
     + '<span class="program-global-tag-title">' + escapeHtml(item.title) + '</span>'
     + '<span class="program-global-tag-desc">' + escapeHtml(item.desc) + '</span>'
     + '</div>'
   )).join('');
-  wrap.innerHTML = (
-    '<div class="program-global-tags-header">'
-    + '<span class="program-global-tags-eyebrow">Průřez celým výstavištěm</span>'
-    + '<p>Formáty napříč dny — gamifikace, matchmaking, silent stage… (data v <code>BX_PROGRAM_GLOBAL_IDEAS</code>)</p>'
+  return (
+    '<div class="program-inspiration-section">'
+    + '<div class="section-header program-patterns-header">'
+    + '<div class="section-eyebrow">Průřez výstavištěm</div>'
+    + '<h2 class="section-title">Formáty napříč 3 dny</h2>'
+    + '<p class="section-desc">Data v <code>BX_PROGRAM_GLOBAL_IDEAS</code> — běží paralelně s expo, ne místo něj.</p>'
     + '</div>'
     + '<div class="program-global-tags-row">' + tags + '</div>'
+    + '</div>'
   );
 }
 
-function renderProgramBenchmarkPatterns() {
-  const root = document.getElementById('program-patterns');
-  if (!root) return;
+function renderProgramBenchmarkPatternsHtml() {
   const cards = BX_PROGRAM_BENCHMARK_PATTERNS.map((p) => (
     '<article class="program-pattern-card">'
     + '<h4>' + escapeHtml(p.name) + '</h4>'
@@ -4430,20 +4625,20 @@ function renderProgramBenchmarkPatterns() {
     + '<a href="#benchmarky" data-page="benchmarky" class="program-pattern-link" data-benchmark-id="' + escapeHtml(p.id) + '">viz benchmark →</a>'
     + '</article>'
   )).join('');
-  root.innerHTML = (
-    '<div class="section-header program-patterns-header">'
+  return (
+    '<div class="program-inspiration-section">'
+    + '<div class="section-header program-patterns-header">'
     + '<div class="section-eyebrow">Inspirace od konkurence</div>'
     + '<h2 class="section-title">Programové vzory z trhu</h2>'
     + '<p class="section-desc">Kompaktní takeaway z benchmarků — nápady pro brainstorm, ne rozhodnutí co BX udělá.</p>'
     + '</div>'
     + '<div class="program-pattern-grid">' + cards + '</div>'
+    + '</div>'
   );
-  root.querySelectorAll('[data-benchmark-id]').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      scrollToBenchmarkCard(link.dataset.benchmarkId);
-    });
-  });
+}
+
+function renderProgramInspiration() {
+  return renderProgramGlobalTagsHtml() + renderProgramBenchmarkPatternsHtml();
 }
 
 function scrollToBenchmarkCard(id) {
@@ -4475,7 +4670,7 @@ function updatePvaMapLegend(filter) {
   if (!legend) return;
   legend.querySelectorAll('[data-pva-day]').forEach((item) => {
     const day = item.dataset.pvaDay;
-    item.classList.toggle('is-active', filter === 'all' || String(filter) === day);
+    item.classList.toggle('is-active', programActivePanel === 'inspiration' || filter === 'all' || String(filter) === day);
   });
 }
 
@@ -4486,27 +4681,56 @@ function bindProgramRootLinks(root) {
       scrollToZoneSection(link.dataset.zoneId);
     });
   });
+  root.querySelectorAll('[data-benchmark-id]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToBenchmarkCard(link.dataset.benchmarkId);
+    });
+  });
+}
+
+function updateProgramDayRowVisibility() {
+  const dayRow = document.getElementById('program-day-row');
+  if (!dayRow) return;
+  dayRow.classList.toggle('is-hidden', programActivePanel === 'inspiration');
 }
 
 function renderProgram(filter) {
   const root = document.getElementById('program-root');
   if (!root) return;
-  const days = filter === 'all'
-    ? BX_PROGRAM_IDEAS
-    : BX_PROGRAM_IDEAS.filter((d) => String(d.day) === String(filter));
-  const renderDay = programActiveView === 'day' ? renderProgramDayOverview : renderProgramSchedule;
-  root.innerHTML = days.map(renderDay).join('');
+  let html = '';
+  if (programActivePanel === 'inspiration') {
+    html = renderProgramInspiration();
+  } else if (programActivePanel === 'marketing') {
+    const days = filter === 'all'
+      ? BX_PROGRAM_IDEAS
+      : BX_PROGRAM_IDEAS.filter((d) => String(d.day) === String(filter));
+    const multiDay = days.length > 1;
+    if (multiDay) html += renderProgramExpoNoteOnce();
+    html += days.map((d, i) => renderProgramMarketing(d, {
+      includeGlobal: !multiDay || i === days.length - 1,
+      showExpoNote: !multiDay,
+    })).join('');
+  } else {
+    const days = filter === 'all'
+      ? BX_PROGRAM_IDEAS
+      : BX_PROGRAM_IDEAS.filter((d) => String(d.day) === String(filter));
+    const renderDay = programActivePanel === 'highlights' ? renderProgramHighlights : renderProgramSchedule;
+    const multiDay = days.length > 1;
+    if (multiDay) html += renderProgramExpoNoteOnce();
+    html += days.map((d) => renderDay(d, !multiDay)).join('');
+  }
+  root.innerHTML = html;
   bindProgramRootLinks(root);
   updatePvaMapLegend(filter);
+  updateProgramDayRowVisibility();
 }
 
 function initProgramPage() {
   const root = document.getElementById('program-root');
-  const filters = document.querySelectorAll('#program-filters [data-program-filter]');
-  const viewTabs = document.querySelectorAll('#program-view-tabs [data-program-view]');
-  if (!root || !filters.length) return;
-  renderProgramGlobalTags();
-  renderProgramBenchmarkPatterns();
+  const filters = document.querySelectorAll('#program-day-row [data-program-filter]');
+  const panelTabs = document.querySelectorAll('#program-panel-tabs [data-program-panel]');
+  if (!root || !filters.length || !panelTabs.length) return;
   renderProgram(programActiveFilter);
   filters.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -4516,10 +4740,10 @@ function initProgramPage() {
       renderProgram(programActiveFilter);
     });
   });
-  viewTabs.forEach((btn) => {
+  panelTabs.forEach((btn) => {
     btn.addEventListener('click', () => {
-      programActiveView = btn.dataset.programView;
-      viewTabs.forEach((b) => b.classList.remove('active'));
+      programActivePanel = btn.dataset.programPanel;
+      panelTabs.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       renderProgram(programActiveFilter);
     });
