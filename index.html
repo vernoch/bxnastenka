@@ -771,6 +771,44 @@ button { cursor: pointer; border: none; background: none; }
 .pricelist-table .col-price { white-space: nowrap; font-weight: 700; color: var(--accent); }
 .pricelist-table .col-czk { white-space: nowrap; opacity: 0.7; }
 .pricelist-table--simple td:first-child { width: 58%; }
+.strategy-section { margin-bottom: 1.1rem; }
+.strategy-section:last-child { margin-bottom: 0; }
+.strategy-section h5 {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+.strategy-section p {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  opacity: 0.88;
+  margin: 0;
+}
+.strategy-section ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+.strategy-section li { margin-bottom: 0.2rem; }
+.strategy-section li:last-child { margin-bottom: 0; }
+.strategy-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(64,184,232,0.15);
+  color: var(--accent);
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
 @media (hover: hover) {
   .flip-card.pricelist-open:hover .flip-card-inner { transform: rotateY(180deg); }
 }
@@ -1968,48 +2006,51 @@ button { cursor: pointer; border: none; background: none; }
             <a href="https://europe.shoptalk.com/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="veletrh">
+          <div class="card" data-category="veletrh" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
-              <div><h3>Reshoper</h3><p class="card-sub">Praha</p></div>
+              <div><h3>Reshoper</h3><p class="card-sub">Praha · 15. 10. 2026</p></div>
               <span class="badge badge-i">veletrh</span>
             </div>
-            <p style="margin-top:0.75rem">Klíčový lokální benchmark – 1 den, 1 hala, 5 000+ návštěvníků e-commerce.</p>
+            <p style="margin-top:0.75rem">Největší česko-slovenský e-commerce veletrh – freemium model: veletrh zdarma, monetizace přes konferenci, roundtables a afterparty.</p>
             <ul class="benchmark-list">
-              <li>Freemium vstup</li>
-              <li>Silent Stages</li>
-              <li>Partnerská stage</li>
+              <li>Veletrh zdarma · konference 3 990–4 990 Kč</li>
+              <li>5 000+ návštěvníků · 100+ vystavovatelů</li>
+              <li>Silent stages + partnerské stage v hale</li>
+              <li>Roundtables 1 990 Kč · afterparty 1 490 Kč</li>
             </ul>
-            <div class="insight-box"><strong>Insight:</strong> Silent Stages = prémiový produkt bez samostatného sálu. Tiché scény v hale.</div>
+            <div class="insight-box"><strong>Insight:</strong> Freemium funnel – masivní návštěvnost zdarma, upsell na prémiový obsah. Vystavovatelé platí za plochu a stage, ne návštěvník za vstup.</div>
             <a href="https://www.reshoper.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="konference">
+          <div class="card" data-category="konference" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
-              <div><h3>Retail Summit</h3><p class="card-sub">Praha</p></div>
+              <div><h3>Retail Summit</h3><p class="card-sub">Praha · 10.–12. 3. 2026</p></div>
               <span class="badge badge-i">konference</span>
             </div>
-            <p style="margin-top:0.75rem">Největší obchodní konference ve střední Evropě – C-level networking.</p>
+            <p style="margin-top:0.75rem">Největší obchodní konference ve střední Evropě od roku 1995 – uzavřený klub retail decision-makerů, 1 300+ účastníků.</p>
             <ul class="benchmark-list">
-              <li>Partnerské pultíky</li>
-              <li>Thought leadership</li>
-              <li>Uzavřený klub decision-makerů</li>
+              <li>1 300+ účastníků · 80+ řečníků · 60+ partnerů</li>
+              <li>Téma 2026: Zdravé vztahy (retail × dodavatelé)</li>
+              <li>C-level networking · Kongresové centrum Praha</li>
+              <li>Partnerství na míru · thought leadership</li>
             </ul>
-            <div class="insight-box"><strong>Insight:</strong> Thought Leadership cennější než velikost stánku. Přitahuje majitele firem.</div>
+            <div class="insight-box"><strong>Insight:</strong> Thought leadership cennější než metry – prodávají přístup k uzavřenému klubu retail lídrů, ne výstavní plochu.</div>
             <a href="https://www.retailsummit.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="veletrh">
+          <div class="card" data-category="veletrh" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
-              <div><h3>Czech Online Expo</h3><p class="card-sub">Praha</p></div>
+              <div><h3>Czech Online Expo</h3><p class="card-sub">Praha · 3.–4. 2. 2027</p></div>
               <span class="badge badge-i">veletrh</span>
             </div>
-            <p style="margin-top:0.75rem">Největší český veletrh pro e-shopy a online marketing.</p>
+            <p style="margin-top:0.75rem">Největší komplexní akce v českém a slovenském digitálu – veletrh, konference a festival v jednom. Summitový model s 22 tematickými tracky.</p>
             <ul class="benchmark-list">
-              <li>Halový veletrh</li>
-              <li>Specializované scény</li>
-              <li>Masivní počet vystavovatelů</li>
+              <li>22 summitů (AI, PPC, SaaS, SEO, HR…)</li>
+              <li>Workshopový den 2. 2. · EXPO zóna + lounge</li>
+              <li>Desítky vystavovatelů · afterparty networking</li>
+              <li>Pořádá SmartEmailing · vstupenky 2027 v prodeji</li>
             </ul>
-            <div class="insight-box"><strong>Insight:</strong> Hlavní lokální e-commerce laťka – benchmark pro BX EXPO v CEE.</div>
+            <div class="insight-box"><strong>Insight:</strong> Summitový výběr programu = vyšší vnímaná hodnota vstupenky. Lead gen pro vystavovatele přes EXPO zónu + večerní networking.</div>
             <a href="https://www.czechonlineexpo.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
@@ -2028,19 +2069,19 @@ button { cursor: pointer; border: none; background: none; }
             <a href="https://www.madfestlondon.com/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="konference">
+          <div class="card" data-category="konference" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
-              <div><h3>Innovation Week</h3><p class="card-sub">Praha</p></div>
+              <div><h3>Innovation Week</h3><p class="card-sub">Praha · 1.–3. 10. 2026</p></div>
               <span class="badge badge-i">konference</span>
             </div>
-            <p style="margin-top:0.75rem">Přední středoevropská platforma propojující byznys a technologie – matchmaking investorů se startupy přes vlastní app.</p>
+            <p style="margin-top:0.75rem">Přední středoevropská platforma propojující byznys a technologie – expo, 4 stage, matchmaking investorů se startupy přes vlastní app.</p>
             <ul class="benchmark-list">
-              <li>Startup Pass 5 500–18 700 Kč</li>
-              <li>Investor Pass 11 900–19 800 Kč</li>
-              <li>Matchmaking app (investoři × startupy)</li>
-              <li>Leaders 14 900 Kč</li>
+              <li>15 000+ návštěvníků · 400+ řečníků · 4 stage</li>
+              <li>Business 3 920 Kč EB · Leaders 11 920 Kč EB</li>
+              <li>Startup & investor program · matchmaking app</li>
+              <li>ČSOB Kampus · 11 let historie</li>
             </ul>
-            <div class="insight-box"><strong>Insight:</strong> Algoritmické propojení podle potřeb – schůzky domluvené předem, ne náhodné hledání v davu.</div>
+            <div class="insight-box"><strong>Insight:</strong> Tiered vstupenky + matchmaking app – schůzky domluvené předem, ne náhodné hledání v davu.</div>
             <a href="https://www.innovationweek.ai/cs" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
@@ -2073,65 +2114,67 @@ button { cursor: pointer; border: none; background: none; }
             <a href="https://europe.fespa.com/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="konference">
+          <div class="card" data-category="konference" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
-              <div><h3>Event Fest</h3><p class="card-sub">Praha</p></div>
+              <div><h3>Event Fest</h3><p class="card-sub">Praha · EXPO 22. 4. · VISION 20. 10. 2026</p></div>
               <span class="badge badge-i">konference</span>
             </div>
-            <p style="margin-top:0.75rem">Moderní B2B událost – firmy prodávají přes reálné zážitky a aktivace, ne letáky.</p>
+            <p style="margin-top:0.75rem">Jediný ucelený event marketingový festival v Česku a na Slovensku – rozdělený na výstavní EXPO a konferenci EVENT VISION v různých termínech.</p>
             <ul class="benchmark-list">
-              <li>Festivalizace B2B</li>
-              <li>Interaktivní stánky</li>
-              <li>Konferenční vstupné + večerní upsell</li>
+              <li>EVENT EXPO: 170+ vystavovatelů · 3 400+ návštěvníků</li>
+              <li>Workshopy, Event Talks, Experience Zone</li>
+              <li>Vlastní app pro rezervace programu</li>
+              <li>EVENT VISION: konference v říjnu (Máj)</li>
             </ul>
-            <div class="insight-box"><strong>Insight:</strong> Vzor pro zážitkový marketing – stánky musí obsahovat aktivace, ne katalog.</div>
+            <div class="insight-box"><strong>Insight:</strong> Festivalizace B2B – zážitkové stánky místo katalogů. Dva termíny = celoroční engagement komunity.</div>
             <a href="https://www.eventfest.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="konference">
+          <div class="card" data-category="konference" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
-              <div><h3>WebExpo</h3><p class="card-sub">Praha</p></div>
+              <div><h3>WebExpo</h3><p class="card-sub">Praha · 26.–28. 5. 2027</p></div>
               <span class="badge badge-i">konference</span>
             </div>
-            <p style="margin-top:0.75rem">Tech komunita a employer branding – festivalový zážitek pro markeťáky a vývojáře.</p>
+            <p style="margin-top:0.75rem">Jedna z předních evropských tech konferencí – 1 600 účastníků, 70 talků, festivalový zážitek v Lucerně od roku 2008.</p>
             <ul class="benchmark-list">
-              <li>Prémiové vstupné</li>
-              <li>WebExpo 4 Kids zóna</li>
-              <li>Komunitní networking</li>
+              <li>70 přednášek · mentoring · Discomfort Zone</li>
+              <li>3 párty v ceně vstupenky · prémiové workshopy</li>
+              <li>WebExpo 4 Kids – family-friendly employer branding</li>
+              <li>Partneři Gold / Silver / Bronze</li>
             </ul>
-            <div class="insight-box"><strong>Insight:</strong> Family-friendly tech zóna jako prémiový sponzoring pro generální partnery.</div>
+            <div class="insight-box"><strong>Insight:</strong> Family-friendly tech zóna jako prémiový sponzoring – druhý dospělý zdarma do kids area a partner boothů.</div>
             <a href="https://webexpo.net/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="konference">
+          <div class="card" data-category="konference" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
               <div><h3>Planeta AI</h3><p class="card-sub">Praha · Hospodářské noviny</p></div>
               <span class="badge badge-i">konference</span>
             </div>
-            <p style="margin-top:0.75rem">Nejlepší byznysová AI konference v Česku – jasně, přehledně a česky vysvětluje, co firmy z AI musí vědět, aby jim neujel vlak.</p>
+            <p style="margin-top:0.75rem">Nejlepší byznysová AI konference v Česku – jasně a česky vysvětluje, co firmy z AI musí vědět. Pořádají Hospodářské noviny.</p>
             <ul class="benchmark-list">
-              <li>Vstupenka 2 590 Kč bez DPH</li>
-              <li>Big picture – AI mění světový byznys</li>
-              <li>Use cases: Groupon, Shoptet, Duvo AI</li>
+              <li>Vstupenka 2 590 Kč bez DPH (2. vlna)</li>
+              <li>Big picture + use cases (Groupon, Shoptet, Duvo AI)</li>
               <li>Bezpečnost modelů a pravidla pro AI</li>
+              <li>Byznys-first, ne technologický hype</li>
             </ul>
-            <div class="insight-box"><strong>Insight:</strong> Byznys-first AI konference – prodává srozumitelnost a praktické use cases, ne technologický hype.</div>
+            <div class="insight-box"><strong>Insight:</strong> Mediální autorita (HN) + srozumitelnost = prémiová jednodenní konference bez expo složky.</div>
             <a href="https://www.planetai.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="festival">
+          <div class="card" data-category="festival" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
-              <div><h3>Marketing Festival</h3><p class="card-sub">Brno · Janáčkovo divadlo</p></div>
+              <div><h3>Marketing Festival</h3><p class="card-sub">Brno · 28.–30. 4. · Janáčkovo divadlo</p></div>
               <span class="badge badge-i">festival</span>
             </div>
-            <p style="margin-top:0.75rem">Festival pro seniorní marketéry – 1 200 odborníků, světové špičky na pódiu, tři dny plné know-how, networkingu a párty.</p>
+            <p style="margin-top:0.75rem">Festival pro seniorní marketéry – 1 200 odborníků, světové špičky (Ritson, Scaman…), 3 dny know-how, networkingu a párty.</p>
             <ul class="benchmark-list">
-              <li>3 dny: warm-up, školení, konference</li>
-              <li>8 přednášek + 5minutovky na pódiu</li>
-              <li>Workshopy (brand, AI, kampaně)</li>
-              <li>Afterparty ve Flédě · videozáznamy</li>
+              <li>3 dny: warm-up · školení · konference + Fléda</li>
+              <li>8 přednášek + 5minutovky · workshopy (brand, AI)</li>
+              <li>Vyprodáno → prodej videozáznamů</li>
+              <li>Cílovka: seniorní marketéři 10+ let v oboru</li>
             </ul>
-            <div class="insight-box"><strong>Insight:</strong> Prémiový zážitkový model – prodává kurátorský výběr řečníků, komunitu a celoroční viditelnost, ne metry plochy.</div>
+            <div class="insight-box"><strong>Insight:</strong> Prémiový zážitkový model – prodává kurátorský výběr řečníků a komunitu, ne metry plochy. Scarcity = vyprodáno.</div>
             <a href="https://www.marketingfestival.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
@@ -3132,7 +3175,7 @@ function addFlipHint(el) {
   return el;
 }
 
-function createPricelistButton(pricelistId) {
+function createPricelistButton(pricelistId, label) {
   const wrap = document.createElement('div');
   wrap.className = 'pricelist-wrap';
   wrap.dataset.pricelistId = pricelistId;
@@ -3140,10 +3183,211 @@ function createPricelistButton(pricelistId) {
   btn.type = 'button';
   btn.className = 'pricelist-btn';
   btn.setAttribute('aria-expanded', 'false');
-  btn.textContent = 'Zobrazit ceník';
+  btn.textContent = label || 'Zobrazit ceník';
   wrap.appendChild(btn);
   return wrap;
 }
+
+const BENCHMARK_STRATEGY_DATA = {
+  reshoper: {
+    strategie: 'Freemium funnel – veletrh jako bezplatný magnet na 5 000+ relevantních návštěvníků, monetizace přes placenou konferenci, roundtables a afterparty. Vystavovatelé financují plochu a obsahové formáty (silent stages, partnerské stage). Návštěvník platí až za hloubkový obsah.',
+    termin: '15. října 2026 · Výstaviště Praha · 1 den (9:00–17:30 konference)',
+    program: [
+      'Veletrh (zdarma): 100+ vystavovatelů, silent stages, partnerské stage, poradenská zóna, networking & work lounge, wellbeing a food zóna',
+      'Konference (placená): 2 panelové diskuze, 6 odborných přednášek, Pecha Kucha stage (8× rychlé talky), VIP zóna, celodenní catering',
+      'Roundtables: malé skupinové diskuze s občerstvením (výběr 1 tématu)',
+      'Afterparty: DJ set, catering, pivo/víno/nealko v ceně',
+    ],
+    vystavovatele: [
+      'Stánky v jedné hale – přímý kontakt s 5 000+ e-shopaři, marketéry a technologickými partnery',
+      'Silent stages a partnerské stage jako prémiový obsahový formát přímo v hale (bez samostatného sálu)',
+      'Poradenská zóna pro konzultace s experty',
+      'Ceník plochy není veřejný – individuální poptávka přes formulář „Chci vystavovat"',
+    ],
+    navstevnik: [
+      'Veletrh: 0 Kč (registrace, limit 5 000 osob) – vstup na veletrh, poradenskou zónu, silent & partnerské stage, networking lounge',
+      'Konference: 3 990 Kč EB / 4 990 Kč (16 přednášek, catering, VIP zóna)',
+      'Roundtable: 1 990 Kč bez DPH',
+      'Afterparty: 1 490 Kč bez DPH',
+      'Kombinace Veletrh + Konference + Afterparty: 5 090 Kč EB (nejoblíbenější balíček)',
+    ],
+  },
+  'czech-online-expo': {
+    strategie: 'Největší komplexní akce v českém a slovenském digitálu – spojuje veletrh, konferenci a festival. Summitový model: 22 tematických tracků, návštěvník si skládá vlastní mix. Monetizace přes vstupenky, vystavovatelské plochy, partnerství a placené workshopy. Pořádá SmartEmailing.',
+    termin: '2. 2. 2027 workshopový den · 3.–4. 2. 2027 hlavní program · PVA Expo Praha · 2+1 dny',
+    program: [
+      '22 summitů: AI, Brand, Cashflow, Content, E-mail Marketing, GEO-SEO, HR, Leadership, Marketing Longevity, Media, PPC, SaaS, Sales, Scaleup, TECH, UX a další',
+      'Workshopový den (2. 2.): praktické workshopy s omezenou kapacitou, vstupenky individuálně',
+      'EXPO zóna: desítky vystavovatelů z e-commerce, martechu a digitálních služeb',
+      'Afterparty a stylové lounge zóny pro networking',
+      'Eventee app pro orientaci v programu',
+    ],
+    vystavovatele: [
+      'EXPO zóna – stánek pro lead gen a brand awareness vůči digitální komunitě CZ/SK',
+      'Možnost řečnického slotu v rámci summitu (garanti a speakři na ročník 2027)',
+      'Partneři a mediální partneři – brandová viditelnost napříč summity',
+      'Ceník není veřejný – poptávka přes „Staňte se vystavovatelem", VOP pro vystavovatele na webu',
+      'Reference: vystavovatelé hlásí desítky kvalifikovaných kontaktů za ročník',
+    ],
+    navstevnik: [
+      'Vstupenky 2027 v prodeji – výběr summitů dle zájmu (mix napříč tématy)',
+      'Workshopový den: samostatné vstupenky s omezenou kapacitou',
+      'Videozáznamy z ročníku 2026 k dispozici online',
+      'Cílovka: markeťáci, e-shopaři, SaaS firmy, agentury, decision-makeři z digitálu',
+      'Afterparty networking jako součást zážitku',
+    ],
+  },
+  'event-fest': {
+    strategie: 'Unikátní event marketingový festival – jediný v Česku a na Slovensku v této ucelené podobě. Dva termíny tvoří jeden celek: EVENT EXPO (výstava + zážitky) a EVENT VISION (konference). Komunitní model s vlastní app pro rezervace. Cíl: inspirace, networking a propojení eventové komunity.',
+    termin: 'EVENT EXPO: 22. 4. 2026 (8:30–18:00) · EVENT VISION: 20. 10. 2026, Máj – House of Fun · 7. ročník',
+    program: [
+      'EVENT EXPO: 170+ vystavovatelů (agentury, lokace, catering, AV, atrakce), největší výstavní plocha v historii',
+      'Doprovodný program: Workshop Room, Event Talks, Event Talks Podcast, Expo Stage Show, Experience Zone, soutěže',
+      'EVENT VISION: konference o budoucnosti eventů, AI, audience experience, práci s publikem',
+      'Vlastní Event Fest app – rezervace workshopů od 15. 4. 2026 (nutná platná vstupenka)',
+      'Mix publika: 35 % agentury, 30 % dodavatelé/lokace, 25 % korporátní zadavatelé',
+    ],
+    vystavovatele: [
+      'Interaktivní stánky s aktivacemi a show – ne katalogové pulty',
+      'Přímý kontakt s 3 400+ odborníky z event branže',
+      'Eventová app pro navazování kontaktů během akce',
+      'Individuální sales přes Dominika Kuparowitze (dominik.kuparowitz@eventfest.cz)',
+      'Reference vystavovatelů: konkrétní poptávky a dlouhodobé spolupráce po účasti',
+    ],
+    navstevnik: [
+      'Vstupenka na Event Fest = vstup na EXPO + možnost rezervovat workshopy v app',
+      'Workshopy a talky: zdarma s vstupenkou, ale nutná předchozí rezervace místa',
+      'Inspirace, trendy, noví dodavatelé a networking s eventovou komunitou',
+      'EVENT VISION (říjen): samostatná konference s mezinárodními speakery',
+      'Pořadatel: FiremniAkce.cz / Liventa s.r.o.',
+    ],
+  },
+  webexpo: {
+    strategie: 'Prémiová evropská tech konference s festivalovým DNA – monetizace přes vstupenky (konference + workshopy) a tiered partnerství (Gold/Silver/Bronze/Experience). Od roku 2008 buduje komunitu devů, designérů a tech leaderů. Unikát: WebExpo 4 Kids jako employer branding magnet.',
+    termin: '26.–28. 5. 2027 · Palác Lucerna, Praha · konference 26.–27. 5., prémiové workshopy 28. 5.',
+    program: [
+      'Konference (2 dny): 70 praktických talků – web dev, UX/UI, AI, data, performance, product, marketing',
+      'Hands-on learning sessions, Discomfort Zone diskuze, mentoring',
+      '3 párty v ceně vstupenky (warm-up 25. 5. + 2 večery během konference)',
+      'Snídaně a celodenní nápoje, 15min masáž zdarma',
+      'Prémiové workshopy (28. 5.): half-day a full-day s top experty (AI engineering, storytelling, content design)',
+      'WebExpo 4 Kids: workshopy AI, 3D tisk, Scratch, LEGO; Kids Corner s au pair; Parents Coffee Lounge',
+    ],
+    vystavovatele: [
+      'Partneři Gold / Silver / Bronze / Experience / Media / Community – individuální nabídka',
+      'Kontakt: sarka@webexpo.net (CEO Šárka Štrossová)',
+      'Partner boothy v rámci akce – přístup k 1 600+ tech profesionálům',
+      'Kids area: druhý dospělý vstup zdarma do dětské zóny a partner boothů (family-friendly EB benefit)',
+      'Ceník partnerství není veřejný – obchodní jednání na míru',
+    ],
+    navstevnik: [
+      'Conference Ticket (26.–27. 5.): 70 talků, aktivity, 3 párty, snídaně, nápoje, masáž, kids program',
+      'Premium Workshops (28. 5.): samostatně placené half-day a full-day workshopy',
+      'Cílovka: frontend/backend devs, designéři, markeťáci, tech leaders',
+      'Platba: faktura + převod/QR/karta do 14 dnů',
+      'Call for Papers na ročník 2027 otevřen do 23. 10.',
+    ],
+  },
+  'marketing-festival': {
+    strategie: 'Prémiový zážitkový festival pro seniorní marketéry – neprodávají metry, ale kurátorský výběr světových řečníků, komunitu a celoroční FOMO. Třídenní formát (warm-up → workshopy → konference + Fléda). Scarcity model: vyprodáno + prodej videozáznamů jako upsell.',
+    termin: '28.–30. dubna (ročník 2025 vyprodán) · Janáčkovo divadlo, Brno · 3 dny · 1 200 účastníků',
+    program: [
+      'Pondělí 28. 4.: warm-up párty pro nedočkavé',
+      'Úterý 29. 4.: praktická školení (brand, AI, kampaně, výzkum…) + večerní tour de Bar po brněnských barech',
+      'Středa 30. 4.: hlavní konferenční den – 8 přednášek světových hvězd + 5minutovky + afterparty ve Flédě',
+      'Meetupy: Brand Clubík, Ranní káva s AI, Brand Growth Meetup',
+      'Řečníci úrovně Mark Ritson, Zoe Scaman, Tom Roach, Jes Scholz, Oli Feldwick',
+    ],
+    vystavovatele: [
+      'Žádná klasická expo hala – model je partnerský/sponzorský, ne výstavní plocha',
+      'Partneři akce (loga na webu a eventu) – kontakt info@marketingfestival.cz',
+      'Thought leadership: pozice řečníka nebo workshop lektora jako prémiový produkt',
+      'Cílová skupina partnerů: značky chtějící oslovit seniorní marketéry a C-level',
+      'Pořadatel: Marketing Festival s.r.o. (Jindřich Faborský)',
+    ],
+    navstevnik: [
+      'Vstupenky na webu – vyprodáno (ročník 2025), návrat přes newsletter',
+      'Cílovka: seniorní marketéři 10+ let zkušeností, C-level, founders, head of marketing',
+      'Videozáznamy všech přednášek k prodeji po akci',
+      'Servis v ceně: top catering, organizace, networking, párty – „za desítku" hodnota dle recenzí',
+      'Strategický den v divadle, technické školení v úterý – dva různé formáty v jednom balíčku',
+    ],
+  },
+  'planeta-ai': {
+    strategie: 'Jednodenní byznysová AI konference pod záštitou Hospodářských novin – prodává srozumitelnost a praktické use cases, ne technologický hype. Monetizace přes vstupenky a partnerství. Žádná expo složka – čistě obsah a networking.',
+    termin: 'Roční akce v Praze · pořádají Hospodářské noviny · jednodenní konference',
+    program: [
+      'Big picture: co AI dnes dokáže, jak mění světový byznys, kam směřuje',
+      'Use cases: Groupon, Shoptet, Duvo AI, BottleCap AI – jak české firmy AI reálně využívají',
+      'Bezpečnost modelů a využívaných dat, pravidla pro AI v organizacích',
+      'Čeští AI odborníci – byznysový jazyk, ne akademický žargon',
+    ],
+    vystavovatele: [
+      'Model partnerství, ne výstavní stánky – hlavní partneři a partneři na webu',
+      'Ideální pro tech firmy a konzultanty cílící na české decision-makery',
+      'Kontakt přes web planetai.cz / Hospodářské noviny',
+      'Žádný veřejný ceník expo plochy – čistě sponzorský model',
+    ],
+    navstevnik: [
+      'Vstupenka 2. vlna: 2 590 Kč bez DPH',
+      'Cílovka: majitelé firem, manažeři, byznys lídři, kteří potřebují AI pochopit prakticky',
+      'Value prop: „co musíte vědět, aby vám neujel vlak" – strach z promeškání jako motivátor',
+      'Galerie a reference z ročníku 2025 na webu',
+    ],
+  },
+  'innovation-week': {
+    strategie: 'Největší inovační platforma ve střední Evropě – kombinuje expo, 4 stage, startup program a matchmaking investorů se startupy přes vlastní app. Tiered vstupenky od studentů po Leaders. Monetizace: vstupenky + víceúrovňové partnerství (Flagship → Connect).',
+    termin: '1.–3. října 2026 · ČSOB Kampus, Praha · 3 dny · 15 000+ návštěvníků · 11 let historie',
+    program: [
+      '4 stage: K.I.S.S., Breakthrough, Hlavní Stage, Startup & Innovation Stage',
+      'Inovační expo zóna + inspirativní semináře',
+      'Startup program: pitchy, investoři, korporátní partneři',
+      'Matchmaking přes mobilní app (Business a Leaders tier)',
+      'Doprovodné události po celé ČR (satellite events)',
+      '400+ řečníků – globální lídři, inovátoři, průkopníci',
+    ],
+    vystavovatele: [
+      'Partnerství: Flagship, Premier, Advantage, Emerging, Connect, Strategic partneři',
+      'Expo zóna pro prezentaci technologií a služeb startupům a korporacím',
+      'Startup showcase a pitch formáty',
+      'Matchmaking app propojuje partnery s investory a startupy',
+      'Kontakt přes innovationweek.ai – partnerství na míru',
+    ],
+    navstevnik: [
+      'Student (1 den): 160 Kč EB / 200 Kč – expo + 2 stage',
+      'Základní (1 den): 264 Kč EB / 330 Kč – expo + 2 stage',
+      'Family (sobota): 384 Kč EB / 480 Kč – 2 dospělí + děti do 15 let',
+      'Business (3 dny): 3 920 Kč EB / 4 900 Kč – 4 stage, semináře, matchmaking, digitální knihovna',
+      'Leaders (3 dny): 11 920 Kč EB / 14 900 Kč – catering, lounge, parkování, večerní networking',
+      'Startup Pass: 5 500–18 700 Kč · Investor Pass: 11 900–19 800 Kč (samostatné programy)',
+    ],
+  },
+  'retail-summit': {
+    strategie: 'Největší obchodní konference ve střední Evropě od roku 1995 – uzavřený klub retail decision-makerů. Monetizace přes vstupenky účastníků a custom partnerství. Thought leadership cennější než velikost stánku. Pořádá Blue Events.',
+    termin: '10.–12. března 2026 · Kongresové centrum Praha · 32. ročník · 3 dny',
+    program: [
+      'Téma 2026: Zdravé vztahy – retail × dodavatelé, inovace, udržitelnost, technologie',
+      '80+ řečníků a panelistů, moderuje Karel „Kovy" Kovář',
+      '1 300+ účastníků – maloobchodníci, výrobci, dodavatelé technologií',
+      'Vrcholové setkání klíčových hráčů středoevropského obchodního trhu',
+      'Možnost vystoupit jako řečník nebo panelista',
+    ],
+    vystavovatele: [
+      '60+ partnerů – partnerství připravené na míru potřebám (Blue Events)',
+      'Partnerské pultíky a brandová viditelnost v Kongresovém centru',
+      'Thought leadership: pozice řečníka v hlavním sále jako prémiový produkt',
+      'Cílovka partnerů: technologické firmy, dodavatelé, FMCG, retail řešení',
+      'Kontakt přes retailsummit.cz – „Chci se stát partnerem konference"',
+    ],
+    navstevnik: [
+      'Registrace jako účastník, řečník nebo partner – tři cesty na webu',
+      'Cílovka: retail lídři, nákupčí, marketingoví manažeři, decision-makeři z obchodu',
+      'Value: jedinečné pódium pro setkání retailu, technologií, dodavatelů a výrobců',
+      '32 let tradice – „katalyzátor změn k lepšímu" (reference dm, Kaufland, Alza, Hornbach)',
+      'Součást portfolia Blue Events (Communication Summit, New Retail Summit SK…)',
+    ],
+  },
+};
 
 const BENCHMARK_EXCEL_DATA = {"OMR":[["1. Program „Young Innovators“ (Dotované stánky pro startupy)","Velikost","Podmínka / Časové omezení","Cena (EUR)","Přepočet (CZK)","Cena za 1 m² kč"],["Výstavní stánek na klíč","9 m²","Schválení v programu (Dotace 6 000 €)","4 000 € (plná: 10k €)","~100 000 Kč (plná: 250k Kč)","11k"],["Výstavní stánek + Masterclass","9 m²","Schválení v programu (Dotace 6 000 €)","24 000 € (plná: 30k €)","~600 000 Kč (plná: 750k Kč)","65k"],["2. Standardní výstavní stánek na klíč (Turnkey Expo Booth)","Velikost","Časové omezení","Cena (EUR)","Přepočet (CZK)","Cena za 1 m² kč"],["Early Bird","9 m² (3x3m)","Při objednání do 31. prosince 2026","10 000 €","~250 000 Kč","27k"],["Standard","9 m² (3x3m)","Při objednání do 31. ledna 2027","12 500 €","~312 500 Kč","35k"],["3. Partnerství „Masterclass“ (Expertní přednášky a workshopy)","Kapacita sálu","Podmínka realizace","Cena (EUR)","Přepočet (CZK)","Cena za 1 m² kč"],["Samostatná Masterclass","až 200 lidí","Samostatně stojící vzdělávací slot (60-90 min)","22 500 €","~562 500 Kč","nelze bez metru"],["Kombinovaná Masterclass","až 200 lidí","V kombinaci s koupeným stánkem, místností/lounge","20 000 €","~500 000 Kč","nelze bez metru"],["4. Prémiový stánek na klíč (Premium Turnkey)","Umístění / Hala","Cena za 1 m²","Základní cena (např. 18 m²)","Přepočet (pro 18 m²)","Cena za 1 m² kč"],["od 18 m² výše","Prémiové haly A1 / A4","2 000 € / m²","36 000 €","~900 000 Kč","50k min"],["5. Prémiový samostatný prostor (Premium Custom / Space Only)","Minimální velikost","Časové omezení","Cena za 1 m²","Přepočet za m²"],["Early Bird","od 30 m²","Do 31. července 2026","1 100 €","~27 500 Kč / m²"],["Standard","od 30 m²","Do 31. října 2026","1 200 €","~30 000 Kč / m²"],["Late","od 30 m²","Od 1. listopadu 2026","1 300 €","~32 500 Kč / m²"]],"EMS":[["Kategorie / Název balíčku","Velikost / Formát","Specifikace / Podmínka","Cena (USD)","Přepočet (CZK)"],["1. Standardní výstavní plocha (Exhibit Packages)"],["Balíček Patron","10' x 10'","Základní plocha vč. sdílení dat o účastnících","7 180 $","~168 700 Kč"],["Balíček Premier","10' x 10'","Stejná plocha + lepší umístění a více lístků","13 535 $","~318 000 Kč"],["Balíček Elite","10' x 20'","Větší plocha + více lístků a vizibility","21 050 $","~494 700 Kč"],["Balíček Platinum","od 20' x 20'","Velká ostrovní plocha + top VIP benefity","od 30 275 $","od ~711 500 Kč"],["2. Sponzorství zážitků a zón (Crowd Pleasers)"],["Hall of Ideas Café","20' x 50'","Exkluzivní branding hlavní kavárny na ploše","35 500 $","~834 250 Kč"],["The Clubhouse","50' x 50'","Uvítací a komunitní zóna + řečnický slot","35 000 $","~822 500 Kč"],["Entrance Unit","Vstupní tunel","Obrandování hlavního vstupu do haly","22 000 $","~517 000 Kč"],["Hallway Pop-up","Chodba","Vlastní aktivace (fotokoutek, ochutnávka atd.) mimo stánek","12 000 $","~282 000 Kč"],["3. Obsah a přednášky (Thought Leadership)"],["Sponsored Workshop","2 hodiny","Vlastní hluboký workshop pro účastníky (zisk autority)","38 750 $","~910 600 Kč"],["Keynote Sponsorship","Úvodní slovo","Promo video a intro na hlavní stagi před klíčovým řečníkem","33 250 $","~781 300 Kč"],["Speaking Session","30 minut","Vlastní garantovaný přednáškový slot (generuje kontakty z publika)","26 100 $","~613 350 Kč"],["4. Dostupná řešení a Inovace (Low Budget)"],["Innovation Central Kiosk","Kiosk","Plně sestavený malý stánek &quot;na klíč&quot; pro efektivní vstup na trh","5 500 $","~129 250 Kč"],["Supplier Pass","1 osoba","Vstupenka pro dodavatele (vstup do haly za účelem byznysu bez stánku)","5 100 $","~119 850 Kč"],["EMS Video Showcase","Online obsah","Profesionální natočení propagačního videa přímo na stánku","4 000 $","~94 000 Kč"],["Next Big Thing (Pitch-fest)","5 minut","Prezentace inovace před odbornou porotou na stagi","3 000 $","~70 500 Kč"]],"euroshop":[["Kategorie / Název balíčku","Velikost / Specifikace","Podmínka / Charakteristika","Cena (EUR)","Přepočet (CZK)"],["1. Pronájem čisté výstavní plochy (Space Only)"],["Veslovací (Řadový)","1 strana otevřená do uličky","Základní holá podlaha v hale (cena za m²)","296","~7 400 Kč"],["Rohový","2 strany otevřené do uličky","Lepší viditelnost z uliček (cena za m²)","306","~7 650 Kč"],["Koncový (Poloostrov)","3 strany otevřené do uličky","Výrazná pozice na konci bloku (cena za m²)","316","~7 900 Kč"],["Ostrovní","4 strany otevřené do uličky","Top prémiové místo v hale (cena za m²)","326","~8 150 Kč"],["Venkovní sekce","Plocha mimo haly","Pouze prostor na venkovní ploše (cena za m²)","130","~3 250 Kč"],["2. Stavba stánků na klíč (Turnkey Booths)","","Přičítá se k ceně čisté plochy"],["Stánek S3 (Základ)","Výška 3,2 m","Hliníkový systém, světelné boxy, nábytek, koberec, elektro (za m²)","155","~3 875 Kč"],["Stánek C1 (Vysoký)","Výška 5 m","Maxima systém, 10m² textilní banner ve výšce, nábytek, elektro (za m²)","200,3","~5 000 Kč"],["Stojan R4 (Standard)","Výška 3 m","Systém Maxima, 3dílné stěny, nábytek, koberec, elektro (za m²)","204","~5 100 Kč"],["Stánek C3 (Prémiový)","Výška 3,5 m","„Megawall“ stěny bez sloupků, luxusní vzhled, nábytek, elektro (za m²)","228,1","~5 700 Kč"],["3. Povinné a doplňkové poplatky (Skryté náklady)"],["Mediální poplatek","Jednorázově","Povinný poplatek za zápis (katalog, appka, web)","829","~20 725 Kč"],["Poplatek za spoluvystavovatele","Fixně za firmu","Pokud je na stánku i partnerská značka","900","~22 500 Kč"],["Odvoz odpadu","Za každý 1 m²","Povinná likvidace odpadu během akce a stavby","2,7","~67 Kč"],["Poplatek AUMA","Za každý 1 m²","Povinný příspěvek německé veletržní asociaci","0,6","~15 Kč"],["Další permanentka","1 kus","Dokoupení lístku pro personál obsluhy stánku","46,55","~1 160 Kč"]],"Inovation week":[["Produkt","Varianta","Cena bez DPH (Kč)","Cena s DPH (Kč)"],["Startup Pass","Startup Pass I","5 500","6 655"],["Startup Pass","Startup Pass II","18 700","22 627"],["Investor Pass","Investor Pass I","11 900","14 399"],["Investor Pass","Investor Pass II","19 800","23 958"]],"NRF paris":[["Typ nabídky","Varianta / Plocha","Cena bez DPH (€)","Cena bez DPH (Kč)","Jednotka"],["Standardní plocha","Holý stojan (Space Only)","615","15 375","za m²"],["Standardní plocha","Vybavený stánek (Turnkey)","1 130","28 250","za m²"],["Innovators Showcase","Startovací balíček","3 750","93 750","za balíček"],["Innovators Showcase","Stánek na klíč (Startup od r. 2021)","6 250","156 250","za balíček"],["Innovators Showcase","Stánek na klíč (Zavedená firma)","8 250","206 250","za balíček"]],"DMEXCO":[["Typ poplatku / Služba","Cena bez DPH (€)","Cena bez DPH (Kč)","Jednotka","Příklad: Odhad pro 10 m² (Kč)"],["Odhadovaný pronájem čisté plochy (Základ)","400","10 000","za m²","100 000"],["Povinný Marketing + Digital package","176","4 400","za m²","44 000"],["Povinný poplatek za energie","24,5","613","za m²","6 125"],["Příplatek: Rohový stánek (2 otevřené strany)","10","250","k ceně za m²","2 500"],["Příplatek: Hlavový stánek (3 otevřené strany)","15","375","k ceně za m²","3 750"],["Příplatek: Ostrovní stánek (4 otevřené strany)","20","500","k ceně za m²","5 000"],["Poplatek za spoluvystavovatele (Co-exhibitor)","1 730","43 250","fixně za firmu","43 250"],["Zápis další značky (Brand name entry)","900","22 500","fixně za zápis","22 500"],["CELKOVÝ ODHAD: Základní stánek 10 m²","600,5","15 013","za m² vč. poplatků","150 125"]],"Web Summit (Lisbon)":[["Typ balíčku / Služba","Velikost / Specifikace","Odhadovaná cena (bez DPH)","Cena v Kč (cca)","Jednotka"],["Startup balíček (např. ALPHA)","1denní pultík + 3 vstupenky","1 100 € - 1 500 €","27 500 - 37 500 Kč","za balíček"],["Předvybavený stánek (Provided)","4 m² až 54 m²","Individuální (od cca 10 000 €)","Od 250 000 Kč","za stánek"],["Vlastní stánek (Custom Build)","24 m² až 324 m²","Individuální (od cca 25 000 €)","Od 625 000 Kč","za plochu/balíček"],["Sponzoring: Masterclass","45minutový slot (cca 100 lidí)","Desítky tisíc € (součást balíčku)","Stovky tisíc Kč","za slot"],["Sponzoring: Tematická Lounge","Investor / Speaker / Dev Lounge","Vyšší desítky až stovky tis. €","Miliony Kč","exkluzivní branding"]],"FACHPACK":[["Položka / Služba","Specifikace","Cena (EUR)","Přepočet (CZK)"],["Plocha: Řadový stánek","1 strana otevřená (za 1 m²)","248","~6 200 Kč"],["Plocha: Rohový stánek","2 strany otevřené (za 1 m²)","284","~7 100 Kč"],["Plocha: Poloostrovní stánek","3 strany otevřené (za 1 m²)","289","~7 225 Kč"],["Plocha: Ostrovní stánek","4 strany otevřené (za 1 m²)","297","~7 425 Kč"],["Marketingový poplatek","Povinný jednorázový poplatek za zápis","1 240,00 €","~31 000 Kč"],["Poplatek za spoluvystavovatele","Fixní poplatek za partnerskou značku","1 650,00 €","~41 250 Kč"],["Odvoz odpadu","Povinný poplatek (za každý m²)","6,4","~160 Kč"],["AUMA poplatek","Povinný příspěvek německé asociaci (za každý m²)","0,6","~15 Kč"]]}
 ;
@@ -3252,23 +3496,40 @@ function buildSimplePricelistHtml(title, items) {
     + rows + '</tbody></table>';
 }
 
+function buildStrategyHtml(title, data) {
+  const listItems = (items) => items.map((item) => '<li>' + escapeHtml(item) + '</li>').join('');
+  return '<h4>' + escapeHtml(title) + ' — strategie</h4>'
+    + '<div class="strategy-section"><h5><span class="strategy-tag">Strategie</span> Celkový model</h5><p>' + escapeHtml(data.strategie) + '</p></div>'
+    + '<div class="strategy-section"><h5><span class="strategy-tag">Termín</span> Kdy a kde</h5><p>' + escapeHtml(data.termin) + '</p></div>'
+    + '<div class="strategy-section"><h5><span class="strategy-tag">Program</span> Co se děje</h5><ul>' + listItems(data.program) + '</ul></div>'
+    + '<div class="strategy-section"><h5><span class="strategy-tag">B2B</span> Nabídka pro vystavovatele</h5><ul>' + listItems(data.vystavovatele) + '</ul></div>'
+    + '<div class="strategy-section"><h5><span class="strategy-tag">Návštěvník</span> Co platí konečný účastník</h5><ul>' + listItems(data.navstevnik) + '</ul></div>';
+}
+
 function registerBenchmarkPricelists() {
   pricelistTemplates.clear();
 
   document.querySelectorAll('#benchmark-grid .card').forEach((card) => {
     const title = card.querySelector('h3')?.textContent?.trim() || 'Benchmark';
     const id = slugifyPricelistId(title);
+    const strategyData = BENCHMARK_STRATEGY_DATA[id];
+
+    if (strategyData) {
+      pricelistTemplates.set(id, { html: buildStrategyHtml(title, strategyData), type: 'strategy' });
+      return;
+    }
+
     const sheetKey = BENCHMARK_EXCEL_SHEETS[id];
     const excelRows = sheetKey ? BENCHMARK_EXCEL_DATA[sheetKey] : null;
 
     if (excelRows && excelRows.length) {
-      pricelistTemplates.set(id, buildExcelTableHtml(title, excelRows));
+      pricelistTemplates.set(id, { html: buildExcelTableHtml(title, excelRows), type: 'pricelist' });
       return;
     }
 
     const items = [...card.querySelectorAll('.benchmark-list li')].map((li) => li.textContent.trim()).filter(Boolean);
     if (!items.length) return;
-    pricelistTemplates.set(id, buildSimplePricelistHtml(title, items));
+    pricelistTemplates.set(id, { html: buildSimplePricelistHtml(title, items), type: 'pricelist' });
   });
 }
 
@@ -3283,7 +3544,10 @@ function initBenchmarkFlipCards() {
     const link = card.querySelector('a[target="_blank"]');
     const title = card.querySelector('h3')?.textContent || '';
     const pricelistId = slugifyPricelistId(title);
-    const pricelistBtn = pricelistTemplates.has(pricelistId) ? createPricelistButton(pricelistId) : null;
+    const template = pricelistTemplates.get(pricelistId);
+    const pricelistBtn = template
+      ? createPricelistButton(pricelistId, template.type === 'strategy' ? 'Zobrazit strategii' : 'Zobrazit ceník')
+      : null;
 
     const front = document.createElement('div');
     if (header) front.appendChild(header.cloneNode(true));
@@ -3347,8 +3611,10 @@ function initPricelistPopups() {
   };
 
   const showPortal = (btn, pricelistId) => {
-    const html = pricelistTemplates.get(pricelistId);
-    if (!html) return;
+    const template = pricelistTemplates.get(pricelistId);
+    if (!template) return;
+    const html = template.html;
+    const closeLabel = template.type === 'strategy' ? 'Zavřít strategii' : 'Zavřít ceník';
 
     if (portal.classList.contains('is-visible') && activeBtn === btn) {
       hidePortal();
@@ -3358,7 +3624,7 @@ function initPricelistPopups() {
     hidePortal();
     activeBtn = btn;
     activeFlipCard = btn.closest('.flip-card');
-    portal.innerHTML = '<button type="button" class="pricelist-close" aria-label="Zavřít ceník">×</button>' + html;
+    portal.innerHTML = '<button type="button" class="pricelist-close" aria-label="' + closeLabel + '">×</button>' + html;
     backdrop.classList.add('is-visible');
     backdrop.setAttribute('aria-hidden', 'false');
     portal.classList.add('is-visible');
