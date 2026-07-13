@@ -1702,12 +1702,214 @@ button { cursor: pointer; border: none; background: none; }
   line-height: 1.45;
   margin: 0;
 }
+.program-status-banner {
+  border-left: 3px solid var(--accent-2);
+  margin-bottom: 1.5rem;
+}
+.program-global-tags-wrap {
+  margin-bottom: 2rem;
+}
+.program-global-tags-header {
+  margin-bottom: 0.75rem;
+}
+.program-global-tags-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.program-global-tags-header p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin: 0.35rem 0 0;
+  line-height: 1.5;
+}
+.program-global-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+.program-global-tag {
+  flex: 1 1 160px;
+  max-width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.85rem;
+}
+.program-global-tag-title {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.program-global-tag-desc {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.program-pva-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.85rem;
+}
+.program-pva-legend-item {
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.program-pva-legend-item.is-active {
+  color: var(--text);
+  border-color: transparent;
+}
+.program-pva-legend--day1.is-active { background: rgba(64,184,232,0.15); color: var(--accent); }
+.program-pva-legend--day2.is-active { background: rgba(168,85,247,0.12); color: var(--accent-2); }
+.program-pva-legend--day3.is-active { background: rgba(236,72,153,0.12); color: var(--accent-3); }
+.program-patterns-block {
+  margin-bottom: 2.25rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.program-patterns-header { margin-bottom: 1.25rem; }
+.program-pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.85rem;
+}
+.program-pattern-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.1rem;
+}
+.program-pattern-card h4 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.program-pattern-list {
+  list-style: none;
+  margin: 0 0 0.65rem;
+  padding: 0;
+}
+.program-pattern-list li {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  padding-left: 0.85rem;
+  position: relative;
+  margin-bottom: 0.3rem;
+}
+.program-pattern-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 800;
+}
+.program-pattern-link {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.program-view-tabs { margin-bottom: 0.65rem; }
+.filter-pill--secondary {
+  opacity: 0.75;
+  font-size: 0.82rem;
+}
+.program-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.program-focus-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.program-focus-card-num {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.program-focus-card h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+.program-focus-summary {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+.program-focus-meta {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+.program-focus-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 0.25rem;
+}
+.program-day-header--compact {
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+}
+.program-extra-compact-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.program-extra-compact {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+}
+.program-extra-compact h4 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.program-extra-compact p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+.program-highlight-flash {
+  animation: programHighlight 2s ease;
+}
+@keyframes programHighlight {
+  0%, 100% { box-shadow: none; }
+  15%, 45% { box-shadow: 0 0 0 3px rgba(64,184,232,0.45); }
+}
 
 @media (max-width: 720px) {
   .zone-grid { grid-template-columns: 1fr; }
   .program-days-overview { grid-template-columns: 1fr; }
   .program-ideas-grid { grid-template-columns: 1fr; }
   .program-stage-item { grid-template-columns: 1fr; }
+  .program-focus-grid { grid-template-columns: 1fr; }
+  .program-global-tags-row { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.35rem; }
+  .program-global-tag { flex: 0 0 72vw; }
 }
   </style>
 </head>
@@ -2006,7 +2208,7 @@ button { cursor: pointer; border: none; background: none; }
             <a href="https://europe.shoptalk.com/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="veletrh" data-detail="strategy">
+          <div class="card" id="benchmark-reshoper" data-category="veletrh" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
               <div><h3>Reshoper</h3><p class="card-sub">Praha · 15. 10. 2026</p></div>
               <span class="badge badge-i">veletrh</span>
@@ -2022,7 +2224,7 @@ button { cursor: pointer; border: none; background: none; }
             <a href="https://www.reshoper.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="konference" data-detail="strategy">
+          <div class="card" id="benchmark-retail-summit" data-category="konference" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
               <div><h3>Retail Summit</h3><p class="card-sub">Praha · 10.–12. 3. 2026</p></div>
               <span class="badge badge-i">konference</span>
@@ -2038,7 +2240,7 @@ button { cursor: pointer; border: none; background: none; }
             <a href="https://www.retailsummit.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="veletrh" data-detail="strategy">
+          <div class="card" id="benchmark-czech-online-expo" data-category="veletrh" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
               <div><h3>Czech Online Expo</h3><p class="card-sub">Praha · 3.–4. 2. 2027</p></div>
               <span class="badge badge-i">veletrh</span>
@@ -2069,7 +2271,7 @@ button { cursor: pointer; border: none; background: none; }
             <a href="https://www.madfestlondon.com/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="konference" data-detail="strategy">
+          <div class="card" id="benchmark-innovation-week" data-category="konference" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
               <div><h3>Innovation Week</h3><p class="card-sub">Praha · 1.–3. 10. 2026</p></div>
               <span class="badge badge-i">konference</span>
@@ -2114,7 +2316,7 @@ button { cursor: pointer; border: none; background: none; }
             <a href="https://europe.fespa.com/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="konference" data-detail="strategy">
+          <div class="card" id="benchmark-event-fest" data-category="konference" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
               <div><h3>Event Fest</h3><p class="card-sub">Praha · EXPO 22. 4. · VISION 20. 10. 2026</p></div>
               <span class="badge badge-i">konference</span>
@@ -2130,7 +2332,7 @@ button { cursor: pointer; border: none; background: none; }
             <a href="https://www.eventfest.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="konference" data-detail="strategy">
+          <div class="card" id="benchmark-webexpo" data-category="konference" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
               <div><h3>WebExpo</h3><p class="card-sub">Praha · 26.–28. 5. 2027</p></div>
               <span class="badge badge-i">konference</span>
@@ -2146,7 +2348,7 @@ button { cursor: pointer; border: none; background: none; }
             <a href="https://webexpo.net/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="konference" data-detail="strategy">
+          <div class="card" id="benchmark-planeta-ai" data-category="konference" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
               <div><h3>Planeta AI</h3><p class="card-sub">Praha · Hospodářské noviny</p></div>
               <span class="badge badge-i">konference</span>
@@ -2162,7 +2364,7 @@ button { cursor: pointer; border: none; background: none; }
             <a href="https://www.planetai.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
           </div>
 
-          <div class="card" data-category="festival" data-detail="strategy">
+          <div class="card" id="benchmark-marketing-festival" data-category="festival" data-detail="strategy">
             <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
               <div><h3>Marketing Festival</h3><p class="card-sub">Brno · 28.–30. 4. · Janáčkovo divadlo</p></div>
               <span class="badge badge-i">festival</span>
@@ -2542,7 +2744,7 @@ button { cursor: pointer; border: none; background: none; }
 
         <div class="zone-grid">
 
-          <article class="zone-card">
+          <article class="zone-card" id="zone-01">
             <div class="zone-card-header">
               <div class="zone-card-num">Sekce 01</div>
               <h3>Print &amp; Production 2.0</h3>
@@ -2573,7 +2775,7 @@ button { cursor: pointer; border: none; background: none; }
             </div>
           </article>
 
-          <article class="zone-card">
+          <article class="zone-card" id="zone-02">
             <div class="zone-card-header">
               <div class="zone-card-num">Sekce 02</div>
               <h3>Packaging &amp; Sustainability</h3>
@@ -2604,7 +2806,7 @@ button { cursor: pointer; border: none; background: none; }
             </div>
           </article>
 
-          <article class="zone-card">
+          <article class="zone-card" id="zone-03">
             <div class="zone-card-header">
               <div class="zone-card-num">Sekce 03</div>
               <h3>Retail &amp; Space</h3>
@@ -2635,7 +2837,7 @@ button { cursor: pointer; border: none; background: none; }
             </div>
           </article>
 
-          <article class="zone-card">
+          <article class="zone-card" id="zone-04">
             <div class="zone-card-header">
               <div class="zone-card-num">Sekce 04</div>
               <h3>Digital &amp; Content</h3>
@@ -2666,7 +2868,7 @@ button { cursor: pointer; border: none; background: none; }
             </div>
           </article>
 
-          <article class="zone-card">
+          <article class="zone-card" id="zone-05">
             <div class="zone-card-header">
               <div class="zone-card-num">Sekce 05</div>
               <h3>AI &amp; Martech</h3>
@@ -2697,7 +2899,7 @@ button { cursor: pointer; border: none; background: none; }
             </div>
           </article>
 
-          <article class="zone-card">
+          <article class="zone-card" id="zone-06">
             <div class="zone-card-header">
               <div class="zone-card-num">Sekce 06</div>
               <h3>E-commerce &amp; On-demand Production</h3>
@@ -2728,7 +2930,7 @@ button { cursor: pointer; border: none; background: none; }
             </div>
           </article>
 
-          <article class="zone-card">
+          <article class="zone-card" id="zone-07">
             <div class="zone-card-header">
               <div class="zone-card-num">Sekce 07</div>
               <h3>Experience &amp; Innovation</h3>
@@ -2759,7 +2961,7 @@ button { cursor: pointer; border: none; background: none; }
             </div>
           </article>
 
-          <article class="zone-card">
+          <article class="zone-card" id="zone-08">
             <div class="zone-card-header">
               <div class="zone-card-num">Sekce 08</div>
               <h3>Promotional Products Reinvented</h3>
@@ -2790,7 +2992,7 @@ button { cursor: pointer; border: none; background: none; }
             </div>
           </article>
 
-          <article class="zone-card">
+          <article class="zone-card" id="zone-09">
             <div class="zone-card-header">
               <div class="zone-card-num">Sekce 09</div>
               <h3>Startup &amp; Innovation Hub</h3>
@@ -2834,36 +3036,50 @@ button { cursor: pointer; border: none; background: none; }
       <div class="container">
         <div class="hero-eyebrow">28.4.–30.4. 2027 · PVA EXPO Praha</div>
         <h1>Program &amp; nápady</h1>
-        <p>Brainstorm obsahu na 3 dny — co by mohlo běžet v jednotlivých sekcích na PVA EXPO. Main stage jen orientačně, zbytek je přehled nápadů k diskusi.</p>
+        <p>Brainstorm nástroj na 3 dny — časová osa, focus sekcí a inspirace z trhu. Detail aktivit a layoutů je v <a href="#sekce" data-page="sekce">Naše sekce</a>.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="zone-draft-banner">
-          <p><strong>Status: brainstorm.</strong> Neoficiální přehled nápadů — upravujete v <code>BX_PROGRAM_IDEAS</code>. Časy u main stage jsou orientační. Umístění hal na PVA je nástřel dle půdorysu.</p>
+        <div class="zone-draft-banner program-status-banner">
+          <p><strong>Brainstorm · ne finální program · časy orientační.</strong> Tady držíme čas a focus dne — konkrétní nápady na aktivity upravujete v <code>BX_PROGRAM_IDEAS</code>, plné popisy jsou v sekcích.</p>
         </div>
+
+        <div id="program-global-tags" class="program-global-tags-wrap" aria-label="Průřezové nápady celého výstaviště"></div>
 
         <div class="program-pva-map" id="program-pva-map">
           <div class="program-pva-map-header">
             <h3>PVA EXPO Praha — orientační mapa</h3>
-            <p>Nápady v sekcích níže odkazují na konkrétní haly a prostory. Finální layout vznikne s ABF po schválení půdorysu.</p>
+            <p>Focus dne → hlavní haly. Kongresový sál = main stage po celé 3 dny. Finální layout vznikne s ABF.</p>
           </div>
           <img src="assets/program-pva-map.png" alt="Půdorys PVA EXPO Praha — haly, kongresový sál, konferenční místnosti" class="program-pva-map-img" loading="lazy">
-          <p class="program-pva-map-caption">Kongresový sál = main stage · konferenční sály = masterclass · haly 1–8 = zážitkové zóny · venkovní plocha = networking &amp; dema</p>
+          <div class="program-pva-legend" id="program-pva-legend">
+            <span class="program-pva-legend-item program-pva-legend--day1 is-active" data-pva-day="1">Den 1 · Haly 2–3 · Produkce &amp; prostor</span>
+            <span class="program-pva-legend-item program-pva-legend--day2" data-pva-day="2">Den 2 · Haly 4–5 · Digitál &amp; data</span>
+            <span class="program-pva-legend-item program-pva-legend--day3" data-pva-day="3">Den 3 · Haly 1, 7–8 · Zážitek &amp; startupy</span>
+          </div>
+          <p class="program-pva-map-caption">Kongresový sál = main stage · konferenční sály = masterclass · venkovní plocha = networking &amp; večerní akce</p>
         </div>
 
+        <div id="program-patterns" class="program-patterns-block" aria-label="Programové vzory z trhu"></div>
+
         <div class="section-header">
-          <div class="section-eyebrow">3 dny · 9 sekcí · nápady</div>
-          <h2 class="section-title">Co by mohlo běžet kde</h2>
-          <p class="section-desc">Každý den má focus na 3 use-cases, u každé sekce nápady na aktivity a orientační místo na výstavišti. Main stage = jen hrubý náčrt, ne pevný harmonogram.</p>
+          <div class="section-eyebrow">Harmonogram vs. focus dne</div>
+          <h2 class="section-title">Program na jeden den</h2>
+          <p class="section-desc">Vyberte den a režim — harmonogram ukáže main stage a večerní prostory, přehled dne 3 focus sekce s odkazem na detail.</p>
+        </div>
+
+        <div class="filter-row program-view-tabs" id="program-view-tabs">
+          <button type="button" class="filter-pill active" data-program-view="schedule">Harmonogram</button>
+          <button type="button" class="filter-pill" data-program-view="day">Přehled dne</button>
         </div>
 
         <div class="filter-row" id="program-filters">
-          <button type="button" class="filter-pill active" data-program-filter="all">Vše</button>
-          <button type="button" class="filter-pill" data-program-filter="1">Den 1 · Produkce 2.0</button>
+          <button type="button" class="filter-pill active" data-program-filter="1">Den 1 · Produkce 2.0</button>
           <button type="button" class="filter-pill" data-program-filter="2">Den 2 · Digitální ekosystém</button>
           <button type="button" class="filter-pill" data-program-filter="3">Den 3 · Zážitek &amp; platforma</button>
+          <button type="button" class="filter-pill filter-pill--secondary" data-program-filter="all">Všechny dny</button>
         </div>
 
         <div id="program-root"></div>
@@ -4091,7 +4307,26 @@ const BX_PROGRAM_IDEAS = [
   },
 ];
 
-let programActiveFilter = 'all';
+let programActiveFilter = '1';
+let programActiveView = 'schedule';
+
+const BX_PROGRAM_BENCHMARK_PATTERNS = [
+  { id: 'reshoper', name: 'Reshoper', takeaways: ['Freemium: veletrh zdarma, placená konference a afterparty jako upsell', 'Silent & partnerské stage v hale, roundtables'] },
+  { id: 'czech-online-expo', name: 'Czech Online Expo', takeaways: ['Summitový model — 22 tracků, návštěvník si skládá mix', 'Workshopový den zvlášť, EXPO zóna + afterparty networking'] },
+  { id: 'event-fest', name: 'Event Fest', takeaways: ['Festivalizace B2B — workshop room, talks, experience zone', 'Vlastní app pro rezervace slotů, interaktivní stánky místo katalogů'] },
+  { id: 'webexpo', name: 'WebExpo', takeaways: ['70 talků + 3 párty v ceně, mentoring a Discomfort Zone', 'Prémiové workshopy jako samostatný den, WebExpo 4 Kids'] },
+  { id: 'marketing-festival', name: 'Marketing Festival', takeaways: ['3 dny: warm-up → školení → konference + Fléda', 'Světové hvězdy na pódiu, tour de bar, scarcity (vyprodáno)'] },
+  { id: 'planeta-ai', name: 'Planeta AI', takeaways: ['Jednodenní byznys-first konference bez expo složky', 'Big picture + praktické use cases v češtině'] },
+  { id: 'innovation-week', name: 'Innovation Week', takeaways: ['4 stage + expo, tiered vstupenky, matchmaking app', 'Startup & investor program, Leaders lounge + catering'] },
+  { id: 'retail-summit', name: 'Retail Summit', takeaways: ['Uzavřený C-level klub retail decision-makerů', 'Thought leadership na main stage, custom partnerství ne metry'] },
+];
+
+function programSectionSummary(section) {
+  const ideas = section.ideas || [];
+  if (!ideas.length) return 'Kompletní nápady a layout v sekci Naše sekce.';
+  if (ideas.length === 1) return ideas[0];
+  return ideas[0] + ' · ' + ideas[1];
+}
 
 function renderProgramStage(stage) {
   if (!stage || !stage.slots || !stage.slots.length) return '';
@@ -4110,118 +4345,181 @@ function renderProgramStage(stage) {
   );
 }
 
-function renderProgramSectionCard(section) {
+function renderProgramExtraSpacesCompact(spaces) {
+  if (!spaces || !spaces.length) return '';
+  return spaces.map((sp) => {
+    const summary = (sp.ideas || []).slice(0, 2).join(' · ');
+    return (
+      '<div class="program-extra-compact">'
+      + '<h4>' + escapeHtml(sp.name) + '</h4>'
+      + '<p>' + escapeHtml(summary) + '</p>'
+      + '</div>'
+    );
+  }).join('');
+}
+
+function renderProgramFocusCard(section, dayData) {
   const name = BX_PROGRAM_ZONES[section.id] || '';
-  const formats = (section.formats || []).map((f) => (
-    '<span class="program-format-tag">' + escapeHtml(f) + '</span>'
-  )).join('');
-  const ideas = (section.ideas || []).map((idea) => (
-    '<li>' + escapeHtml(idea) + '</li>'
-  )).join('');
+  const summary = programSectionSummary(section);
   return (
-    '<article class="program-idea-card">'
-    + '<div class="program-idea-card-header">'
-    + '<div class="program-idea-card-num">Sekce ' + escapeHtml(section.id) + '</div>'
+    '<article class="program-focus-card">'
+    + '<div class="program-focus-card-num">Sekce ' + escapeHtml(section.id) + ' · focus Den ' + dayData.day + '</div>'
     + '<h4>' + escapeHtml(name) + '</h4>'
-    + '<div class="program-idea-location">📍 ' + escapeHtml(section.location || 'PVA · TBD') + '</div>'
-    + '</div>'
-    + '<div class="program-idea-card-body">'
-    + (formats ? '<div class="program-idea-formats">' + formats + '</div>' : '')
-    + '<ul class="program-idea-list">' + ideas + '</ul>'
-    + '</div></article>'
+    + '<p class="program-focus-summary">' + escapeHtml(summary) + '</p>'
+    + '<div class="program-focus-meta">📍 ' + escapeHtml(section.location || 'PVA · TBD') + '</div>'
+    + '<a href="#sekce" data-page="sekce" class="program-focus-link" data-zone-id="' + escapeHtml(section.id) + '">Detail sekce →</a>'
+    + '</article>'
   );
 }
 
-function renderProgramExtraSpaces(spaces) {
-  if (!spaces || !spaces.length) return '';
-  return spaces.map((sp) => (
-    '<div class="program-extra-block">'
-    + '<h4>' + escapeHtml(sp.name) + '</h4>'
-    + '<ul class="program-idea-list">' + (sp.ideas || []).map((i) => '<li>' + escapeHtml(i) + '</li>').join('') + '</ul>'
-    + '</div>'
-  )).join('');
-}
-
-function renderProgramDayBlock(dayData) {
-  const sectionsHtml = (dayData.sections || []).map(renderProgramSectionCard).join('');
-  const extraHtml = renderProgramExtraSpaces(dayData.extraSpaces);
-  const pillarHtml = dayData.pillar
-    ? '<span class="program-day-pillar">Pilíř: ' + escapeHtml(dayData.pillar) + '</span>'
-    : '';
-  const focusHtml = dayData.focusLabel
-    ? '<div class="program-day-focus">' + escapeHtml(dayData.focusLabel) + '</div>'
-    : '';
+function renderProgramDayOverview(dayData) {
+  const sectionsHtml = (dayData.sections || []).map((s) => renderProgramFocusCard(s, dayData)).join('');
   return (
     '<div class="program-day-block" data-program-day="' + dayData.day + '">'
     + '<div class="program-day-header">'
     + '<h3>Den ' + dayData.day + ' · ' + escapeHtml(dayData.date) + ' (' + escapeHtml(dayData.weekday) + ')</h3>'
-    + pillarHtml
     + '<span class="program-day-theme">' + escapeHtml(dayData.theme) + '</span>'
-    + focusHtml
     + '<p class="program-day-desc">' + escapeHtml(dayData.themeDesc) + '</p>'
     + '</div>'
-    + renderProgramStage(dayData.mainStage)
-    + '<div class="program-ideas-grid">' + sectionsHtml + '</div>'
-    + extraHtml
+    + '<div class="program-focus-grid">' + sectionsHtml + '</div>'
     + '</div>'
   );
 }
 
-function renderProgramOverview() {
+function renderProgramSchedule(dayData) {
+  const extraHtml = renderProgramExtraSpacesCompact(dayData.extraSpaces);
   return (
-    '<div class="program-days-overview">'
-    + BX_PROGRAM_IDEAS.map((d) => (
-      '<div class="program-day-overview">'
-      + '<div class="program-day-overview-date">Den ' + d.day + ' · ' + escapeHtml(d.date) + '</div>'
-      + '<h3>' + escapeHtml(d.theme) + '</h3>'
-      + '<div class="program-day-overview-theme">' + escapeHtml(d.pillar || '') + '</div>'
-      + '<p>' + escapeHtml(d.focusLabel || d.themeDesc) + '</p>'
-      + '</div>'
-    )).join('')
+    '<div class="program-day-block" data-program-day="' + dayData.day + '">'
+    + '<div class="program-day-header program-day-header--compact">'
+    + '<h3>Den ' + dayData.day + ' · ' + escapeHtml(dayData.date) + ' (' + escapeHtml(dayData.weekday) + ')</h3>'
+    + '<span class="program-day-theme">' + escapeHtml(dayData.theme) + '</span>'
+    + '</div>'
+    + renderProgramStage(dayData.mainStage)
+    + (extraHtml ? '<div class="program-extra-compact-wrap">' + extraHtml + '</div>' : '')
     + '</div>'
   );
 }
 
-function renderProgramGlobalIdeas() {
-  const cards = BX_PROGRAM_GLOBAL_IDEAS.map((item) => (
-    '<div class="program-global-card">'
-    + '<h4>' + escapeHtml(item.title) + '</h4>'
-    + '<p>' + escapeHtml(item.desc) + '</p>'
+function renderProgramGlobalTags() {
+  const wrap = document.getElementById('program-global-tags');
+  if (!wrap) return;
+  const tags = BX_PROGRAM_GLOBAL_IDEAS.map((item) => (
+    '<div class="program-global-tag">'
+    + '<span class="program-global-tag-title">' + escapeHtml(item.title) + '</span>'
+    + '<span class="program-global-tag-desc">' + escapeHtml(item.desc) + '</span>'
     + '</div>'
   )).join('');
-  return (
-    '<div class="program-global-ideas">'
-    + '<h3>Průřezové nápady · celé výstaviště</h3>'
-    + '<p>Formáty a aktivity, které nemusí patřit jen do jedné sekce — můžou běžet všech 3 dní nebo jako samostatný produkt.</p>'
-    + '<div class="program-global-grid">' + cards + '</div>'
+  wrap.innerHTML = (
+    '<div class="program-global-tags-header">'
+    + '<span class="program-global-tags-eyebrow">Průřez celým výstavištěm</span>'
+    + '<p>Formáty napříč dny — gamifikace, matchmaking, silent stage… (data v <code>BX_PROGRAM_GLOBAL_IDEAS</code>)</p>'
     + '</div>'
+    + '<div class="program-global-tags-row">' + tags + '</div>'
   );
+}
+
+function renderProgramBenchmarkPatterns() {
+  const root = document.getElementById('program-patterns');
+  if (!root) return;
+  const cards = BX_PROGRAM_BENCHMARK_PATTERNS.map((p) => (
+    '<article class="program-pattern-card">'
+    + '<h4>' + escapeHtml(p.name) + '</h4>'
+    + '<ul class="program-pattern-list">'
+    + p.takeaways.map((t) => '<li>' + escapeHtml(t) + '</li>').join('')
+    + '</ul>'
+    + '<a href="#benchmarky" data-page="benchmarky" class="program-pattern-link" data-benchmark-id="' + escapeHtml(p.id) + '">viz benchmark →</a>'
+    + '</article>'
+  )).join('');
+  root.innerHTML = (
+    '<div class="section-header program-patterns-header">'
+    + '<div class="section-eyebrow">Inspirace od konkurence</div>'
+    + '<h2 class="section-title">Programové vzory z trhu</h2>'
+    + '<p class="section-desc">Kompaktní takeaway z benchmarků — nápady pro brainstorm, ne rozhodnutí co BX udělá.</p>'
+    + '</div>'
+    + '<div class="program-pattern-grid">' + cards + '</div>'
+  );
+  root.querySelectorAll('[data-benchmark-id]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToBenchmarkCard(link.dataset.benchmarkId);
+    });
+  });
+}
+
+function scrollToBenchmarkCard(id) {
+  showPage('benchmarky');
+  requestAnimationFrame(() => {
+    const el = document.getElementById('benchmark-' + id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.add('program-highlight-flash');
+      setTimeout(() => el.classList.remove('program-highlight-flash'), 2200);
+    }
+  });
+}
+
+function scrollToZoneSection(zoneId) {
+  showPage('sekce');
+  requestAnimationFrame(() => {
+    const el = document.getElementById('zone-' + zoneId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.classList.add('program-highlight-flash');
+      setTimeout(() => el.classList.remove('program-highlight-flash'), 2200);
+    }
+  });
+}
+
+function updatePvaMapLegend(filter) {
+  const legend = document.getElementById('program-pva-legend');
+  if (!legend) return;
+  legend.querySelectorAll('[data-pva-day]').forEach((item) => {
+    const day = item.dataset.pvaDay;
+    item.classList.toggle('is-active', filter === 'all' || String(filter) === day);
+  });
+}
+
+function bindProgramRootLinks(root) {
+  root.querySelectorAll('[data-zone-id]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToZoneSection(link.dataset.zoneId);
+    });
+  });
 }
 
 function renderProgram(filter) {
   const root = document.getElementById('program-root');
-  const pvaMap = document.getElementById('program-pva-map');
   if (!root) return;
   const days = filter === 'all'
     ? BX_PROGRAM_IDEAS
     : BX_PROGRAM_IDEAS.filter((d) => String(d.day) === String(filter));
-  let html = '';
-  if (filter === 'all') html += renderProgramOverview();
-  html += days.map(renderProgramDayBlock).join('');
-  if (filter === 'all') html += renderProgramGlobalIdeas();
-  root.innerHTML = html;
-  if (pvaMap) pvaMap.style.display = filter === 'all' ? '' : 'none';
+  const renderDay = programActiveView === 'day' ? renderProgramDayOverview : renderProgramSchedule;
+  root.innerHTML = days.map(renderDay).join('');
+  bindProgramRootLinks(root);
+  updatePvaMapLegend(filter);
 }
 
 function initProgramPage() {
   const root = document.getElementById('program-root');
   const filters = document.querySelectorAll('#program-filters [data-program-filter]');
+  const viewTabs = document.querySelectorAll('#program-view-tabs [data-program-view]');
   if (!root || !filters.length) return;
+  renderProgramGlobalTags();
+  renderProgramBenchmarkPatterns();
   renderProgram(programActiveFilter);
   filters.forEach((btn) => {
     btn.addEventListener('click', () => {
       programActiveFilter = btn.dataset.programFilter;
       filters.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProgram(programActiveFilter);
+    });
+  });
+  viewTabs.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      programActiveView = btn.dataset.programView;
+      viewTabs.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       renderProgram(programActiveFilter);
     });
