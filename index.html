@@ -204,6 +204,62 @@ button { cursor: pointer; border: none; background: none; }
   background: rgba(255,255,255,0.08);
   box-shadow: inset 0 0 0 1px rgba(230,50,138,0.25);
 }
+.nav-dropdown {
+  position: relative;
+}
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+.nav-dropdown-chevron {
+  font-size: 0.55rem;
+  opacity: 0.55;
+  transition: transform 0.2s;
+}
+.nav-dropdown.open .nav-dropdown-chevron,
+.nav-dropdown.is-active .nav-dropdown-chevron {
+  opacity: 0.85;
+}
+.nav-dropdown.open .nav-dropdown-chevron {
+  transform: rotate(180deg);
+}
+.nav-dropdown.is-active .nav-dropdown-trigger {
+  color: var(--text-light);
+  background: rgba(255,255,255,0.08);
+  box-shadow: inset 0 0 0 1px rgba(230,50,138,0.25);
+}
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  min-width: 188px;
+  background: #111118;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 0.35rem;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.45);
+  z-index: 160;
+}
+.nav-dropdown.open .nav-dropdown-menu {
+  display: block;
+}
+.nav-dropdown-item {
+  display: block;
+  padding: 0.52rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.62);
+  transition: background 0.15s, color 0.15s;
+}
+.nav-dropdown-item:hover,
+.nav-dropdown-item.active {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
 .page-subnav {
   background: var(--surface-muted);
   border-bottom: 1px solid var(--border);
@@ -1280,7 +1336,23 @@ button { cursor: pointer; border: none; background: none; }
     background: var(--hero-bg);
     padding: 1rem;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    align-items: stretch;
+    gap: 0.25rem;
   }
+  .site-header.nav-open .nav-dropdown { width: 100%; }
+  .site-header.nav-open .nav-dropdown-trigger { width: 100%; justify-content: space-between; }
+  .site-header.nav-open .nav-dropdown-menu {
+    position: static;
+    display: none;
+    min-width: 0;
+    width: 100%;
+    margin-top: 0.25rem;
+    box-shadow: none;
+    border: none;
+    background: rgba(255,255,255,0.04);
+    padding: 0.25rem 0.35rem 0.35rem;
+  }
+  .site-header.nav-open .nav-dropdown.open .nav-dropdown-menu { display: block; }
   .header-inner .btn-primary { display: none; }
 }
 
@@ -2076,9 +2148,37 @@ button { cursor: pointer; border: none; background: none; }
       </div>
       <nav class="nav-desktop">
         <a href="#domu" data-page="domu" class="nav-link active">Domů</a>
-        <a href="#benchmarky" data-page="benchmarky" data-nav-group="konkurence" class="nav-link">Konkurence</a>
-        <a href="#model" data-page="model" data-nav-group="model" class="nav-link">Model</a>
-        <a href="#sekce" data-page="sekce" data-nav-group="akce" class="nav-link">Akce</a>
+
+        <div class="nav-dropdown" data-nav-group="konkurence">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            Konkurence <span class="nav-dropdown-chevron" aria-hidden="true">▼</span>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="#benchmarky" data-page="benchmarky" class="nav-dropdown-item" role="menuitem">Benchmarky</a>
+            <a href="#archetypy" data-page="archetypy" class="nav-dropdown-item" role="menuitem">Modely</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown" data-nav-group="model">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            Model <span class="nav-dropdown-chevron" aria-hidden="true">▼</span>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="#model" data-page="model" class="nav-dropdown-item" role="menuitem">Náš model</a>
+            <a href="#kalkulacka" data-page="kalkulacka" class="nav-dropdown-item" role="menuitem">Kalkulačka</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown" data-nav-group="akce">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            Akce <span class="nav-dropdown-chevron" aria-hidden="true">▼</span>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="#sekce" data-page="sekce" class="nav-dropdown-item" role="menuitem">Naše sekce</a>
+            <a href="#program" data-page="program" class="nav-dropdown-item" role="menuitem">Program</a>
+          </div>
+        </div>
+
         <a href="#marketing" data-page="marketing" class="nav-link">Marketing</a>
         <a href="#vstupenky" data-page="vstupenky" class="nav-link">Vstupenky</a>
       </nav>
@@ -4873,19 +4973,62 @@ const NAV_PAGE_GROUPS = {
   program: 'akce',
 };
 
+function closeAllNavDropdowns() {
+  document.querySelectorAll('.nav-dropdown.open').forEach((dropdown) => {
+    dropdown.classList.remove('open');
+    const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+  });
+}
+
+function initNavDropdowns() {
+  document.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
+    const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+    const menu = dropdown.querySelector('.nav-dropdown-menu');
+    if (!trigger) return;
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = dropdown.classList.contains('open');
+      closeAllNavDropdowns();
+      if (!isOpen) {
+        dropdown.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+    if (menu) {
+      menu.addEventListener('click', (e) => e.stopPropagation());
+    }
+  });
+  document.addEventListener('click', closeAllNavDropdowns);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllNavDropdowns();
+  });
+}
+
 function showPage(id) {
   if (!PAGE_TITLES[id]) id = 'domu';
   document.querySelectorAll('.page-view').forEach((p) => p.classList.remove('active'));
   const page = document.getElementById('page-' + id);
   if (page) page.classList.add('active');
   const activeGroup = NAV_PAGE_GROUPS[id] || null;
-  document.querySelectorAll('.nav-link, .footer-link').forEach((el) => {
+  document.querySelectorAll('.nav-link:not(.nav-dropdown-trigger)').forEach((el) => {
+    el.classList.toggle('active', el.dataset.page === id);
+  });
+  document.querySelectorAll('.nav-dropdown').forEach((el) => {
+    el.classList.toggle('is-active', activeGroup && el.dataset.navGroup === activeGroup);
+  });
+  document.querySelectorAll('.nav-dropdown-item').forEach((el) => {
+    el.classList.toggle('active', el.dataset.page === id);
+  });
+  document.querySelectorAll('.footer-link').forEach((el) => {
     const isActive = el.dataset.page === id || (activeGroup && el.dataset.navGroup === activeGroup);
     el.classList.toggle('active', isActive);
   });
   document.querySelectorAll('.page-subnav-link').forEach((el) => {
     el.classList.toggle('active', el.dataset.page === id);
   });
+  closeAllNavDropdowns();
   document.title = PAGE_TITLES[id];
   window.scrollTo(0, 0);
   if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
@@ -4970,6 +5113,7 @@ function initLogoPicker() {
 document.addEventListener('DOMContentLoaded', () => {
   initLogoPicker();
   initFlipCards();
+  initNavDropdowns();
   initProgramPage();
   initMarketingPage();
   syncPackageCardRefs();
