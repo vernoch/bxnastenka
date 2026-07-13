@@ -204,6 +204,32 @@ button { cursor: pointer; border: none; background: none; }
   background: rgba(255,255,255,0.08);
   box-shadow: inset 0 0 0 1px rgba(230,50,138,0.25);
 }
+.page-subnav {
+  background: var(--surface-muted);
+  border-bottom: 1px solid var(--border);
+  padding: 0.65rem 0;
+}
+.page-subnav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.page-subnav-link {
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: all 0.2s;
+}
+.page-subnav-link:hover,
+.page-subnav-link.active {
+  color: var(--accent);
+  border-color: transparent;
+  background: rgba(64,184,232,0.12);
+}
 .mobile-nav-toggle { display: none; color: white; padding: 0.5rem; font-size: 1.5rem; line-height: 1; }
 
 /* ── Buttons ── */
@@ -2050,13 +2076,11 @@ button { cursor: pointer; border: none; background: none; }
       </div>
       <nav class="nav-desktop">
         <a href="#domu" data-page="domu" class="nav-link active">Domů</a>
-        <a href="#benchmarky" data-page="benchmarky" class="nav-link">Benchmarky</a>
-        <a href="#archetypy" data-page="archetypy" class="nav-link">Modely konkurence</a>
-        <a href="#model" data-page="model" class="nav-link">Náš model</a>
-        <a href="#sekce" data-page="sekce" class="nav-link">Naše sekce</a>
-        <a href="#program" data-page="program" class="nav-link">Program</a>
+        <a href="#benchmarky" data-page="benchmarky" data-nav-group="konkurence" class="nav-link">Konkurence</a>
+        <a href="#model" data-page="model" data-nav-group="model" class="nav-link">Model</a>
+        <a href="#sekce" data-page="sekce" data-nav-group="akce" class="nav-link">Akce</a>
+        <a href="#marketing" data-page="marketing" class="nav-link">Marketing</a>
         <a href="#vstupenky" data-page="vstupenky" class="nav-link">Vstupenky</a>
-        <a href="#kalkulacka" data-page="kalkulacka" class="nav-link">Kalkulačka</a>
       </nav>
       <button class="mobile-nav-toggle" aria-label="Menu">☰</button>
     </div>
@@ -2151,45 +2175,33 @@ button { cursor: pointer; border: none; background: none; }
         <div class="nav-cards">
           <a href="#benchmarky" data-page="benchmarky" class="nav-card">
             <div class="nav-card-num">01</div>
-            <h3>Benchmarky</h3>
-            <p>18 analyzovaných akcí – EuroShop, OMR, EMS, FESPA, WebExpo, Planeta AI, Marketing Festival a další.</p>
-            <span class="nav-card-link">Zobrazit →</span>
-          </a>
-          <a href="#archetypy" data-page="archetypy" class="nav-card">
-            <div class="nav-card-num">02</div>
-            <h3>Modely konkurence</h3>
-            <p>Osm modelů konkurence – od Space Only po garanci leadů a matchmaking.</p>
-            <span class="nav-card-link">Zobrazit →</span>
+            <h3>Konkurence</h3>
+            <p>18 benchmarků akcí + 8 cenových modelů — od Space Only po matchmaking a lead gen.</p>
+            <span class="nav-card-link">Benchmarky &amp; modely →</span>
           </a>
           <a href="#model" data-page="model" class="nav-card">
-            <div class="nav-card-num">03</div>
-            <h3>Náš model</h3>
-            <p>9 výstavních sekcí, oficiální Gold / Silver balíčky pro vystavovatele.</p>
-            <span class="nav-card-link">Zobrazit →</span>
+            <div class="nav-card-num">02</div>
+            <h3>Model &amp; ceny</h3>
+            <p>Náš model BX EXPO, Gold / Silver balíčky a interaktivní kalkulačka stánku.</p>
+            <span class="nav-card-link">Model &amp; kalkulačka →</span>
           </a>
           <a href="#sekce" data-page="sekce" class="nav-card">
-            <div class="nav-card-num">04</div>
-            <h3>Naše sekce</h3>
-            <p>Nástřel zážitkových zón — jak může vypadat každá ze 9 sekcí na výstavišti.</p>
-            <span class="nav-card-link">Zobrazit →</span>
+            <div class="nav-card-num">03</div>
+            <h3>Akce</h3>
+            <p>9 zážitkových sekcí na výstavišti + brainstorm programu po dnech a vlnách.</p>
+            <span class="nav-card-link">Sekce &amp; program →</span>
           </a>
-          <a href="#program" data-page="program" class="nav-card">
-            <div class="nav-card-num">05</div>
-            <h3>Program</h3>
-            <p>Přehled nápadů po dnech a sekcích — ne itinerář, ale brainstorm co kde může běžet.</p>
-            <span class="nav-card-link">Zobrazit →</span>
+          <a href="#marketing" data-page="marketing" class="nav-card">
+            <div class="nav-card-num">04</div>
+            <h3>Marketing &amp; PR</h3>
+            <p>Nápady na komunikaci po vlnách, PR, sociální sítě a co-marketing s partnery.</p>
+            <span class="nav-card-link">Marketing →</span>
           </a>
           <a href="#vstupenky" data-page="vstupenky" class="nav-card">
-            <div class="nav-card-num">06</div>
+            <div class="nav-card-num">05</div>
             <h3>Vstupenky</h3>
             <p>VIP, Business a Basic — tři úrovně pro návštěvníky včetně kurátorovaného VIP zdarma.</p>
-            <span class="nav-card-link">Zobrazit →</span>
-          </a>
-          <a href="#kalkulacka" data-page="kalkulacka" class="nav-card">
-            <div class="nav-card-num">07</div>
-            <h3>Kalkulačka</h3>
-            <p>Interaktivní konfigurátor ceny stánku v reálném čase.</p>
-            <span class="nav-card-link">Zobrazit →</span>
+            <span class="nav-card-link">Vstupenky →</span>
           </a>
         </div>
       </div>
@@ -2211,6 +2223,13 @@ button { cursor: pointer; border: none; background: none; }
         <p>Přední veletrhy, konference a festivaly používají opakující se modely cenotvorby. Nejvyšší marže neleží v pronájmu m², ale v povinných poplatcích, obsahu a datech.</p>
       </div>
     </section>
+
+    <nav class="page-subnav" aria-label="Konkurence">
+      <div class="container page-subnav-inner">
+        <a href="#benchmarky" data-page="benchmarky" class="page-subnav-link">Benchmarky</a>
+        <a href="#archetypy" data-page="archetypy" class="page-subnav-link">Modely</a>
+      </div>
+    </nav>
 
     <section class="section">
       <div class="container">
@@ -2517,6 +2536,13 @@ button { cursor: pointer; border: none; background: none; }
       </div>
     </section>
 
+    <nav class="page-subnav" aria-label="Konkurence">
+      <div class="container page-subnav-inner">
+        <a href="#benchmarky" data-page="benchmarky" class="page-subnav-link">Benchmarky</a>
+        <a href="#archetypy" data-page="archetypy" class="page-subnav-link">Modely</a>
+      </div>
+    </nav>
+
     <section class="section">
       <div class="container">
         <div class="card-grid">
@@ -2645,6 +2671,13 @@ button { cursor: pointer; border: none; background: none; }
         <p>Cíl: přechod od pronájmu m² k prodeji byznysu. EuroShop struktura, inspirace OMR (startup program, masterclass, fáze objednávky). Sazby × 0,78 — CEE positioning pod evropskými festivaly, nad lokálním veletrhem.</p>
       </div>
     </section>
+
+    <nav class="page-subnav" aria-label="Model a ceny">
+      <div class="container page-subnav-inner">
+        <a href="#model" data-page="model" class="page-subnav-link">Náš model</a>
+        <a href="#kalkulacka" data-page="kalkulacka" class="page-subnav-link">Kalkulačka</a>
+      </div>
+    </nav>
 
     <section class="section section-muted">
       <div class="container">
@@ -2853,6 +2886,13 @@ button { cursor: pointer; border: none; background: none; }
         <p>Pracovní koncept, jak může každá z 9 výstavních sekcí vypadat na PVA EXPO — ne katalog stánků, ale zážitkové zóny s obsahem, demy a programem. Materiál pro obchodní schůzky s partnery.</p>
       </div>
     </section>
+
+    <nav class="page-subnav" aria-label="Akce">
+      <div class="container page-subnav-inner">
+        <a href="#sekce" data-page="sekce" class="page-subnav-link">Naše sekce</a>
+        <a href="#program" data-page="program" class="page-subnav-link">Program</a>
+      </div>
+    </nav>
 
     <section class="section">
       <div class="container">
@@ -3160,14 +3200,21 @@ button { cursor: pointer; border: none; background: none; }
       <div class="container">
         <div class="hero-eyebrow">28.4.–30.4. 2027 · PVA EXPO Praha</div>
         <h1>Program &amp; nápady</h1>
-        <p>Brainstorm na 3 dny — harmonogram, programové vlny, marketing a inspirace. Všechny sekce běží celé 3 dny; dny jen určují, co zviditelňujeme na stage a v PR.</p>
+        <p>Brainstorm harmonogramu a programových vln — všechny sekce běží celé 3 dny. Detail zón je v <a href="#sekce" data-page="sekce">Naše sekce</a>, komunikace ve <a href="#marketing" data-page="marketing">Marketing</a>.</p>
       </div>
     </section>
+
+    <nav class="page-subnav" aria-label="Akce">
+      <div class="container page-subnav-inner">
+        <a href="#sekce" data-page="sekce" class="page-subnav-link">Naše sekce</a>
+        <a href="#program" data-page="program" class="page-subnav-link">Program</a>
+      </div>
+    </nav>
 
     <section class="section">
       <div class="container">
         <div class="zone-draft-banner program-status-banner">
-          <p><strong>Brainstorm · ne finální program · časy orientační.</strong> Vystavovatelé a všechny sekce 01–09 jsou na místě <strong>celé 3 dny</strong>. „Den“ = programová vlna na main stage, peak momenty a marketing — ne zavřené haly. Data: <code>BX_PROGRAM_IDEAS</code>, layouty v <a href="#sekce" data-page="sekce">Naše sekce</a>.</p>
+          <p><strong>Brainstorm · ne finální program · časy orientační.</strong> Vystavovatelé a všechny sekce 01–09 jsou na místě <strong>celé 3 dny</strong>. „Vlna“ = program na main stage a peak momenty — ne zavřené haly. Data: <code>BX_PROGRAM_IDEAS</code> · komunikace: <a href="#marketing" data-page="marketing">Marketing</a> · layouty: <a href="#sekce" data-page="sekce">Naše sekce</a>.</p>
         </div>
 
         <div class="program-pva-map" id="program-pva-map">
@@ -3190,11 +3237,10 @@ button { cursor: pointer; border: none; background: none; }
             <div class="filter-row program-workspace-tabs" id="program-panel-tabs">
               <button type="button" class="filter-pill active" data-program-panel="schedule">Harmonogram</button>
               <button type="button" class="filter-pill" data-program-panel="highlights">Programové vlny</button>
-              <button type="button" class="filter-pill" data-program-panel="marketing">Marketing &amp; PR</button>
               <button type="button" class="filter-pill" data-program-panel="inspiration">Inspirace z trhu</button>
             </div>
             <div class="program-workspace-days" id="program-day-row">
-              <span class="program-workspace-days-label">2 · Který den (platí pro harmonogram, vlny i marketing)</span>
+              <span class="program-workspace-days-label">2 · Který den</span>
               <button type="button" class="filter-pill active" data-program-filter="1">Den 1 · St 28.4.</button>
               <button type="button" class="filter-pill" data-program-filter="2">Den 2 · Čt 29.4.</button>
               <button type="button" class="filter-pill" data-program-filter="3">Den 3 · Pá 30.4.</button>
@@ -3204,6 +3250,32 @@ button { cursor: pointer; border: none; background: none; }
 
           <div id="program-root"></div>
         </div>
+      </div>
+    </section>
+    </div>
+    <div id="page-marketing" class="page-view">
+<section class="page-hero">
+      <div class="container">
+        <div class="hero-eyebrow">Komunikace · 28.4.–30.4. 2027</div>
+        <h1>Marketing &amp; PR</h1>
+        <p>Brainstorm komunikace po programových vlnách — PR, sociální sítě, pozvánky a co-marketing. Všechny sekce běží 3 dny; vlny jen určují, co zviditelňujeme ven.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="zone-draft-banner program-status-banner">
+          <p><strong>Brainstorm · ne finální kampaň.</strong> Nápady po dnech v <code>marketingIdeas</code> u každého záznamu v <code>BX_PROGRAM_IDEAS</code>, průřez v <code>BX_PROGRAM_MARKETING_GLOBAL</code>. Harmonogram stage → <a href="#program" data-page="program">Program</a>.</p>
+        </div>
+
+        <div class="filter-row" id="marketing-day-filters">
+          <button type="button" class="filter-pill active" data-marketing-filter="1">Den 1 · St 28.4.</button>
+          <button type="button" class="filter-pill" data-marketing-filter="2">Den 2 · Čt 29.4.</button>
+          <button type="button" class="filter-pill" data-marketing-filter="3">Den 3 · Pá 30.4.</button>
+          <button type="button" class="filter-pill filter-pill--secondary" data-marketing-filter="all">Všechny dny</button>
+        </div>
+
+        <div id="marketing-root"></div>
       </div>
     </section>
     </div>
@@ -3302,6 +3374,13 @@ button { cursor: pointer; border: none; background: none; }
         <p>Ceník plochy dle ABF (domluveno) + návrhové položky BX EXPO. Oficiální Gold / Silver balíčky.</p>
       </div>
     </section>
+
+    <nav class="page-subnav" aria-label="Model a ceny">
+      <div class="container page-subnav-inner">
+        <a href="#model" data-page="model" class="page-subnav-link">Náš model</a>
+        <a href="#kalkulacka" data-page="kalkulacka" class="page-subnav-link">Kalkulačka</a>
+      </div>
+    </nav>
 
     <section class="section">
       <div class="container calc-layout">
@@ -3475,10 +3554,10 @@ button { cursor: pointer; border: none; background: none; }
         <p style="margin-top:0.25rem;opacity:0.6">Interní strategický materiál · cenotvorba vystavovatele</p>
       </div>
       <div class="footer-links">
-        <a href="#benchmarky" data-page="benchmarky" class="footer-link">Benchmarky</a>
-        <a href="#model" data-page="model" class="footer-link">Náš model</a>
-        <a href="#sekce" data-page="sekce" class="footer-link">Naše sekce</a>
-        <a href="#program" data-page="program" class="footer-link">Program</a>
+        <a href="#benchmarky" data-page="benchmarky" data-nav-group="konkurence" class="footer-link">Konkurence</a>
+        <a href="#model" data-page="model" data-nav-group="model" class="footer-link">Model</a>
+        <a href="#sekce" data-page="sekce" data-nav-group="akce" class="footer-link">Akce</a>
+        <a href="#marketing" data-page="marketing" class="footer-link">Marketing</a>
         <a href="#vstupenky" data-page="vstupenky" class="footer-link">Vstupenky</a>
         <a href="#kalkulacka" data-page="kalkulacka" class="footer-link">Kalkulačka</a>
       </div>
@@ -4701,16 +4780,6 @@ function renderProgram(filter) {
   let html = '';
   if (programActivePanel === 'inspiration') {
     html = renderProgramInspiration();
-  } else if (programActivePanel === 'marketing') {
-    const days = filter === 'all'
-      ? BX_PROGRAM_IDEAS
-      : BX_PROGRAM_IDEAS.filter((d) => String(d.day) === String(filter));
-    const multiDay = days.length > 1;
-    if (multiDay) html += renderProgramExpoNoteOnce();
-    html += days.map((d, i) => renderProgramMarketing(d, {
-      includeGlobal: !multiDay || i === days.length - 1,
-      showExpoNote: !multiDay,
-    })).join('');
   } else {
     const days = filter === 'all'
       ? BX_PROGRAM_IDEAS
@@ -4750,6 +4819,39 @@ function initProgramPage() {
   });
 }
 
+let marketingActiveFilter = '1';
+
+function renderMarketing(filter) {
+  const root = document.getElementById('marketing-root');
+  if (!root) return;
+  const days = filter === 'all'
+    ? BX_PROGRAM_IDEAS
+    : BX_PROGRAM_IDEAS.filter((d) => String(d.day) === String(filter));
+  const multiDay = days.length > 1;
+  let html = '';
+  if (multiDay) html += renderProgramExpoNoteOnce();
+  html += days.map((d, i) => renderProgramMarketing(d, {
+    includeGlobal: !multiDay || i === days.length - 1,
+    showExpoNote: !multiDay,
+  })).join('');
+  root.innerHTML = html;
+}
+
+function initMarketingPage() {
+  const root = document.getElementById('marketing-root');
+  const filters = document.querySelectorAll('#marketing-day-filters [data-marketing-filter]');
+  if (!root || !filters.length) return;
+  renderMarketing(marketingActiveFilter);
+  filters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      marketingActiveFilter = btn.dataset.marketingFilter;
+      filters.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderMarketing(marketingActiveFilter);
+    });
+  });
+}
+
 const PAGE_TITLES = {
   domu: 'Brand Experience EXPO Dashboard',
   benchmarky: 'Benchmarky – BX EXPO',
@@ -4757,8 +4859,18 @@ const PAGE_TITLES = {
   model: 'Náš model – BX EXPO',
   sekce: 'Naše sekce – BX EXPO',
   program: 'Program – BX EXPO',
+  marketing: 'Marketing – BX EXPO',
   vstupenky: 'Vstupenky – BX EXPO',
   kalkulacka: 'Kalkulačka – BX EXPO',
+};
+
+const NAV_PAGE_GROUPS = {
+  benchmarky: 'konkurence',
+  archetypy: 'konkurence',
+  model: 'model',
+  kalkulacka: 'model',
+  sekce: 'akce',
+  program: 'akce',
 };
 
 function showPage(id) {
@@ -4766,10 +4878,13 @@ function showPage(id) {
   document.querySelectorAll('.page-view').forEach((p) => p.classList.remove('active'));
   const page = document.getElementById('page-' + id);
   if (page) page.classList.add('active');
-  document.querySelectorAll('[data-page]').forEach((el) => {
-    if (el.classList.contains('nav-link') || el.classList.contains('footer-link')) {
-      el.classList.toggle('active', el.dataset.page === id);
-    }
+  const activeGroup = NAV_PAGE_GROUPS[id] || null;
+  document.querySelectorAll('.nav-link, .footer-link').forEach((el) => {
+    const isActive = el.dataset.page === id || (activeGroup && el.dataset.navGroup === activeGroup);
+    el.classList.toggle('active', isActive);
+  });
+  document.querySelectorAll('.page-subnav-link').forEach((el) => {
+    el.classList.toggle('active', el.dataset.page === id);
   });
   document.title = PAGE_TITLES[id];
   window.scrollTo(0, 0);
@@ -4856,6 +4971,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLogoPicker();
   initFlipCards();
   initProgramPage();
+  initMarketingPage();
   syncPackageCardRefs();
   document.querySelectorAll('[data-page]').forEach((el) => {
     if (el.classList.contains('nav-card')) return;
