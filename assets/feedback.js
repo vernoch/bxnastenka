@@ -243,7 +243,7 @@
     }, 2200);
   }
 
-  async function submitFeedback(name, comment) {
+  function submitFeedback(name, comment) {
     if (!comment) {
       popup?.querySelector('#feedback-comment')?.focus();
       return;
@@ -252,12 +252,6 @@
     if (WEBHOOK_URL.includes('VAS_DEPLOY_ID')) {
       alert('Nastavte WEBHOOK_URL v souboru assets/feedback.js na URL vaší Google Web app.');
       return;
-    }
-
-    const submitBtn = popup?.querySelector('.feedback-btn-submit');
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Odesílám…';
     }
 
     const payload = {
@@ -269,25 +263,18 @@
 
     if (name) localStorage.setItem('bx-feedback-name', name);
 
-    try {
-      // text/plain — obchází CORS preflight u Google Apps Script
-      await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload),
-      });
+    closePopup();
+    showToast('Odesláno');
 
-      closePopup();
-      showToast('Odesláno');
-    } catch (err) {
+    // Odeslání na pozadí — uživatel nečeká na Google Apps Script
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload),
+    }).catch((err) => {
       console.error('Feedback submit failed:', err);
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Odeslat';
-      }
-      alert('Odeslání se nepodařilo. Zkuste to znovu.');
-    }
+    });
   }
 
   if (document.readyState === 'loading') {
