@@ -6,7 +6,7 @@
   'use strict';
 
   // ↓↓↓ Doplňte URL z Google Apps Script po nasazení ↓↓↓
-  const WEBHOOK_URL = 'https://script.google.com/macros/s/VAS_DEPLOY_ID/exec';
+  const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxeJIgWokAT6sH-ZT7IasOpKF3Pg3yiW7xrtxyfFuYMdLOJmma4C511HrUaM9njzklH/exec';
 
   const COMMENTABLE_SELECTOR = 'h1, h2, h3, h4, h5, h6, p, div, li, td, th, span, blockquote, figcaption';
   const IGNORE_SELECTOR = [
