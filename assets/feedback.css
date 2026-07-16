@@ -1,0 +1,207 @@
+/* ── Režim připomínek (inline feedback) ── */
+
+body.feedback-mode-active {
+  cursor: crosshair;
+}
+
+body.feedback-mode-active * {
+  cursor: crosshair !important;
+}
+
+body.feedback-mode-active .feedback-mode-toggle,
+body.feedback-mode-active .feedback-mode-toggle *,
+body.feedback-mode-active .feedback-popup,
+body.feedback-mode-active .feedback-popup * {
+  cursor: auto !important;
+}
+
+.feedback-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-left: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.feedback-mode-toggle:hover {
+  color: #fff;
+  border-color: rgba(64, 184, 232, 0.35);
+}
+
+.feedback-mode-toggle.is-active {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(230, 50, 138, 0.18) 0%, rgba(64, 184, 232, 0.14) 100%);
+  border-color: rgba(230, 50, 138, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(64, 184, 232, 0.25),
+    0 0 18px rgba(230, 50, 138, 0.2);
+}
+
+.feedback-mode-toggle-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.feedback-mode-toggle.is-active .feedback-mode-toggle-dot {
+  background: #40b8e8;
+  box-shadow: 0 0 8px #e6328a;
+}
+
+.feedback-popup {
+  position: fixed;
+  z-index: 10000;
+  width: min(300px, calc(100vw - 1.5rem));
+  padding: 0.85rem;
+  border-radius: 12px;
+  background: #111118;
+  border: 1px solid rgba(230, 50, 138, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(64, 184, 232, 0.2),
+    0 16px 40px rgba(0, 0, 0, 0.55),
+    0 0 24px rgba(230, 50, 138, 0.12);
+  animation: feedback-popup-in 0.18s ease-out;
+}
+
+@keyframes feedback-popup-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.feedback-popup-context {
+  font-size: 0.68rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  word-break: break-word;
+}
+
+.feedback-popup-context strong {
+  color: rgba(64, 184, 232, 0.9);
+  font-weight: 600;
+}
+
+.feedback-field {
+  display: block;
+  margin-bottom: 0.55rem;
+}
+
+.feedback-field label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.25rem;
+}
+
+.feedback-field input,
+.feedback-field textarea {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 0.84rem;
+  resize: vertical;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.feedback-field input:focus,
+.feedback-field textarea:focus {
+  outline: none;
+  border-color: rgba(64, 184, 232, 0.55);
+  box-shadow: 0 0 0 2px rgba(230, 50, 138, 0.15);
+}
+
+.feedback-field textarea {
+  min-height: 72px;
+}
+
+.feedback-actions {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 0.65rem;
+}
+
+.feedback-btn {
+  flex: 1;
+  padding: 0.48rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.feedback-btn:active {
+  transform: scale(0.98);
+}
+
+.feedback-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed !important;
+}
+
+.feedback-btn-submit {
+  color: #fff;
+  background: linear-gradient(90deg, #e6328a 0%, #9b5de5 50%, #40b8e8 100%);
+}
+
+.feedback-btn-cancel {
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feedback-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  z-index: 10001;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  background: #111118;
+  border: 1px solid rgba(64, 184, 232, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.feedback-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 900px) {
+  .feedback-mode-toggle {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+}
