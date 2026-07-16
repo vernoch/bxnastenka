@@ -4,8 +4,9 @@ body.feedback-mode-active {
   cursor: crosshair;
 }
 
-body.feedback-mode-active * {
-  cursor: crosshair !important;
+body.feedback-mode-active main,
+body.feedback-mode-active main * {
+  cursor: crosshair;
 }
 
 body.feedback-mode-active .feedback-mode-toggle,

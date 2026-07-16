@@ -121,17 +121,33 @@
     let el = node instanceof Element ? node : node.parentElement;
     while (el && el !== document.body) {
       if (el.matches(IGNORE_SELECTOR)) return null;
-      if (el.closest(IGNORE_SELECTOR)) {
+      if (el.tagName === 'DIV' && el.children.length > 4) {
         el = el.parentElement;
         continue;
       }
       if (el.matches(COMMENTABLE_SELECTOR)) {
-        const text = (el.textContent || '').trim();
-        if (text.length >= 2 || el.id) return el;
+        const snippet = getTextSnippet(el, 2);
+        if (snippet.length >= 2 || el.id) return el;
       }
       el = el.parentElement;
     }
     return null;
+  }
+
+  function getTextSnippet(el, maxLen) {
+    maxLen = maxLen || 60;
+    let out = '';
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+      const part = node.textContent.replace(/\s+/g, ' ').trim();
+      if (!part) continue;
+      out = out ? out + ' ' + part : part;
+      if (out.length >= maxLen) break;
+    }
+    out = out.trim();
+    if (!out) return '';
+    return out.length > maxLen ? out.slice(0, maxLen) + '…' : out;
   }
 
   function getElementContext(el) {
@@ -147,8 +163,7 @@
     }
 
     const tag = el.tagName.toLowerCase();
-    const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
-    const snippet = text.slice(0, 60) + (text.length > 60 ? '…' : '');
+    const snippet = getTextSnippet(el, 60);
     if (snippet) {
       parts.push(tag + ':"' + snippet + '"');
     } else {
@@ -156,6 +171,23 @@
     }
 
     return parts.join(' | ');
+  }
+
+  function sendPayload(payload) {
+    const body = JSON.stringify(payload);
+    const blob = new Blob([body], { type: 'text/plain;charset=utf-8' });
+    if (navigator.sendBeacon && navigator.sendBeacon(WEBHOOK_URL, blob)) {
+      return;
+    }
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      keepalive: true,
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: body,
+    }).catch(function (err) {
+      console.error('Feedback submit failed:', err);
+    });
   }
 
   function openPopup(x, y, targetEl) {
@@ -199,7 +231,15 @@
 
     popup.querySelector('.feedback-btn-submit').addEventListener('click', (e) => {
       e.stopPropagation();
+      e.preventDefault();
       submitFeedback(nameInput.value.trim(), commentInput.value.trim());
+    });
+
+    commentInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        submitFeedback(nameInput.value.trim(), commentInput.value.trim());
+      }
     });
 
     popup.addEventListener('click', (e) => e.stopPropagation());
@@ -266,15 +306,9 @@
     closePopup();
     showToast('Odesláno');
 
-    // Odeslání na pozadí — uživatel nečeká na Google Apps Script
-    fetch(WEBHOOK_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(payload),
-    }).catch((err) => {
-      console.error('Feedback submit failed:', err);
-    });
+    setTimeout(function () {
+      sendPayload(payload);
+    }, 0);
   }
 
   if (document.readyState === 'loading') {
