@@ -2834,6 +2834,40 @@ font-size: 0.82rem;
 color: var(--text-muted);
 line-height: 1.45;
 }
+.pva-doc-banner {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem 0.75rem;
+margin-top: 1.25rem;
+}
+.pva-doc-link {
+display: inline-flex;
+align-items: center;
+gap: 0.35rem;
+padding: 0.45rem 0.85rem;
+border: 1px solid rgba(255,255,255,0.14);
+border-radius: 999px;
+background: rgba(255,255,255,0.06);
+font-size: 0.78rem;
+font-weight: 600;
+color: var(--text-light);
+text-decoration: none;
+white-space: nowrap;
+transition: border-color 0.2s, background 0.2s;
+}
+.pva-doc-link:hover {
+border-color: rgba(64,184,232,0.45);
+background: rgba(64,184,232,0.12);
+}
+.pva-doc-link::after {
+content:'→';
+font-size: 0.85em;
+opacity: 0.75;
+}
+.pva-inspirace-gallery {
+padding-top: 1.75rem;
+padding-bottom: 5rem;
+}
 .pva-contact-bar {
 display: flex;
 flex-wrap: wrap;
@@ -3325,16 +3359,17 @@ line-height: 1.55;
 <section class="page-hero">
 <div class="container">
 <h1>Inspirace</h1>
-<p>Reference z veletrhů, eventů a výstavních instalací — vizuální inspirace pro BX EXPO 2027.</p>
+<p>Prezentace a katalogy přímo od PVA EXPO Praha — pro orientaci v areálu, službách a reklamních formátech.</p>
+<div class="pva-doc-banner">
+<a class="pva-doc-link" href="https://pvaexpo.cz/cdn/file/wY6dUXqA7pqDvliz5BzYbmWZ0K5RMIbI.pdf" target="_blank" rel="noopener noreferrer">Prezentace areálu 2026</a>
+<a class="pva-doc-link" href="https://pvaexpo.cz/cdn/file/YIVoyBpcv8Bexd9UfeBMeBTF2vj70Jn1.pdf" target="_blank" rel="noopener noreferrer">Venue, hotel &amp; catering</a>
+<a class="pva-doc-link" href="https://pvaexpo.cz/cdn/file/yXPNUWCsRzI3HbReVSIhJ3UitgeBC6Nc.pdf" target="_blank" rel="noopener noreferrer">Katalog reklamních ploch 2026</a>
+</div>
 </div>
 </section>
 
-<section class="section">
+<section class="section pva-inspirace-gallery">
 <div class="container">
-<div class="section-header">
-<h2 class="section-title">Galerie</h2>
-<p class="section-desc">Fotky z akcí a výstav — postupně od scény po detaily prostoru.</p>
-</div>
 <div class="pva-gallery-stack">
 <figure>
 <img src="assets/fotky/2025-11-06_CPE_007.jpg" alt="Eventová scéna — listopad 2025" loading="lazy">
