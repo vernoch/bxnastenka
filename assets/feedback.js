@@ -96,15 +96,19 @@
       (e) => {
         if (!modeActive) return;
 
-        if (e.target.closest('.feedback-mode-toggle')) return;
-        if (e.target.closest('.feedback-popup')) return;
+        const eventTarget = e.target instanceof Element ? e.target : e.target.parentElement;
+        if (!eventTarget) return;
+
+        if (eventTarget.closest('.feedback-mode-toggle')) return;
+        if (eventTarget.closest('.feedback-popup')) return;
 
         e.preventDefault();
         e.stopPropagation();
 
-        const target = findCommentableTarget(e.target);
+        const target = findCommentableTarget(eventTarget);
         if (!target) return;
 
+        clearHoverHighlight();
         openPopup(e.clientX, e.clientY, target);
       },
       true
@@ -121,13 +125,13 @@
     let el = node instanceof Element ? node : node.parentElement;
     while (el && el !== document.body) {
       if (el.matches(IGNORE_SELECTOR)) return null;
-      if (el.tagName === 'DIV' && el.children.length > 4) {
-        el = el.parentElement;
-        continue;
-      }
       if (el.matches(COMMENTABLE_SELECTOR)) {
         const snippet = getTextSnippet(el, 2);
         if (snippet.length >= 2 || el.id) return el;
+      }
+      if (el.tagName === 'DIV' && el.children.length > 4) {
+        el = el.parentElement;
+        continue;
       }
       el = el.parentElement;
     }
