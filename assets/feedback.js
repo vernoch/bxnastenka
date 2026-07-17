@@ -108,7 +108,6 @@
         const target = findCommentableTarget(eventTarget);
         if (!target) return;
 
-        clearHoverHighlight();
         openPopup(e.clientX, e.clientY, target);
       },
       true
