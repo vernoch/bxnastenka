@@ -3029,7 +3029,7 @@ line-height: 1.55;
 <button type="button" class="feedback-mode-toggle" aria-pressed="false">
 <span class="feedback-mode-toggle-dot" aria-hidden="true"></span>Režim připomínek
 </button>
-<button class="mobile-nav-toggle" aria-label="Menu">☰</button>
+<button type="button" class="mobile-nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
 </div>
 </header>
 
@@ -5207,7 +5207,10 @@ if (location.hash!=='#' + id) history.replaceState(null,'','#' + id);
 const header = document.querySelector('.site-header');
 if (header) header.classList.remove('nav-open');
 const toggle = document.querySelector('.mobile-nav-toggle');
-if (toggle) toggle.textContent ='☰';
+if (toggle) {
+toggle.textContent ='☰';
+toggle.setAttribute('aria-expanded','false');
+}
 }
 
 
@@ -5264,7 +5267,9 @@ const header = document.querySelector('.site-header');
 if (toggle && header) {
 toggle.addEventListener('click', () => {
 header.classList.toggle('nav-open');
-toggle.textContent = header.classList.contains('nav-open')?'✕':'☰';
+const open = header.classList.contains('nav-open');
+toggle.textContent = open ? '✕' : '☰';
+toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
 });
 }
 });

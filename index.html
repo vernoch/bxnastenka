@@ -1206,7 +1206,7 @@ width: 100%;
 .logo-img.logo-img--chevrons { height: 46px; min-height: 46px; }
 .nav-desktop { display: none; }
 .mobile-nav-toggle { display: block; }
-.site-header.nav-open.nav-desktop {
+.site-header.nav-open .nav-desktop {
 display: flex;
 flex-direction: column;
 position: absolute;
@@ -1216,6 +1216,7 @@ right: 0;
 background: var(--hero-bg);
 padding: 1rem;
 border-bottom: 1px solid rgba(255,255,255,0.1);
+z-index: 101;
 }
 .header-inner.btn-primary { display: none; }
 }
@@ -1382,7 +1383,7 @@ margin-top: auto;
 <a href="#vstupenky" data-page="vstupenky" class="nav-link">Vstupenky</a>
 <a href="#kalkulacka" data-page="kalkulacka" class="nav-link">Kalkulačka</a>
 </nav>
-<button class="mobile-nav-toggle" aria-label="Menu">☰</button>
+<button type="button" class="mobile-nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
 </div>
 </header>
 
@@ -3287,7 +3288,10 @@ if (location.hash!=='#' + id) history.replaceState(null,'','#' + id);
 const header = document.querySelector('.site-header');
 if (header) header.classList.remove('nav-open');
 const toggle = document.querySelector('.mobile-nav-toggle');
-if (toggle) toggle.textContent ='☰';
+if (toggle) {
+toggle.textContent ='☰';
+toggle.setAttribute('aria-expanded','false');
+}
 }
 
 
@@ -3386,7 +3390,9 @@ const header = document.querySelector('.site-header');
 if (toggle && header) {
 toggle.addEventListener('click', () => {
 header.classList.toggle('nav-open');
-toggle.textContent = header.classList.contains('nav-open')?'✕':'☰';
+const open = header.classList.contains('nav-open');
+toggle.textContent = open ? '✕' : '☰';
+toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
 });
 }
 
