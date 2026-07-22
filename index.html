@@ -1206,7 +1206,7 @@ width: 100%;
 .logo-img.logo-img--chevrons { height: 46px; min-height: 46px; }
 .nav-desktop { display: none; }
 .mobile-nav-toggle { display: block; }
-.site-header.nav-open .nav-desktop {
+.site-header.nav-open.nav-desktop {
 display: flex;
 flex-direction: column;
 position: absolute;
@@ -1216,37 +1216,12 @@ right: 0;
 background: var(--hero-bg);
 padding: 1rem;
 border-bottom: 1px solid rgba(255,255,255,0.1);
-z-index: 101;
 }
 .header-inner.btn-primary { display: none; }
 }
 
 .page-view { display: none; }
 .page-view.active { display: block; }
-
-/* ── Kalendář ── */
-.calendar-legend { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; margin-bottom: 2rem; }
-.calendar-legend-item { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); }
-.calendar-dot { width: 0.65rem; height: 0.65rem; border-radius: 50%; background: var(--bx-purple); flex-shrink: 0; }
-.calendar-dot--bx { background: var(--bx-pink); }
-.calendar-years { display: flex; flex-direction: column; gap: 2.5rem; }
-.calendar-year { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow); overflow: hidden; }
-.calendar-year-title { font-size: 1.35rem; font-weight: 900; padding: 1.1rem 1.5rem; background: linear-gradient(90deg, rgba(230,50,138,0.08), rgba(155,93,229,0.08)); border-bottom: 1px solid var(--border); }
-.calendar-month-row { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; padding: 0.95rem 1.5rem; border-top: 1px solid var(--border); align-items: start; }
-.calendar-month-row:first-of-type { border-top: 0; }
-.calendar-month-name { font-size: 0.88rem; font-weight: 800; color: var(--accent-2); padding-top: 0.15rem; }
-.calendar-events-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
-.calendar-item { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.75rem; padding: 0.65rem 0.85rem; border-radius: 10px; background: var(--surface-muted); border: 1px solid var(--border); }
-.calendar-item--bx { background: linear-gradient(135deg, rgba(230,50,138,0.12), rgba(155,93,229,0.1)); border: 2px solid rgba(230,50,138,0.45); box-shadow: 0 0 0 1px rgba(230,50,138,0.08); }
-.calendar-item-date { font-size: 0.78rem; font-weight: 800; line-height: 1.35; color: var(--accent-2); }
-.calendar-item--bx .calendar-item-date { color: var(--bx-pink); }
-.calendar-item-title { font-size: 0.92rem; font-weight: 800; line-height: 1.35; }
-.calendar-item-meta { display: block; margin-top: 0.15rem; font-size: 0.76rem; color: var(--text-muted); }
-.calendar-empty { margin: 0; font-size: 0.82rem; color: var(--text-muted); opacity: 0.55; padding: 0.2rem 0; }
-@media (max-width: 640px) {
-.calendar-month-row { grid-template-columns: 1fr; gap: 0.45rem; }
-.calendar-item { grid-template-columns: 5.5rem 1fr; }
-}
 
 /* ── Zážitkové zóny / Naše sekce ── */
 .zone-draft-banner {
@@ -1404,11 +1379,10 @@ margin-top: auto;
 <a href="#archetypy" data-page="archetypy" class="nav-link">Modely konkurence</a>
 <a href="#model" data-page="model" class="nav-link">Náš model</a>
 <a href="#sekce" data-page="sekce" class="nav-link">Naše sekce</a>
-<a href="#kalendar" data-page="kalendar" class="nav-link">Kalendář</a>
 <a href="#vstupenky" data-page="vstupenky" class="nav-link">Vstupenky</a>
 <a href="#kalkulacka" data-page="kalkulacka" class="nav-link">Kalkulačka</a>
 </nav>
-<button type="button" class="mobile-nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+<button class="mobile-nav-toggle" aria-label="Menu">☰</button>
 </div>
 </header>
 
@@ -2494,37 +2468,6 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 </div>
 </section>
 </div>
-<div id="page-kalendar" class="page-view">
-<section class="page-hero">
-<div class="container">
-<div class="hero-eyebrow">Strategický přehled · srpen 2026 – 2027</div>
-<h1>Kalendář</h1>
-<p>Přehled všech měsíců — konkurenční akce s potvrzeným termínem a zvýrazněný termín BX EXPO.</p>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<div class="calendar-legend" aria-label="Legenda kalendáře">
-<span class="calendar-legend-item"><span class="calendar-dot"></span> Konkurence</span>
-<span class="calendar-legend-item"><span class="calendar-dot calendar-dot--bx"></span> BX EXPO</span>
-</div>
-<div class="calendar-years">
-<section class="calendar-year" aria-label="Kalendář 2026 od srpna">
-<h2 class="calendar-year-title">2026 · od srpna</h2>
-<div class="calendar-month-row"><div class="calendar-month-name">Srpen</div><div><p class="calendar-empty">—</p></div></div>
-<div class="calendar-month-row"><div class="calendar-month-name">Září</div><div><ul class="calendar-events-list"><li class="calendar-item"><div class="calendar-item-date">14. 9.</div><div><div class="calendar-item-title">Planeta AI</div><span class="calendar-item-meta">Praha · O2 universum · konference</span></div></li><li class="calendar-item"><div class="calendar-item-date">15.–17. 9.</div><div><div class="calendar-item-title">NRF Europe</div><span class="calendar-item-meta">Paříž · retail veletrh</span></div></li><li class="calendar-item"><div class="calendar-item-date">23.–24. 9.</div><div><div class="calendar-item-title">DMEXCO</div><span class="calendar-item-meta">Kolín n. R. · digitální marketing</span></div></li></ul></div></div>
-<div class="calendar-month-row"><div class="calendar-month-name">Říjen</div><div><ul class="calendar-events-list"><li class="calendar-item"><div class="calendar-item-date">1.–3. 10.</div><div><div class="calendar-item-title">Innovation Week</div><span class="calendar-item-meta">Praha · konference & expo</span></div></li><li class="calendar-item"><div class="calendar-item-date">15. 10.</div><div><div class="calendar-item-title">Reshoper</div><span class="calendar-item-meta">Praha · e-commerce veletrh</span></div></li><li class="calendar-item"><div class="calendar-item-date">20. 10.</div><div><div class="calendar-item-title">Event Fest VISION</div><span class="calendar-item-meta">Praha · konference</span></div></li></ul></div></div>
-<div class="calendar-month-row"><div class="calendar-month-name">Listopad</div><div><ul class="calendar-events-list"><li class="calendar-item"><div class="calendar-item-date">9.–12. 11.</div><div><div class="calendar-item-title">Web Summit</div><span class="calendar-item-meta">Lisabon · tech konference</span></div></li></ul></div></div>
-<div class="calendar-month-row"><div class="calendar-month-name">Prosinec</div><div><p class="calendar-empty">—</p></div></div>
-</section>
-<section class="calendar-year" aria-label="Kalendář 2027">
-<h2 class="calendar-year-title">2027</h2>
-<div class="calendar-month-row"><div class="calendar-month-name">Leden</div><div><p class="calendar-empty">—</p></div></div><div class="calendar-month-row"><div class="calendar-month-name">Únor</div><div><ul class="calendar-events-list"><li class="calendar-item"><div class="calendar-item-date">2. 2.</div><div><div class="calendar-item-title">Czech Online Expo — workshopový den</div><span class="calendar-item-meta">Praha · PVA EXPO</span></div></li><li class="calendar-item"><div class="calendar-item-date">3.–4. 2.</div><div><div class="calendar-item-title">Czech Online Expo — hlavní program</div><span class="calendar-item-meta">Praha · veletrh & konference</span></div></li><li class="calendar-item"><div class="calendar-item-date">16.–18. 2.</div><div><div class="calendar-item-title">EuroCIS</div><span class="calendar-item-meta">Düsseldorf · retail technologie</span></div></li></ul></div></div><div class="calendar-month-row"><div class="calendar-month-name">Březen</div><div><p class="calendar-empty">—</p></div></div><div class="calendar-month-row"><div class="calendar-month-name">Duben</div><div><ul class="calendar-events-list"><li class="calendar-item"><div class="calendar-item-date">20.–21. 4.</div><div><div class="calendar-item-title">Marketing Festival</div><span class="calendar-item-meta">Brno · Janáčkovo divadlo · festival</span></div></li><li class="calendar-item calendar-item--bx"><div class="calendar-item-date">28.–30. 4.</div><div><div class="calendar-item-title">BX EXPO</div><span class="calendar-item-meta">PVA EXPO Praha · naše akce</span></div></li></ul></div></div><div class="calendar-month-row"><div class="calendar-month-name">Květen</div><div><ul class="calendar-events-list"><li class="calendar-item"><div class="calendar-item-date">3.–5. 5.</div><div><div class="calendar-item-title">OMR Festival</div><span class="calendar-item-meta">Hamburk · digitální marketing</span></div></li><li class="calendar-item"><div class="calendar-item-date">26.–28. 5.</div><div><div class="calendar-item-title">WebExpo</div><span class="calendar-item-meta">Praha · Palác Lucerna · tech konference</span></div></li></ul></div></div><div class="calendar-month-row"><div class="calendar-month-name">Červen</div><div><ul class="calendar-events-list"><li class="calendar-item"><div class="calendar-item-date">1.–3. 6.</div><div><div class="calendar-item-title">Shoptalk Europe</div><span class="calendar-item-meta">Barcelona · retail & e-commerce</span></div></li></ul></div></div><div class="calendar-month-row"><div class="calendar-month-name">Červenec</div><div><ul class="calendar-events-list"><li class="calendar-item"><div class="calendar-item-date">6.–8. 7.</div><div><div class="calendar-item-title">MAD//Fest London</div><span class="calendar-item-meta">Londýn · marketing festival</span></div></li></ul></div></div><div class="calendar-month-row"><div class="calendar-month-name">Srpen</div><div><p class="calendar-empty">—</p></div></div><div class="calendar-month-row"><div class="calendar-month-name">Září</div><div><p class="calendar-empty">—</p></div></div><div class="calendar-month-row"><div class="calendar-month-name">Říjen</div><div><p class="calendar-empty">—</p></div></div><div class="calendar-month-row"><div class="calendar-month-name">Listopad</div><div><p class="calendar-empty">—</p></div></div><div class="calendar-month-row"><div class="calendar-month-name">Prosinec</div><div><p class="calendar-empty">—</p></div></div>
-</section>
-</div>
-</div>
-</section>
-</div>
 <div id="page-vstupenky" class="page-view">
 <section class="page-hero">
 <div class="container">
@@ -2793,7 +2736,6 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <a href="#benchmarky" data-page="benchmarky" class="footer-link">Benchmarky</a>
 <a href="#model" data-page="model" class="footer-link">Náš model</a>
 <a href="#sekce" data-page="sekce" class="footer-link">Naše sekce</a>
-<a href="#kalendar" data-page="kalendar" class="footer-link">Kalendář</a>
 <a href="#vstupenky" data-page="vstupenky" class="footer-link">Vstupenky</a>
 <a href="#kalkulacka" data-page="kalkulacka" class="footer-link">Kalkulačka</a>
 </div>
@@ -3325,7 +3267,6 @@ benchmarky:'Benchmarky – BX EXPO',
 archetypy:'Modely konkurence – BX EXPO',
 model:'Náš model – BX EXPO',
 sekce:'Naše sekce – BX EXPO',
-kalendar:'Kalendář – BX EXPO',
 vstupenky:'Vstupenky – BX EXPO',
 kalkulacka:'Kalkulačka – BX EXPO',
 };
@@ -3346,10 +3287,7 @@ if (location.hash!=='#' + id) history.replaceState(null,'','#' + id);
 const header = document.querySelector('.site-header');
 if (header) header.classList.remove('nav-open');
 const toggle = document.querySelector('.mobile-nav-toggle');
-if (toggle) {
-toggle.textContent ='☰';
-toggle.setAttribute('aria-expanded','false');
-}
+if (toggle) toggle.textContent ='☰';
 }
 
 
@@ -3448,9 +3386,7 @@ const header = document.querySelector('.site-header');
 if (toggle && header) {
 toggle.addEventListener('click', () => {
 header.classList.toggle('nav-open');
-const open = header.classList.contains('nav-open');
-toggle.textContent = open ? '✕' : '☰';
-toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+toggle.textContent = header.classList.contains('nav-open')?'✕':'☰';
 });
 }
 
