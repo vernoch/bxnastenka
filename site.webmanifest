@@ -1,0 +1,25 @@
+{
+  "name": "BX EXPO Dashboard",
+  "short_name": "BX EXPO",
+  "icons": [
+    {
+      "src": "/bxnastenka/assets/icons/bx-bookmark-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/bxnastenka/assets/icons/bx-bookmark-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/bxnastenka/assets/icons/bx-favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "display": "browser",
+  "start_url": "/bxnastenka/prototyp.html",
+  "theme_color": "#0a0a12",
+  "background_color": "#0a0a12"
+}
