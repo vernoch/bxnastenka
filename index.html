@@ -1223,30 +1223,7 @@ border-bottom: 1px solid rgba(255,255,255,0.1);
 .page-view { display: none; }
 .page-view.active { display: block; }
 
-/* ── Propagace / marketing inspirace ── */
-.prop-draft-banner { background: linear-gradient(135deg, rgba(64,184,232,0.08) 0%, rgba(155,93,229,0.1) 100%); border: 1px dashed rgba(64,184,232,0.35); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
-.prop-draft-banner p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
-.prop-draft-banner strong { color: var(--text); }
-.prop-inspo-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 960px; }
-.prop-inspo-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-.prop-inspo-header { padding: 1.25rem 1.5rem 0; }
-.prop-inspo-header h3 { font-size: 1.1rem; margin-bottom: 0.35rem; }
-.prop-inspo-meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem; }
-.prop-inspo-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
-.prop-inspo-tag { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.25rem 0.55rem; border-radius: 999px; background: rgba(155,93,229,0.12); color: var(--accent); }
-.prop-inspo-body { padding: 0 1.5rem 1.25rem; }
-.prop-inspo-body p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 0.75rem; }
-.prop-inspo-body ul { list-style: none; margin: 0.75rem 0 0; }
-.prop-inspo-body li { font-size: 0.82rem; color: var(--text-muted); padding: 0.2rem 0; }
-.prop-inspo-body li::before { content:'→'; color: var(--accent); margin-right: 0.4rem; }
-.prop-inspo-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; padding: 0 1rem 1.25rem; }
-@media (max-width: 720px) { .prop-inspo-shots { grid-template-columns: 1fr; } }
-.prop-inspo-shot { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); background: #111; }
-.prop-inspo-shot img { width: 100%; height: auto; display: block; }
-.prop-inspo-shot figcaption { font-size: 0.72rem; color: var(--text-muted); padding: 0.5rem 0.65rem; background: var(--surface-muted); line-height: 1.4; }
-.prop-add-slot { border: 2px dashed var(--border); border-radius: var(--radius-lg); padding: 2.5rem 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1.5rem; }
-
-/* ── Zážitkové zóny ── */
+/* ── Zážitkové zóny / Naše sekce ── */
 .zone-draft-banner {
 background: linear-gradient(135deg, rgba(230,50,138,0.08) 0%, rgba(155,93,229,0.1) 50%, rgba(64,184,232,0.08) 100%);
 border: 1px dashed rgba(155,93,229,0.35);
@@ -1401,8 +1378,7 @@ margin-top: auto;
 <a href="#benchmarky" data-page="benchmarky" class="nav-link">Benchmarky</a>
 <a href="#archetypy" data-page="archetypy" class="nav-link">Modely konkurence</a>
 <a href="#model" data-page="model" class="nav-link">Náš model</a>
-<a href="#zony" data-page="zony" class="nav-link">Naše zóny</a>
-<a href="#propagace" data-page="propagace" class="nav-link">Propagace</a>
+<a href="#sekce" data-page="sekce" class="nav-link">Naše sekce</a>
 <a href="#vstupenky" data-page="vstupenky" class="nav-link">Vstupenky</a>
 <a href="#kalkulacka" data-page="kalkulacka" class="nav-link">Kalkulačka</a>
 </nav>
@@ -1425,8 +1401,8 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 </div>
 <div class="stats-row">
 <div><div class="stat-num">8</div><div class="stat-label">modely konkurence</div></div>
-<div><div class="stat-num">9</div><div class="stat-label">výstavních zón</div></div>
-<div><div class="stat-num">21</div><div class="stat-label">analyzovaných akcí</div></div>
+<div><div class="stat-num">9</div><div class="stat-label">výstavních sekcí</div></div>
+<div><div class="stat-num">18</div><div class="stat-label">analyzovaných akcí</div></div>
 <div><div class="stat-num">2</div><div class="stat-label">oficiální balíčky</div></div>
 </div>
 </div>
@@ -1441,7 +1417,7 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="feature-grid">
 <div class="feature-card">
 <h3>Benchmarky</h3>
-<p>21 analyzovaných akcí – EuroShop, OMR, EMS, FESPA, WebExpo, Planeta AI, Marketing Festival a další. Přední veletrhy používají opakující se modely cenotvorby.</p>
+<p>18 analyzovaných akcí – EuroShop, OMR, EMS, FESPA, WebExpo, Planeta AI, Marketing Festival a další. Přední veletrhy používají opakující se modely cenotvorby.</p>
 </div>
 <div class="feature-card">
 <h3>Modely konkurence</h3>
@@ -1449,7 +1425,7 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 </div>
 <div class="feature-card">
 <h3>Náš model</h3>
-<p>9 výstavních zón a oficiální Gold / Silver partnerské balíčky pro vystavovatele.</p>
+<p>9 výstavních sekcí a oficiální Gold / Silver partnerské balíčky pro vystavovatele.</p>
 </div>
 <div class="feature-card">
 <h3>Vstupenky</h3>
@@ -1460,12 +1436,8 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <p>Interaktivní konfigurátor ceny stánku v reálnem čase. Vystavovatel vidí, z čeho se cena skládá.</p>
 </div>
 <div class="feature-card">
-<h3>Naše zóny</h3>
+<h3>Naše sekce</h3>
 <p>Nástřel 9 zážitkových zón — nápady, layout na výstavišti a orientační partnerství pro obchodní schůzky.</p>
-</div>
-<div class="feature-card">
-<h3>Propagace</h3>
-<p>Inspirace od konkurence — placené kampaně s lead dotazníky, Facebook/Google Ads a další formáty k diskusi.</p>
 </div>
 </div>
 </div>
@@ -1504,7 +1476,7 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <a href="#benchmarky" data-page="benchmarky" class="nav-card">
 <div class="nav-card-num">01</div>
 <h3>Benchmarky</h3>
-<p>21 analyzovaných akcí – EuroShop, OMR, EMS, FESPA, WebExpo, Planeta AI, Marketing Festival a další.</p>
+<p>18 analyzovaných akcí – EuroShop, OMR, EMS, FESPA, WebExpo, Planeta AI, Marketing Festival a další.</p>
 <span class="nav-card-link">Zobrazit →</span>
 </a>
 <a href="#archetypy" data-page="archetypy" class="nav-card">
@@ -1516,29 +1488,23 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <a href="#model" data-page="model" class="nav-card">
 <div class="nav-card-num">03</div>
 <h3>Náš model</h3>
-<p>9 výstavních zón, oficiální Gold / Silver balíčky pro vystavovatele.</p>
+<p>9 výstavních sekcí, oficiální Gold / Silver balíčky pro vystavovatele.</p>
 <span class="nav-card-link">Zobrazit →</span>
 </a>
-<a href="#zony" data-page="zony" class="nav-card">
+<a href="#sekce" data-page="sekce" class="nav-card">
 <div class="nav-card-num">04</div>
-<h3>Naše zóny</h3>
-<p>Nástřel zážitkových zón — jak může vypadat každá ze 9 zón na výstavišti.</p>
-<span class="nav-card-link">Zobrazit →</span>
-</a>
-<a href="#propagace" data-page="propagace" class="nav-card">
-<div class="nav-card-num">05</div>
-<h3>Propagace</h3>
-<p>Inspirace od konkurence — placené kampaně, lead formuláře, reklamní formáty.</p>
+<h3>Naše sekce</h3>
+<p>Nástřel zážitkových zón — jak může vypadat každá ze 9 sekcí na výstavišti.</p>
 <span class="nav-card-link">Zobrazit →</span>
 </a>
 <a href="#vstupenky" data-page="vstupenky" class="nav-card">
-<div class="nav-card-num">06</div>
+<div class="nav-card-num">05</div>
 <h3>Vstupenky</h3>
 <p>VIP, Business a Basic — tři úrovně pro návštěvníky včetně kurátorovaného VIP.</p>
 <span class="nav-card-link">Zobrazit →</span>
 </a>
 <a href="#kalkulacka" data-page="kalkulacka" class="nav-card">
-<div class="nav-card-num">07</div>
+<div class="nav-card-num">06</div>
 <h3>Kalkulačka</h3>
 <p>Interaktivní konfigurátor ceny stánku v reálném čase.</p>
 <span class="nav-card-link">Zobrazit →</span>
@@ -1851,56 +1817,6 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <a href="https://www.marketingfestival.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
 </div>
 
-<div class="card" data-category="veletrh">
-<div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
-<div><h3>World of AI &amp; Big Data Expo</h3><p class="card-sub">Varšava · Ptak Warsaw Expo</p></div>
-<span class="badge badge-i">veletrh</span>
-</div>
-<p style="margin-top:0.75rem">Premiérový mezinárodní veletrh AI a databázových technologií (22.–24. 9. 2026). Organizátor Ptak Warsaw Expo — stejný model souběžných specializovaných veletrhů v jednom termínu.</p>
-<ul class="benchmark-list">
-<li>Souběžně: polygrafie, kybernetická bezpečnost, logistika, datová centra, HR tech, krmiva</li>
-<li>Google Ads CPC + Facebook lead kampaně s dotazníkem</li>
-<li>Personalizovaný landing: vystavovatel vs. návštěvník, velikost stánku</li>
-<li>Multijazyčný web (CS, EN, PL, UA…)</li>
-</ul>
-<div class="insight-box"><strong>Insight:</strong> Placená propagace rovnou sbírá kvalifikované leady přes dotazník — ne obecný kontakt, ale intent (vystavovatel + velikost stánku). Souběh tematických veletrhů navyšuje návštěvnost bez nákladů na samostatné akce.</div>
-<a href="https://worldofaibigdataexpo.com/cs/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
-</div>
-
-<div class="card" data-category="festival">
-<div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
-<div><h3>CERNA AI Festival</h3><p class="card-sub">Ostrava · Gong</p></div>
-<span class="badge badge-i">festival</span>
-</div>
-<p style="margin-top:0.75rem">Největší AI akce svého druhu v Česku (15. 9. 2026) — 1 500+ účastníků, 70+ expertů, 7 stagí, expo zóna a 12+ workshopů. Pořádá Černá kostka (Moravskoslezský kraj).</p>
-<ul class="benchmark-list">
-<li>Vstupenky: Early Bird 1 390 Kč → Standard 2 190 → Last minute 3 190 Kč</li>
-<li>V ceně: záznamy, PDF, AI terminál, oběd, expo zóna</li>
-<li>Prodej přes Colosseum Ticket (B2C middleware)</li>
-<li>Partnerství: hlavní, mediální, za podpory (AWS, ČS, ČAUI…)</li>
-<li>Networking app Eventee — registrace na účastníka, ne na e-mail</li>
-</ul>
-<div class="insight-box"><strong>Insight:</strong> Prodávají balíček hodnoty, ne jen vstup — záznamy a materiály v ceně snižují námitky. Early Bird s limitem 400 ks vytváří urgenci. Expo zóna + 7 stagí = hybrid konference a veletrhu bez pronájmu m².</div>
-<a href="https://cernaaifestival.cz/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
-</div>
-
-<div class="card" data-category="konference">
-<div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
-<div><h3>DIGIFEST</h3><p class="card-sub">Praha · Cubex</p></div>
-<span class="badge badge-i">konference</span>
-</div>
-<p style="margin-top:0.75rem">Hybridní B2B akce — veletrh, konference, workshopy a nová AI zóna (14. 10. 2026). Pořadatel Dáváme s.r.o. Model freemium + prémiové balíčky s umělou scarcity.</p>
-<ul class="benchmark-list">
-<li>Basic 1 000 Kč · týmový vstup 600 Kč/os.</li>
-<li>Standard 2 000 Kč (+1 vstup zdarma, nahrávky, kontakty vystavovatelů)</li>
-<li>VIP 12 500 Kč — pouze 30 ks (salónek, konzultace, fast-track)</li>
-<li>Expo ZDARMA 14:00–17:00 · waiting list na uvolněná místa</li>
-<li>Referral: pozvi kolegu → Fast-Track + losování o VIP/Standard</li>
-</ul>
-<div class="insight-box"><strong>Insight:</strong> Víceúrovňový vstup s jasným upsell chainem (free odpoledne → Basic → Standard → VIP). Waiting list a limit 30 VIP vytváří urgenci. AI zóna jako novinka 2026 = prémiový diferenciátor v ceně Basic.</div>
-<a href="https://www.digifest.cz/rocnik-2026/vstupenky/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
-</div>
-
 </div>
 </div>
 </section>
@@ -2046,7 +1962,7 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <section class="section section-muted">
 <div class="container">
 <div class="section-header">
-<h2 class="section-title">9 výstavních zón</h2>
+<h2 class="section-title">9 výstavních sekcí</h2>
 <p class="section-desc">Struktura podle nomenklatury BX EXPO — use-cases, nikoliv zastaralé obory.</p>
 </div>
 <div class="card-grid">
@@ -2073,7 +1989,7 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="ticket-grid">
 
 <div class="ticket-card highlight official" data-package="gold">
-<span class="package-badge">Exkluzivní · max 1 / zóna</span>
+<span class="package-badge">Exkluzivní · max 1 / sekce</span>
 <h3>Gold</h3>
 <p class="ticket-sub">Lídři trhu · maximální viditelnost</p>
 <div class="ticket-price">500 000 Kč</div>
@@ -2092,7 +2008,7 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 </div>
 
 <div class="ticket-card official" data-package="silver">
-<span class="package-badge">Max 3 / zóna</span>
+<span class="package-badge">Max 3 / sekce</span>
 <h3>Silver</h3>
 <p class="ticket-sub">Zavedené značky · silná viditelnost</p>
 <div class="ticket-price">200 000 Kč</div>
@@ -2242,32 +2158,32 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 </div>
 </section>
 </div>
-<div id="page-zony" class="page-view">
+<div id="page-sekce" class="page-view">
 <section class="page-hero">
 <div class="container">
 <div class="hero-eyebrow">Zážitkové zóny · Nástřel</div>
-<h1>Naše zóny</h1>
-<p>Pracovní koncept, jak může každá z 9 výstavních zón vypadat na PVA EXPO — ne katalog stánků, ale zážitkové zóny s obsahem, demy a programem. Materiál pro obchodní schůzky s partnery.</p>
+<h1>Naše sekce</h1>
+<p>Pracovní koncept, jak může každá z 9 výstavních sekcí vypadat na PVA EXPO — ne katalog stánků, ale zážitkové zóny s obsahem, demy a programem. Materiál pro obchodní schůzky s partnery.</p>
 </div>
 </section>
 
 <section class="section">
 <div class="container">
 <div class="zone-draft-banner">
-<p><strong>Status: nástřel.</strong> Popisy layoutu a partnerství jsou orientační — slouží k diskusi s vystavovateli a anchor partnery. Finální podoba zón vznikne ve spolupráci s klíčovými partnery zón (vč. ČAUI pro AI &amp; Martech).</p>
+<p><strong>Status: nástřel.</strong> Popisy layoutu a partnerství jsou orientační — slouží k diskusi s vystavovateli a anchor partnery. Finální podoba zón vznikne ve spolupráci s klíčovými partnery sekcí (vč. ČAUI pro AI &amp; Martech).</p>
 </div>
 
 <div class="section-header">
 <div class="section-eyebrow">9 zón · 1 veletrh</div>
 <h2 class="section-title">Jak může vypadat výstaviště</h2>
-<p class="section-desc">Každá zóna = tematická zóna s vlastním layoutem, programem a typem partnerů. Cíl: návštěvník projde příběhem značky, ne jen uličkou stánků.</p>
+<p class="section-desc">Každá sekce = tematická zóna s vlastním layoutem, programem a typem partnerů. Cíl: návštěvník projde příběhem značky, ne jen uličkou stánků.</p>
 </div>
 
 <div class="zone-grid">
 
 <article class="zone-card">
 <div class="zone-card-header">
-<div class="zone-card-num">Zóna 01</div>
+<div class="zone-card-num">Sekce 01</div>
 <h3>Print &amp; Production 2.0</h3>
 <div class="zone-card-tags">
 <span class="zone-tag">live výroba</span>
@@ -2290,15 +2206,15 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="zone-block-label">Náhled zóny na výstavišti</div>
 <p>Otevřená produkční ulička — stroje viditelné z uličky, vzorkovna materiálů po obvodu, objednávkový kiosk u vstupu do zóny.</p>
 <div class="zone-layout-img-wrap"><img src="assets/zones/zone-01-print.png" alt="Náhled zóny Print &amp; Production 2.0 — live tisková linka ve výstavní hale" class="zone-layout-img" loading="lazy"></div>
-<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem zóny.</p>
+<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
 </div>
-<p class="zone-partner-hint"><strong>Partner zóny:</strong> výrobce tiskových technologií · integrátor workflow · orientačně 500k–1,2 mil. Kč</p>
+<p class="zone-partner-hint"><strong>Partner sekce:</strong> výrobce tiskových technologií · integrátor workflow · orientačně 500k–1,2 mil. Kč</p>
 </div>
 </article>
 
 <article class="zone-card">
 <div class="zone-card-header">
-<div class="zone-card-num">Zóna 02</div>
+<div class="zone-card-num">Sekce 02</div>
 <h3>Packaging &amp; Sustainability</h3>
 <div class="zone-card-tags">
 <span class="zone-tag">ESG</span>
@@ -2321,15 +2237,15 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="zone-block-label">Náhled zóny na výstavišti</div>
 <p>Kurátorská galerie — stěny s materiálovými vzorky, uprostřed stoly s reálnými obaly. AR body spouštěné mobilem u vybraných exponátů.</p>
 <div class="zone-layout-img-wrap"><img src="assets/zones/zone-02-packaging.png" alt="Náhled zóny Packaging &amp; Sustainability — galerie materiálů a obalů" class="zone-layout-img" loading="lazy"></div>
-<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem zóny.</p>
+<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
 </div>
-<p class="zone-partner-hint"><strong>Partner zóny:</strong> Mondi, obalářská asociace SYBA · orientačně 500k–1 mil. Kč</p>
+<p class="zone-partner-hint"><strong>Partner sekce:</strong> Mondi, obalářská asociace SYBA · orientačně 500k–1 mil. Kč</p>
 </div>
 </article>
 
 <article class="zone-card">
 <div class="zone-card-header">
-<div class="zone-card-num">Zóna 03</div>
+<div class="zone-card-num">Sekce 03</div>
 <h3>Retail &amp; Space</h3>
 <div class="zone-card-tags">
 <span class="zone-tag">prodejna budoucnosti</span>
@@ -2352,15 +2268,15 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="zone-block-label">Náhled zóny na výstavišti</div>
 <p>Modulární prodejní box uprostřed haly — návštěvník projde „obchodem“. LED obrazovky na obvodu, POP/POS prvky v kontextu.</p>
 <div class="zone-layout-img-wrap"><img src="assets/zones/zone-03-retail.png" alt="Náhled zóny Retail &amp; Space — mini prodejna budoucnosti" class="zone-layout-img" loading="lazy"></div>
-<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem zóny.</p>
+<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
 </div>
-<p class="zone-partner-hint"><strong>Partner zóny:</strong> Samsung, LG, Zebra, POPAI · orientačně 800k–1,5 mil. Kč</p>
+<p class="zone-partner-hint"><strong>Partner sekce:</strong> Samsung, LG, Zebra, POPAI · orientačně 800k–1,5 mil. Kč</p>
 </div>
 </article>
 
 <article class="zone-card">
 <div class="zone-card-header">
-<div class="zone-card-num">Zóna 04</div>
+<div class="zone-card-num">Sekce 04</div>
 <h3>Digital &amp; Content</h3>
 <div class="zone-card-tags">
 <span class="zone-tag">content studio</span>
@@ -2383,15 +2299,15 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="zone-block-label">Náhled zóny na výstavišti</div>
 <p>Studio uprostřed — kamery, světla, editační stanice. Kolem „feed wall“ s live obsahem generovaným během veletrhu.</p>
 <div class="zone-layout-img-wrap"><img src="assets/zones/zone-04-digital.png" alt="Náhled zóny Digital &amp; Content — content studio a video stěny" class="zone-layout-img" loading="lazy"></div>
-<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem zóny.</p>
+<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
 </div>
-<p class="zone-partner-hint"><strong>Partner zóny:</strong> produkční agentura, Adobe, Runway · orientačně 300–700 tis. Kč</p>
+<p class="zone-partner-hint"><strong>Partner sekce:</strong> produkční agentura, Adobe, Runway · orientačně 300–700 tis. Kč</p>
 </div>
 </article>
 
 <article class="zone-card">
 <div class="zone-card-header">
-<div class="zone-card-num">Zóna 05</div>
+<div class="zone-card-num">Sekce 05</div>
 <h3>AI &amp; Martech</h3>
 <div class="zone-card-tags">
 <span class="zone-tag">mini stage</span>
@@ -2414,15 +2330,15 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="zone-block-label">Náhled zóny na výstavišti</div>
 <p>Centrální hub zóny — stage vpředu, kolem 4–6 demo islandů, vzadu lounge pro schůzky. Nejživější místo veletrhu.</p>
 <div class="zone-layout-img-wrap"><img src="assets/zones/zone-05-ai.png" alt="Náhled zóny AI &amp; Martech — mini stage a demo ostrovy" class="zone-layout-img" loading="lazy"></div>
-<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem zóny.</p>
+<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
 </div>
-<p class="zone-partner-hint"><strong>Partner zóny:</strong> ČAUI + 1–3 AI firmy · orientačně 1–2 mil. Kč · garance 20 B2B meetingů</p>
+<p class="zone-partner-hint"><strong>Partner sekce:</strong> ČAUI + 1–3 AI firmy · orientačně 1–2 mil. Kč · garance 20 B2B meetingů</p>
 </div>
 </article>
 
 <article class="zone-card">
 <div class="zone-card-header">
-<div class="zone-card-num">Zóna 06</div>
+<div class="zone-card-num">Sekce 06</div>
 <h3>E-commerce &amp; On-demand Production</h3>
 <div class="zone-card-tags">
 <span class="zone-tag">fulfillment</span>
@@ -2445,15 +2361,15 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="zone-block-label">Náhled zóny na výstavišti</div>
 <p>Lineární cesta — návštěvník projde tok objednávky jako na pásovém nákupu. Fyzický conveyor nebo šipková trasa na podlaze.</p>
 <div class="zone-layout-img-wrap"><img src="assets/zones/zone-06-ecommerce.png" alt="Náhled zóny E-commerce — fulfillment a on-demand linka" class="zone-layout-img" loading="lazy"></div>
-<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem zóny.</p>
+<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
 </div>
-<p class="zone-partner-hint"><strong>Partner zóny:</strong> APEK, Shoptet, Packeta · orientačně 600k–1,2 mil. Kč</p>
+<p class="zone-partner-hint"><strong>Partner sekce:</strong> APEK, Shoptet, Packeta · orientačně 600k–1,2 mil. Kč</p>
 </div>
 </article>
 
 <article class="zone-card">
 <div class="zone-card-header">
-<div class="zone-card-num">Zóna 07</div>
+<div class="zone-card-num">Sekce 07</div>
 <h3>Experience &amp; Innovation</h3>
 <div class="zone-card-tags">
 <span class="zone-tag">immersive</span>
@@ -2476,15 +2392,15 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="zone-block-label">Náhled zóny na výstavišti</div>
 <p>Dva režimy — tmavý immersive box uprostřed + světlé open demo kolem. Návštěvník střídá „wow moment“ a praktické ukázky.</p>
 <div class="zone-layout-img-wrap"><img src="assets/zones/zone-07-experience.png" alt="Náhled zóny Experience &amp; Innovation — immersive instalace a AR demo" class="zone-layout-img" loading="lazy"></div>
-<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem zóny.</p>
+<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
 </div>
-<p class="zone-partner-hint"><strong>Partner zóny:</strong> event agentura, Red Bull, Clientology · orientačně 800k–1,5 mil. Kč</p>
+<p class="zone-partner-hint"><strong>Partner sekce:</strong> event agentura, Red Bull, Clientology · orientačně 800k–1,5 mil. Kč</p>
 </div>
 </article>
 
 <article class="zone-card">
 <div class="zone-card-header">
-<div class="zone-card-num">Zóna 08</div>
+<div class="zone-card-num">Sekce 08</div>
 <h3>Promotional Products Reinvented</h3>
 <div class="zone-card-tags">
 <span class="zone-tag">premium merch</span>
@@ -2507,15 +2423,15 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="zone-block-label">Náhled zóny na výstavišti</div>
 <p>Butikový charakter — výstavní vitríny, uprostřed live customizační stan. Menší plocha, vyšší vizuální kvalita než klasický merch stánek.</p>
 <div class="zone-layout-img-wrap"><img src="assets/zones/zone-08-promo.png" alt="Náhled zóny Promotional Products — prémiová galerie dárků" class="zone-layout-img" loading="lazy"></div>
-<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem zóny.</p>
+<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
 </div>
-<p class="zone-partner-hint"><strong>Partner zóny:</strong> PF Concept, prémioví dodavatelé · vystavovatel orientačně 150–400 tis. Kč</p>
+<p class="zone-partner-hint"><strong>Partner sekce:</strong> PF Concept, prémioví dodavatelé · vystavovatel orientačně 150–400 tis. Kč</p>
 </div>
 </article>
 
 <article class="zone-card">
 <div class="zone-card-header">
-<div class="zone-card-num">Zóna 09</div>
+<div class="zone-card-num">Sekce 09</div>
 <h3>Startup &amp; Innovation Hub</h3>
 <div class="zone-card-tags">
 <span class="zone-tag">pitch stage</span>
@@ -2538,9 +2454,9 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="zone-block-label">Náhled zóny na výstavišti</div>
 <p>Kompaktní cluster — malé startup stánky (3×3 m) kolem centrální pitch stage. StartupYard / CzechCrunch vibe, ne korporátní hala.</p>
 <div class="zone-layout-img-wrap"><img src="assets/zones/zone-09-startup.png" alt="Náhled zóny Startup &amp; Innovation Hub — pitch stage a startup stánky" class="zone-layout-img" loading="lazy"></div>
-<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem zóny.</p>
+<p class="zone-layout-caption">Vizualizace nástřelu — finální podoba ve spolupráci s partnerem sekce.</p>
 </div>
-<p class="zone-partner-hint"><strong>Partner zóny:</strong> StartupYard, CzechCrunch · startup stánek od 54 tis. Kč (Bronze / pultík)</p>
+<p class="zone-partner-hint"><strong>Partner sekce:</strong> StartupYard, CzechCrunch · startup stánek od 54 tis. Kč (Bronze / pultík)</p>
 </div>
 </article>
 
@@ -2552,53 +2468,6 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 </div>
 </section>
 </div>
-
-<div id="page-propagace" class="page-view">
-<section class="page-hero">
-<div class="container">
-<div class="hero-eyebrow">Marketing · Inspirace od konkurence</div>
-<h1>Propagace</h1>
-<p>Nástěnka nápadů na propagaci BX EXPO — screenshoty, kampaně a formáty, které fungují jinde. Ne finální plán, ale sbírka inspirace pro interní diskusi.</p>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<div class="prop-draft-banner">
-<p><strong>Status: návrhy a inspirace.</strong> Materiály zde slouží k brainstormingu — placené kampaně konkurence, lead formuláře, reklamní formáty.</p>
-</div>
-<div class="section-header">
-<div class="section-eyebrow">Příklad #1</div>
-<h2 class="section-title">Lead gen kampaň s dotazníkem</h2>
-<p class="section-desc">Ptak Warsaw Expo — World of AI &amp; Big Data Expo. Placená propagace vede rovnou na kvalifikační formulář.</p>
-</div>
-<div class="prop-inspo-grid">
-<article class="prop-inspo-card">
-<div class="prop-inspo-header">
-<h3>World of AI &amp; Big Data Expo</h3>
-<p class="prop-inspo-meta">Varšava · 22.–24. 9. 2026 · Ptak Warsaw Expo</p>
-<div class="prop-inspo-tags">
-<span class="prop-inspo-tag">Facebook Ads</span>
-<span class="prop-inspo-tag">Google Ads CPC</span>
-<span class="prop-inspo-tag">Lead formulář</span>
-</div>
-</div>
-<div class="prop-inspo-shots">
-<figure class="prop-inspo-shot">
-<img src="assets/propagace/world-ai-bigdata-fb-ad.png" alt="Facebook Ads — World of AI &amp; Big Data Expo" loading="lazy">
-<figcaption>Facebook Ads — CTA „Staňte se vystavovatelem“</figcaption>
-</figure>
-<figure class="prop-inspo-shot">
-<img src="assets/propagace/world-ai-bigdata-landing-form.png" alt="Landing s dotazníkem" loading="lazy">
-<figcaption>Landing — dotazník vystavovatel / velikost stánku</figcaption>
-</figure>
-</div>
-</article>
-</div>
-<div class="prop-add-slot"><p>+ Další nápady na propagaci přidáme sem</p></div>
-</div>
-</section>
-</div>
-
 <div id="page-vstupenky" class="page-view">
 <section class="page-hero">
 <div class="container">
@@ -2672,7 +2541,7 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <p class="visitor-ticket-price-note">Cena bude doplněna</p>
 <ul class="visitor-ticket-features">
 <li>Vstup na veletrh (3 dny)</li>
-<li>Prohlídka výstavních zón</li>
+<li>Prohlídka výstavních sekcí</li>
 <li>Veřejný stage program</li>
 <li class="muted">Matchmaking</li>
 <li class="muted">VIP večírek &amp; lounge</li>
@@ -2866,8 +2735,7 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <div class="footer-links">
 <a href="#benchmarky" data-page="benchmarky" class="footer-link">Benchmarky</a>
 <a href="#model" data-page="model" class="footer-link">Náš model</a>
-<a href="#zony" data-page="zony" class="footer-link">Naše zóny</a>
-<a href="#propagace" data-page="propagace" class="footer-link">Propagace</a>
+<a href="#sekce" data-page="sekce" class="footer-link">Naše sekce</a>
 <a href="#vstupenky" data-page="vstupenky" class="footer-link">Vstupenky</a>
 <a href="#kalkulacka" data-page="kalkulacka" class="footer-link">Kalkulačka</a>
 </div>
@@ -3398,8 +3266,7 @@ domu:'Brand Experience EXPO Dashboard',
 benchmarky:'Benchmarky – BX EXPO',
 archetypy:'Modely konkurence – BX EXPO',
 model:'Náš model – BX EXPO',
-zony:'Naše zóny – BX EXPO',
-propagace:'Propagace – BX EXPO',
+sekce:'Naše sekce – BX EXPO',
 vstupenky:'Vstupenky – BX EXPO',
 kalkulacka:'Kalkulačka – BX EXPO',
 };
