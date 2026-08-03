@@ -524,45 +524,45 @@ font-weight: 900;
 text-transform: uppercase;
 margin-bottom: 0.35rem;
 }
-.visitor-ticket-card.visitor-ticket-sub {
+.visitor-ticket-card .visitor-ticket-sub {
 font-size: 0.85rem;
 color: var(--text-muted);
 margin-bottom: 1rem;
 }
-.visitor-ticket-card.visitor-ticket-price {
+.visitor-ticket-card .visitor-ticket-price {
 font-size: 1.5rem;
 font-weight: 900;
 margin-bottom: 0.35rem;
 color: var(--text-muted);
 }
-.visitor-ticket-card.visitor-ticket-price-note {
+.visitor-ticket-card .visitor-ticket-price-note {
 font-size: 0.78rem;
 color: var(--text-muted);
 font-style: italic;
 margin-bottom: 1rem;
 }
-.visitor-ticket-card.visitor-ticket-features {
+.visitor-ticket-card .visitor-ticket-features {
 list-style: none;
 flex: 1;
 }
-.visitor-ticket-card.visitor-ticket-features li {
+.visitor-ticket-card .visitor-ticket-features li {
 position: relative;
 padding: 0.35rem 0 0.35rem 1.35rem;
 font-size: 0.88rem;
 color: var(--text);
 line-height: 1.45;
 }
-.visitor-ticket-card.visitor-ticket-features li::before {
+.visitor-ticket-card .visitor-ticket-features li::before {
 content:'✓';
 position: absolute;
 left: 0;
 color: var(--accent);
 font-weight: 700;
 }
-.visitor-ticket-card.visitor-ticket-features li.muted {
+.visitor-ticket-card .visitor-ticket-features li.muted {
 opacity: 0.45;
 }
-.visitor-ticket-card.visitor-ticket-features li.muted::before {
+.visitor-ticket-card .visitor-ticket-features li.muted::before {
 content:' —';
 font-weight: 400;
 }
@@ -784,12 +784,12 @@ background: transparent;
 border: none;
 min-height: 190px;
 }
-.layer-stack.flip-card-front {
+.layer-item .flip-card-front {
 border-left: 4px solid var(--accent);
 }
-.layer-stack.flip-card:nth-child(2).flip-card-front { border-left-color: var(--accent-2); }
-.layer-stack.flip-card:nth-child(3).flip-card-front { border-left-color: var(--accent-3); }
-.layer-stack.flip-card-back ul {
+.layer-stack .layer-item:nth-child(2) .flip-card-front { border-left-color: var(--accent-2); }
+.layer-stack .layer-item:nth-child(3) .flip-card-front { border-left-color: var(--accent-3); }
+.layer-item .flip-card-back ul {
 margin-top: 0.5rem;
 padding-left: 1.25rem;
 font-size: 0.9rem;
@@ -1061,10 +1061,10 @@ font-weight: 800;
 margin-bottom: 0.5rem;
 }
 .flip-card-front p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; }
-.flip-card-front.card-sub { font-size: 0.85rem; color: var(--accent-2); font-weight: 500; margin-bottom: 0.75rem; }
-.flip-card-front.card-num { font-size: 0.75rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
-.flip-card-front.nav-card-num { font-size: 2rem; font-weight: 900; opacity: 0.12; margin-bottom: 0.5rem; line-height: 1; }
-.flip-card-front.nav-card-link {
+.flip-card-front .card-sub { font-size: 0.85rem; color: var(--accent-2); font-weight: 500; margin-bottom: 0.75rem; }
+.flip-card-front .card-num { font-size: 0.75rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+.flip-card-front .nav-card-num { font-size: 2rem; font-weight: 900; opacity: 0.12; margin-bottom: 0.5rem; line-height: 1; }
+.flip-card-front .nav-card-link {
 display: inline-flex;
 align-items: center;
 gap: 0.25rem;
@@ -1073,29 +1073,29 @@ font-weight: 600;
 font-size: 0.85rem;
 color: var(--accent);
 }
-.ticket-card.flip-card-front {
+.ticket-card .flip-card-front {
 background: var(--surface);
 border: 1px solid var(--border);
 }
-.ticket-card.highlight.flip-card-front {
+.ticket-card.highlight .flip-card-front {
 border-color: var(--accent);
 box-shadow: 0 0 0 1px var(--accent);
 }
-.ticket-card.flip-card-front h3 { font-size: 1.1rem; font-weight: 800; text-transform: uppercase; }
-.ticket-card.flip-card-front.ticket-sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
-.ticket-card.flip-card-front.ticket-price { font-size: 1.75rem; font-weight: 900; margin-bottom: 0.25rem; }
-.ticket-card.flip-card-front.ticket-calc-ref { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.35rem; }
-.ticket-card.flip-card-front.ticket-save { margin-bottom: 0.5rem; }
-.ticket-card.flip-card-front.ticket-price-old { font-size: 0.9rem; color: var(--text-muted); text-decoration: line-through; }
-.ticket-card.flip-card-back.ticket-features { list-style: none; margin-top: 0.5rem; }
-.ticket-card.flip-card-back.ticket-features li {
+.ticket-card .flip-card-front h3 { font-size: 1.1rem; font-weight: 800; text-transform: uppercase; }
+.ticket-card .flip-card-front .ticket-sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+.ticket-card .flip-card-front .ticket-price { font-size: 1.75rem; font-weight: 900; margin-bottom: 0.25rem; }
+.ticket-card .flip-card-front .ticket-calc-ref { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.35rem; }
+.ticket-card .flip-card-front .ticket-save { margin-bottom: 0.5rem; }
+.ticket-card .flip-card-front .ticket-price-old { font-size: 0.9rem; color: var(--text-muted); text-decoration: line-through; }
+.ticket-card .flip-card-back .ticket-features { list-style: none; margin-top: 0.5rem; }
+.ticket-card .flip-card-back .ticket-features li {
 font-size: 0.85rem;
 padding: 0.35rem 0 0.35rem 1.25rem;
 position: relative;
 color: var(--text-light-muted);
 }
-.ticket-card.flip-card-back.ticket-features li::before { content:'✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
-.feature-card.flip-card-front h3 {
+.ticket-card .flip-card-back .ticket-features li::before { content:'✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.feature-card .flip-card-front h3 {
 font-size: 1.2rem;
 text-transform: uppercase;
 letter-spacing: -0.01em;
@@ -1127,14 +1127,14 @@ margin-bottom: 0.25rem;
 }
 .flip-card-back p,
 .flip-card-back li { color: var(--text-light-muted); font-size: 0.85rem; line-height: 1.5; }
-.flip-card-back.insight-box {
+.flip-card-back .insight-box {
 background: rgba(64,184,232,0.12);
 border-left-color: var(--accent);
 color: var(--text-light-muted);
 margin-top: 0.75rem;
 flex-shrink: 0;
 }
-.flip-card-back.pricelist-wrap {
+.flip-card-back .pricelist-wrap {
 margin-top: 0;
 display: block;
 }
@@ -1152,7 +1152,7 @@ border-top: 1px solid rgba(255,255,255,0.08);
 .card-back-footer.pricelist-wrap {
 margin-top: 0;
 }
-.flip-card-back.card-back-footer a {
+.flip-card-back .card-back-footer a {
 color: var(--accent);
 font-size: 0.85rem;
 font-weight: 600;
@@ -1168,8 +1168,8 @@ margin-top: auto;
 padding-top: 0.75rem;
 flex-shrink: 0;
 }
-.flip-card-back.benchmark-list li::before { color: var(--accent); }
-.flip-card-back.card-sub { color: var(--accent-2); }
+.flip-card-back .benchmark-list li::before { color: var(--accent); }
+.flip-card-back .card-sub { color: var(--accent-2); }
 .flip-hint {
 margin-top: auto;
 padding-top: 1rem;
@@ -1179,16 +1179,16 @@ color: var(--accent);
 opacity: 0.85;
 letter-spacing: 0.02em;
 }
-.flip-card-front.flip-card-header {
+.flip-card-front .flip-card-header {
 display: flex;
 justify-content: space-between;
 align-items: flex-start;
 gap: 0.5rem;
 width: 100%;
 }
-#benchmark-grid.flip-card { min-height: 300px; }
-#page-archetypy.flip-card { min-height: 340px; }
-#page-model.card-grid.flip-card { min-height: 280px; }
+#benchmark-grid .flip-card { min-height: 300px; }
+#page-archetypy .flip-card { min-height: 340px; }
+#page-model .card-grid .flip-card { min-height: 280px; }
 .ticket-card.flip-card { min-height: 360px; }
 .nav-card.flip-card { min-height: 260px; }
 .feature-card.flip-card { min-height: 220px; }
@@ -2892,7 +2892,7 @@ return'<h4>' + escapeHtml(title) +' — ceník</h4>'
 function registerBenchmarkPricelists() {
 pricelistTemplates.clear();
 
-document.querySelectorAll('#benchmark-grid.card').forEach((card) => {
+document.querySelectorAll('#benchmark-grid .card').forEach((card) => {
 const title = card.querySelector('h3')?.textContent?.trim() ||'Benchmark';
 const id = slugifyPricelistId(title);
 const sheetKey = BENCHMARK_EXCEL_SHEETS[id];
@@ -2912,7 +2912,7 @@ pricelistTemplates.set(id, buildSimplePricelistHtml(title, items));
 function initBenchmarkFlipCards() {
 registerBenchmarkPricelists();
 
-document.querySelectorAll('#benchmark-grid.card').forEach((card) => {
+document.querySelectorAll('#benchmark-grid .card').forEach((card) => {
 const header = card.querySelector('div:first-child');
 const shortP = card.querySelector('p[style*="margin-top"]');
 const list = card.querySelector('.benchmark-list');
@@ -3021,7 +3021,7 @@ if (e.key ==='Escape' && portal.classList.contains('is-visible')) hidePortal();
 portal.dataset.bound ='true';
 }
 
-document.querySelectorAll('#benchmark-grid.pricelist-wrap').forEach((wrap) => {
+document.querySelectorAll('#benchmark-grid .pricelist-wrap').forEach((wrap) => {
 const btn = wrap.querySelector('.pricelist-btn');
 const pricelistId = wrap.dataset.pricelistId;
 if (!btn ||!pricelistId ||!pricelistTemplates.has(pricelistId)) return;
@@ -3035,7 +3035,7 @@ showPortal(btn, pricelistId);
 }
 
 function initArchetypeFlipCards() {
-document.querySelectorAll('#page-archetypy.card-grid.card').forEach((card) => {
+document.querySelectorAll('#page-archetypy .card-grid .card').forEach((card) => {
 const num = card.querySelector('.card-num');
 const h3 = card.querySelector('h3');
 const sub = card.querySelector('.card-sub');
@@ -3062,7 +3062,7 @@ createFlipStructure(card, front, back,'340px');
 }
 
 function initSectionFlipCards() {
-const sectionGrid = document.querySelector('#page-model.section-muted.card-grid');
+const sectionGrid = document.querySelector('#page-model .section-muted .card-grid');
 if (!sectionGrid) return;
 sectionGrid.querySelectorAll('.card').forEach((card) => {
 const numWrap = card.querySelector('div[style*="display:flex"]');
@@ -3086,7 +3086,7 @@ createFlipStructure(card, front, back,'280px');
 }
 
 function initPricingFlipCards() {
-const pricingSection = document.querySelectorAll('#page-model.section.card-grid');
+const pricingSection = document.querySelectorAll('#page-model .section .card-grid');
 pricingSection.forEach((grid) => {
 if (grid.closest('.section-muted')) return;
 grid.querySelectorAll('.card').forEach((card) => {
