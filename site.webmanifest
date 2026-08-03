@@ -16,6 +16,11 @@
       "src": "/bxnastenka/assets/icons/bx-favicon-32.png",
       "sizes": "32x32",
       "type": "image/png"
+    },
+    {
+      "src": "/bxnastenka/assets/icons/bx-favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "display": "browser",
