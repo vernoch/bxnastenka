@@ -3477,6 +3477,7 @@ createFlipStructure(item, front, back,'190px');
 
 function initFlipCards() {
 initFeatureFlipCards();
+initBenchmarkCalendar();
 initBenchmarkFlipCards();
 initPricelistPopups();
 initArchetypeFlipCards();
@@ -3627,21 +3628,13 @@ toggle.textContent = header.classList.contains('nav-open')?'✕':'☰';
 }
 
 // Benchmark filters
-const filterBtns = document.querySelectorAll('.filter-pill');
-const benchmarkCards = document.querySelectorAll('[data-category]');
-if (filterBtns.length && benchmarkCards.length) {
+const filterBtns = document.querySelectorAll('#page-benchmarky .filter-pill');
+if (filterBtns.length) {
 filterBtns.forEach((btn) => {
 btn.addEventListener('click', () => {
 filterBtns.forEach((b) => b.classList.remove('active'));
 btn.classList.add('active');
-const filter = btn.dataset.filter;
-benchmarkCards.forEach((card) => {
-if (filter ==='all' || card.dataset.category === filter) {
-card.classList.remove('hidden');
-} else {
-card.classList.add('hidden');
-}
-});
+applyBenchmarkFilter(btn.dataset.filter || 'all');
 });
 });
 }
