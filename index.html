@@ -1664,6 +1664,23 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 
 <section class="section">
 <div class="container">
+<div class="benchmark-calendar" id="benchmark-calendar">
+<div class="benchmark-calendar-head">
+<div>
+<h2>Kalendář akcí</h2>
+<p>Termíny benchmarků v roce — kde se konkurence potkává s publikem a kde má BX EXPO prostor (28.–30. 4. 2027).</p>
+</div>
+<div class="benchmark-calendar-legend" aria-hidden="true">
+<span class="legend-veletrh"><i></i> Veletrh</span>
+<span class="legend-konference"><i></i> Konference</span>
+<span class="legend-festival"><i></i> Festival</span>
+<span class="legend-bx"><i></i> BX EXPO</span>
+</div>
+</div>
+<div class="benchmark-calendar-grid" id="benchmark-calendar-grid" aria-label="Kalendář benchmark akcí"></div>
+<p class="benchmark-calendar-note">Klik na akci v kalendáři posune na detailní kartu níže. Filtry kategorií synchronizují kalendář i mřížku.</p>
+</div>
+
 <div class="filter-row">
 <button class="filter-pill active" data-filter="all">Vše</button>
 <button class="filter-pill" data-filter="veletrh">Veletrhy</button>
@@ -1673,7 +1690,7 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 
 <div class="card-grid" id="benchmark-grid">
 
-<div class="card" data-category="veletrh">
+<div class="card" data-category="veletrh" data-benchmark-id="euroshop">
 <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
 <div><h3>EuroShop</h3><p class="card-sub">Düsseldorf</p></div>
 <span class="badge badge-i">veletrh</span>
@@ -1688,9 +1705,7 @@ Nejdřív jsme zmapovali cenové modely konkurence, pak z nich postavili vlastn�
 <a href="https://www.euroshop-tradefair.com/" target="_blank" rel="noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600">Otevřít web →</a>
 </div>
 
-<div class="card" data-category="veletrh">
-<div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
-<div><h3>OMR Festival</h3><p class="card-sub">Hamburk</p></div>
+<div class="card" data-category="veletrh" data-benchmark-id="omr-festival"><p class="card-sub">Hamburk</p></div>
 <span class="badge badge-i">veletrh</span>
 </div>
 <p style="margin-top:0.75rem">Veletrh digitálního marketingu s festivalovým zázemím – stánky na klíč, Masterclass a placená garance kvalifikovaných leadů z databáze návštěvníků.</p>
